@@ -1,9 +1,10 @@
 /* jshint node: true */
+/* eslint no-undef: 0 no-var: 0 */
 
 module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'dummy',
-    environment: environment,
+    environment,
     rootURL: '/',
     locationType: 'auto',
     EmberENV: {
@@ -20,6 +21,10 @@ module.exports = function(environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
+    },
+
+    emberApiActions: {
+      pushToStore: true
     }
   };
 
@@ -42,9 +47,9 @@ module.exports = function(environment) {
     ENV.APP.rootElement = '#ember-testing';
   }
 
-  if (environment === 'production') {
-
-  }
+  // if (environment === 'production') {
+  //
+  // }
 
   return ENV;
 };
