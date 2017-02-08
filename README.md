@@ -14,6 +14,62 @@ Ember Custom Actions is a package for defining custom API actions, dedicated for
 
 ## Documentation
 
+### Model actions
+To define custom action like: `posts/1/publish` you can use
+`modelAction(path, options)` method with arguments:
+- `path` - the url of the action (in our case it's `publish`)
+- `options` - optional parameter which will overwrite the configuration options
+
+```js
+import Model from 'ember-data/model';
+import { modelAction } from 'ember-custom-actions';
+
+export default Model.extend({
+  publish: modelAction('publish', { pushToStore: false }),
+});
+
+```
+
+#### Usage
+```js
+let user = this.get('currentUser');
+let postToPublish = this.get('store').findRecord('post', 1);
+let payload = { publisher: user };
+
+postToPublish.publish(payload).then((status) => {
+  alert(`Post has been: ${status}`)
+});
+```
+
+### Resource actions
+To a define custom action like: `posts/favorites` you can use
+`resourceAction(path, options)` method with arguments:
+- `path` - the url of the action (in our case it's `favorites`)
+- `options` - optional parameter which will overwrite the configuration options
+
+```js
+import Model from 'ember-data/model';
+import { resourceAction } from 'ember-custom-actions';
+
+export default Model.extend({
+  favorites: resourceAction('favorites', { type: 'GET' }),
+});
+
+```
+
+#### Usage
+```js
+let user = this.get('currentUser');
+let emptyPost = this.get('store').createRecord('post');
+let payload = { user };
+
+emptyPost.favorites(payload).then((favoritesPosts) => {
+  console.log(favoritesPosts);
+}).finally(()=>{
+  emptyPost.deleteRecord();
+});
+```
+
 ### Configuration
 
 You can define your custom options in your `config/environment.js` file
@@ -76,63 +132,6 @@ It's great for API with request data format restrictions
   - dasherize
   - decamelize
   - underscore
-
-
-### Model actions
-To define custom action like: `posts/1/publish` you can use
-`modelAction(path, options)` method with arguments:
-- `path` - the url of the action (in our case it's `publish`)
-- `options` - optional parameter which will overwrite the configuration options
-
-```js
-import Model from 'ember-data/model';
-import { modelAction } from 'ember-custom-actions';
-
-export default Model.extend({
-  publish: modelAction('publish', { pushToStore: false }),
-});
-
-```
-
-#### Usage
-```js
-let user = this.get('currentUser');
-let postToPublish = this.get('store').findRecord('post', 1);
-let payload = { publisher: user };
-
-postToPublish.publish(payload).then((status) => {
-  alert(`Post has been: ${status}`)
-});
-```
-
-### Resource actions
-To a define custom action like: `posts/favorites` you can use
-`resourceAction(path, options)` method with arguments:
-- `path` - the url of the action (in our case it's `favorites`)
-- `options` - optional parameter which will overwrite the configuration options
-
-```js
-import Model from 'ember-data/model';
-import { resourceAction } from 'ember-custom-actions';
-
-export default Model.extend({
-  favorites: resourceAction('favorites', { type: 'GET' }),
-});
-
-```
-
-#### Usage
-```js
-let user = this.get('currentUser');
-let emptyPost = this.get('store').createRecord('post');
-let payload = { user };
-
-emptyPost.favorites(payload).then((favoritesPosts) => {
-  console.log(favoritesPosts);
-}).finally(()=>{
-  emptyPost.deleteRecord();
-});
-```
 
 # Development
 
