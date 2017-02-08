@@ -4,8 +4,7 @@
   <a href='https://travis-ci.org/Exelord/ember-custom-actions'><img src="https://travis-ci.org/Exelord/ember-custom-actions.svg?branch=master" alt="Dependency Status" /></a> <a href='https://gemnasium.com/github.com/Exelord/ember-custom-actions'><img src="https://gemnasium.com/badges/github.com/Exelord/ember-custom-actions.svg" alt="Dependency Status" /></a>
 </p>
 
-The Ember add-on lets you call custom actions to your JSON API server.
-Ember Custom Actions is compatible with Ember 2.8 (and higher) applications..
+Ember Custom Actions is a package for defining custom API actions, dedicated for Ember 2.8 (and higher) applications.
 
 # Getting started
 
@@ -17,7 +16,7 @@ Ember Custom Actions is compatible with Ember 2.8 (and higher) applications..
 
 ### Configuration
 
-You can define your custom default options in your `config/environment.js` file.
+You can define your custom options in your `config/environment.js` file
 
 ``` js
 module.exports = function(environment) {
@@ -34,16 +33,16 @@ module.exports = function(environment) {
 }
 ```
 #### `type`
-default type of the request (GET, PUT, POST, DELETE, etc..)
+Default type of the request (GET, PUT, POST, DELETE, etc..)
 
 #### `urlType`
-Base of the URL that's generated for the action. If not defined `urlType` is equal `type`;
+Base of the URL which is generated for the action. If not defined, `urlType` is equal to the `type` option
 
 #### `ajaxOptions`
-you can define your own ajax options for example headers.
+Your own ajax options (e.g. headers)
 
 #### `pushToStore`
-if you want to push the recived data to the store mark this option to `true` and change your application `JSONAPISerializer` to:
+If you want to push the received data to the store, set this option to `true` and change your application `JSONAPISerializer` to:
 ``` js
 // app/serializers/application.js
 
@@ -51,16 +50,16 @@ import { JSONAPISerializer } from 'ember-custom-actions';
 export default JSONAPISerializer.extend();
 ```
 #### `normalizeOperation`
-You can define how your outgoing data should be serialized.
+You can define how your outgoing data should be serialized
 
-Example of data:
+Exemplary data:
 ```js
 {
   firstParam: 'My Name',
   colors: { rubyRed: 1, blueFish: 3 }
 }
 ```
-using a `dasherize` transformer our request data will be look like:
+After using a `dasherize` transformer our request data will turn into:
 
 ```js
 {
@@ -68,7 +67,7 @@ using a `dasherize` transformer our request data will be look like:
   colors: { ruby-red: 1, blue-fish: 3 }
 }
 ```
-It's great for API with request data format restrictions.
+It's great for API with request data format restrictions
 
 **Available transformers:**
   - camelize
@@ -82,9 +81,8 @@ It's great for API with request data format restrictions.
 ### Model actions
 To define custom action like: `posts/1/publish` you can use
 `modelAction(path, options)` method with arguments:
-
-`path` - the url of the action in our case `publish`
-`options` - optional parameter which will overwrite the configuration options
+- `path` - the url of the action (in our case it's `publish`)
+- `options` - optional parameter which will overwrite the configuration options
 
 ```js
 import Model from 'ember-data/model';
@@ -108,11 +106,10 @@ postToPublish.publish(payload).then((status) => {
 ```
 
 ### Resource actions
-To define custom action like: `posts/favorites` you can use
+To a define custom action like: `posts/favorites` you can use
 `resourceAction(path, options)` method with arguments:
-
-`path` - the url of the action in our case `favorites`
-`options` - optional parameter which will overwrite the configuration options
+- `path` - the url of the action (in our case it's `favorites`)
+- `options` - optional parameter which will overwrite the configuration options
 
 ```js
 import Model from 'ember-data/model';
@@ -141,7 +138,7 @@ emptyPost.favorites(payload).then((favoritesPosts) => {
 
 ## Installation
 
-* `git clone <repository-url>` this repository
+* `git clone https://github.com/Exelord/ember-custom-actions.git`
 * `cd ember-custom-actions`
 * `npm install`
 * `bower install`
@@ -168,7 +165,7 @@ Big thanks to Mike North and his [Project](https://github.com/mike-north/ember-a
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/exelord/Monarchy. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the Contributor Covenant code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/exelord/ember-custom-actions. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the Contributor Covenant code of conduct.
 
 ## License
 
