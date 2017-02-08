@@ -77,7 +77,7 @@ You can define your custom options in your `config/environment.js` file
 ``` js
 module.exports = function(environment) {
   var ENV = {
-    'ember-api-actions': {
+    'emberCustomActions': {
       type: 'PUT',
       ajaxOptions: {},
       pushToStore: false,

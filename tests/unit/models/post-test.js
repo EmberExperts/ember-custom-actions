@@ -14,7 +14,13 @@ moduleForModel('post', 'Unit | Model | post', {
 });
 
 test('model action', function(assert) {
-  this.server.put('/posts/:id/publish', () => {
+  assert.expect(3);
+
+  this.server.put('/posts/:id/publish', (request) => {
+    let data = JSON.parse(request.requestBody);
+    assert.deepEqual(data, { myParam: 'My first param' });
+    assert.equal(request.url, '/posts/1/publish');
+
     return [200, { }, 'true'];
   });
 
@@ -31,9 +37,13 @@ test('model action', function(assert) {
 });
 
 test('model action pushes to store', function(assert) {
-  assert.expect(3);
+  assert.expect(5);
 
-  this.server.put('/posts/:id/publish', () => {
+  this.server.put('/posts/:id/publish', (request) => {
+    let data = JSON.parse(request.requestBody);
+    assert.deepEqual(data, { myParam: 'My first param' });
+    assert.equal(request.url, '/posts/1/publish');
+
     return [200, {}, '{"data": {"id": 2, "type": "Post"}}'];
   });
 
@@ -53,7 +63,13 @@ test('model action pushes to store', function(assert) {
 });
 
 test('resource action', function(assert) {
-  this.server.put('/posts/list', () => {
+  assert.expect(3);
+
+  this.server.put('/posts/list', (request) => {
+    let data = JSON.parse(request.requestBody);
+    assert.deepEqual(data, { myParam: 'My first param' });
+    assert.equal(request.url, '/posts/list');
+
     return [200, { }, 'true'];
   });
 
@@ -69,10 +85,34 @@ test('resource action', function(assert) {
   });
 });
 
-test('resource action pushes to store', function(assert) {
+test('resource action with params in GET', function(assert) {
   assert.expect(3);
 
-  this.server.put('/posts/list', () => {
+  this.server.get('/posts/search', (request) => {
+    assert.equal(request.url, '/posts/search?my-param=My%20first%20param');
+    assert.equal(request.requestHeaders.test, 'Custom header');
+    return [200, { }, 'true'];
+  });
+
+  let done = assert.async();
+  let payload = { myParam: 'My first param' };
+
+  let model = this.subject();
+  model.set('id', 1);
+  model.search(payload, { ajaxOptions: { headers: { test: 'Custom header' } } }).then((response) => {
+    assert.ok(response, true);
+    done();
+  });
+});
+
+test('resource action pushes to store', function(assert) {
+  assert.expect(5);
+
+  this.server.put('/posts/list', (request) => {
+    let data = JSON.parse(request.requestBody);
+    assert.deepEqual(data, { myParam: 'My first param' });
+    assert.equal(request.url, '/posts/list');
+
     return [200, {}, '{"data": [{"id": "2", "type": "post"},{"id": "3", "type": "post"}]}'];
   });
 
