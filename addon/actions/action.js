@@ -3,7 +3,7 @@ import UrlBuilder from '../utils/url-builder';
 import normalizePayload from '../utils/normalize-payload';
 import defaultConfig from '../config';
 
-const { assign, getOwner, computed, isArray, ArrayProxy, Object } = Ember;
+const { assign, getOwner, computed, isArray, ArrayProxy, ObjectProxy, Object } = Ember;
 
 export default Object.extend({
   model: null,
@@ -11,9 +11,7 @@ export default Object.extend({
   payload: {},
   instance: false,
 
-  store: computed('model', function() {
-    return this.get('model').store;
-  }),
+  store: computed.reads('model.store'),
 
   modelName: computed('model', function() {
     let { constructor } = this.get('model');
@@ -29,22 +27,25 @@ export default Object.extend({
   }),
 
   appConfig: computed('model', function() {
-    return getOwner(this.get('model')).resolveRegistration('config:environment').emberApiActions || {};
+    let config = getOwner(this.get('model')).resolveRegistration('config:environment').emberApiActions || {};
+    return Object.create(config);
   }),
 
-  config: computed('model', 'options', function() {
-    return assign(defaultConfig, this.get('appConfig'), this.get('options'));
+  defaultConfig: computed(function() {
+    return Object.create(defaultConfig);
   }),
 
-  requestType: computed('config', function() {
-    return this.get('config').type.toUpperCase();
+  config: computed('defaultConfig', 'options', 'appConfig', function() {
+    return Object.create(assign(this.get('defaultConfig'), this.get('appConfig'), this.get('options')));
   }),
 
-  urlType: computed('config', 'requestType', function() {
-    return this.get('config').urlType || this.get('requestType');
+  requestType: computed('config.type', function() {
+    return this.get('config.type').toUpperCase();
   }),
 
-  url: computed('model', 'path', 'urlType', 'instance', function() {
+  urlType: computed.or('config.urlType', 'requestType'),
+
+  url: computed('model', 'path', 'urlType', 'instance', 'adapter', function() {
     return UrlBuilder.create({
       path: this.get('path'),
       adapter: this.get('adapter'),
@@ -54,15 +55,15 @@ export default Object.extend({
     }).build();
   }),
 
-  data: computed('config', 'payload', function() {
-    let payload = (this.get('payload') instanceof Object) ? this.get('payload') : {};
-    let data = normalizePayload(payload, this.get('config').normalizeOperation);
-    return assign(this.get('config').ajaxOptions, { data });
+  data: computed('config.{normalizeOperation,ajaxOptions}', 'payload', function() {
+    let payload = (this.get('payload') instanceof window.Object) ? this.get('payload') : {};
+    let data = normalizePayload(payload, this.get('config.normalizeOperation'));
+    return assign(this.get('config.ajaxOptions'), { data });
   }),
 
   callAction() {
     return this.get('adapter').ajax(this.get('url'), this.get('requestType'), this.get('data')).then((response) => {
-      if (this.get('config').pushToStore && response.data) {
+      if (this.get('config.pushToStore') && response.data) {
         return this._pushToStore(this.get('serializer').pushPayload(this.get('store'), response));
       } else {
         return response;
@@ -71,10 +72,7 @@ export default Object.extend({
   },
 
   _pushToStore(content) {
-    if (isArray(content)) {
-      return ArrayProxy.create({ content });
-    } else {
-      return content;
-    }
+    let proxy = isArray(content) ? ArrayProxy : ObjectProxy;
+    return proxy.create({ content });
   }
 });
