@@ -7,7 +7,7 @@ function transformObject(object, operation) {
     let data = {};
 
     Object.keys(object).forEach((key) => {
-      data[key[operation]()] = transformObject(object[key], operation);
+      data[String[operation](key)] = transformObject(object[key], operation);
     });
 
     return data;
