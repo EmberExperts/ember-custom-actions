@@ -23,7 +23,7 @@ module.exports = function(environment) {
       // when it is created
     },
 
-    emberApiActions: {
+    emberCustomActions: {
       pushToStore: true
     }
   };

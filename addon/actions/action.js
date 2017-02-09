@@ -27,7 +27,7 @@ export default Object.extend({
   }),
 
   appConfig: computed('model', function() {
-    let config = getOwner(this.get('model')).resolveRegistration('config:environment').emberApiActions || {};
+    let config = getOwner(this.get('model')).resolveRegistration('config:environment').emberCustomActions || {};
     return Object.create(config);
   }),
 
