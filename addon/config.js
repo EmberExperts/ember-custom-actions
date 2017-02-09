@@ -2,5 +2,6 @@ export default {
   type: 'PUT',
   ajaxOptions: {},
   pushToStore: false,
-  normalizeOperation: ''
+  normalizeOperation: '',
+  promiseType: null
 };

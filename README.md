@@ -81,7 +81,8 @@ module.exports = function(environment) {
       type: 'PUT',
       ajaxOptions: {},
       pushToStore: false,
-      normalizeOperation: ''
+      normalizeOperation: '',
+      promiseType: null
     },
   };
 
@@ -132,6 +133,27 @@ It's great for API with request data format restrictions
   - dasherize
   - decamelize
   - underscore
+
+
+#### `promiseType`
+You can easily observe a returned model by changing promiseType to `array` or `object` according to what type of data
+your server will return.
+
+When `array`:
+```js
+model.customAction({}, { promiseType: 'array' }) // returns DS.PromiseArray
+```
+
+When `object`:
+```js
+model.customAction({}, { promiseType: 'object' }) // returns DS.PromiseObject
+```
+
+When `null` (default):
+```js
+model.customAction({}, { promiseType: null }) // returns Promise
+```
+`null` is useful if you don't care about the response or just want to use `then` on the promise without using `binding` or display it in the template.
 
 # Development
 

@@ -1,9 +1,18 @@
+/* eslint ember-suave/no-direct-property-access:1 */
+
 import Ember from 'ember';
+import DS from 'ember-data';
+
 import UrlBuilder from '../utils/url-builder';
 import normalizePayload from '../utils/normalize-payload';
 import defaultConfig from '../config';
 
-const { assign, getOwner, computed, isArray, ArrayProxy, ObjectProxy, Object } = Ember;
+const { assign, getOwner, computed, Object } = Ember;
+
+const promiseTypes = {
+  array: DS.PromiseArray,
+  object: DS.PromiseObject
+};
 
 export default Object.extend({
   model: null,
@@ -61,18 +70,22 @@ export default Object.extend({
     return assign(this.get('config.ajaxOptions'), { data });
   }),
 
+  promiseType: computed('config.promiseType', function() {
+    return promiseTypes[this.get('config.promiseType')];
+  }),
+
   callAction() {
+    let promise = this._promise();
+    return this.get('promiseType') ? this.get('promiseType').create({ promise }) : promise;
+  },
+
+  _promise() {
     return this.get('adapter').ajax(this.get('url'), this.get('requestType'), this.get('data')).then((response) => {
       if (this.get('config.pushToStore') && response.data) {
-        return this._pushToStore(this.get('serializer').pushPayload(this.get('store'), response));
+        return this.get('serializer').pushPayload(this.get('store'), response);
       } else {
         return response;
       }
     });
-  },
-
-  _pushToStore(content) {
-    let proxy = isArray(content) ? ArrayProxy : ObjectProxy;
-    return proxy.create({ content });
   }
 });
