@@ -1,3 +1,7 @@
+/* eslint ember-suave/no-direct-property-access:1 */
+
+import Ember from 'ember';
+import DS from 'ember-data';
 import { moduleForModel, test } from 'ember-qunit';
 import Pretender from 'pretender';
 
@@ -125,8 +129,28 @@ test('resource action pushes to store', function(assert) {
   assert.equal(store.peekAll('post').get('length'), 1);
 
   model.list(payload).then((response) => {
-    assert.equal(response.get('length'), 2);
+    assert.equal(response.length, 2);
     assert.equal(store.peekAll('post').get('length'), 3);
     done();
   });
+});
+
+test('promiseTypes', function(assert) {
+  assert.expect(6);
+
+  this.server.put('/posts/list', (request) => {
+    assert.equal(request.url, '/posts/list');
+
+    return [200, {}, '{"data": [{"id": "2", "type": "post"},{"id": "3", "type": "post"}]}'];
+  });
+
+  let model = this.subject();
+
+  let promise = model.list();
+  let promiseArray = model.list(null, { promiseType: 'array' });
+  let promiseObject = model.list(null, { promiseType: 'object' });
+
+  assert.equal(promise.constructor, Ember.RSVP.Promise);
+  assert.equal(promiseArray.constructor, DS.PromiseArray);
+  assert.equal(promiseObject.constructor, DS.PromiseObject);
 });
