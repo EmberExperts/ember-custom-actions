@@ -1,9 +1,8 @@
-/* eslint ember-suave/no-direct-property-access:1 */
-
 import Ember from 'ember';
-import DS from 'ember-data';
 import { moduleForModel, test } from 'ember-qunit';
 import Pretender from 'pretender';
+
+const { RSVP, ArrayProxy, ObjectProxy } = Ember;
 
 moduleForModel('post', 'Unit | Model | post', {
   needs: ['config:environment', 'serializer:application'],
@@ -150,7 +149,7 @@ test('promiseTypes', function(assert) {
   let promiseArray = model.list(null, { promiseType: 'array' });
   let promiseObject = model.list(null, { promiseType: 'object' });
 
-  assert.equal(promise.constructor, Ember.RSVP.Promise);
-  assert.equal(promiseArray.constructor, DS.PromiseArray);
-  assert.equal(promiseObject.constructor, DS.PromiseObject);
+  assert.equal(promise.constructor, RSVP.Promise);
+  assert.equal(promiseArray.constructor.superclass, ArrayProxy);
+  assert.equal(promiseObject.constructor.superclass, ObjectProxy);
 });
