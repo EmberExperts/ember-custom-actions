@@ -8,6 +8,10 @@ Ember Custom Actions is a package for defining custom API actions, dedicated for
 
 # Getting started
 
+## Demo
+Before you will start with documentation check our demo app: [Ember-Custom-Actions Website][43255946]
+[43255946]: https://exelord.github.io/ember-custom-actions/ "Website - Demo App"
+
 ## Installation
 
 `ember install ember-custom-actions`
