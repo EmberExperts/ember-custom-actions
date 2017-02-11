@@ -1,6 +1,6 @@
 {
   "name": "ember-custom-actions",
-  "dependencies": {
+  "dev-dependencies": {
     "bootstrap": "^3.3.7"
   }
 }
