@@ -1,17 +1,16 @@
 /* eslint ember-suave/no-direct-property-access:1 */
 
 import Ember from 'ember';
-import DS from 'ember-data';
 
 import UrlBuilder from '../utils/url-builder';
 import normalizePayload from '../utils/normalize-payload';
 import defaultConfig from '../config';
 
-const { assign, getOwner, computed, Object } = Ember;
+const { assign, getOwner, computed, Object, ObjectProxy, ArrayProxy, PromiseProxyMixin } = Ember;
 
 const promiseTypes = {
-  array: DS.PromiseArray,
-  object: DS.PromiseObject
+  array: ArrayProxy.extend(PromiseProxyMixin),
+  object: ObjectProxy.extend(PromiseProxyMixin)
 };
 
 export default Object.extend({

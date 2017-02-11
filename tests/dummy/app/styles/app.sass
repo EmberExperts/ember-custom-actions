@@ -1,0 +1,91 @@
+@import "ember-bootstrap/bootstrap"
+
+$red-color: #d43b2f
+$orange-color: #fec434
+
+.navbar-brand
+  padding-top: 0px
+  padding-bottom: 0px
+
+.navbar-default
+  background-color: white
+  padding: 10px 0
+
+#header
+  padding-top: 120px
+  padding-bottom: 100px
+  background: linear-gradient(45deg, #fefdf0 0%, $orange-color 50%, $red-color 100%)
+
+  .logo
+    max-width: 100%
+    max-height: 400px
+
+#getting-started
+  padding: 80px 0
+
+#documentation
+  text-align: center
+  padding: 80px 0
+  text-transform: uppercase
+  background: linear-gradient(45deg, #fefdf0 0%, $orange-color 50%, $red-color 100%)
+
+#examples
+  text-align: center
+  padding: 80px 0
+  text-transform: uppercase
+  .progress-bar
+    background-color: $red-color
+
+.btn-outline
+    background-color: transparent
+    color: black
+    transition: all .5s
+    border: black 1px solid
+
+    &:hover
+      background-color: transparent
+      color: white
+      border-color: white
+
+
+
+#footer
+  background: #fff
+  padding: 25px 0
+  color: #555
+
+  .content
+    display: flex
+    justify-content: space-between
+    align-items: center
+
+  .copyright
+    font-size: 13px
+    margin-bottom: 0
+
+    img
+      width: 24px
+      vertical-align: bottom
+
+    a
+      color: black
+      font-weight: bold
+
+      &:hover
+        color: $red-color
+
+  .social
+    text-align: right
+    margin-bottom: 0
+    display: inline-block
+
+    li
+      display: inline-block
+      margin-right: 15px
+
+      a
+        font-size: 22px
+        color: black
+
+        &:hover
+          color: $red-color

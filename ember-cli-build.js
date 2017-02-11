@@ -1,10 +1,13 @@
-/*jshint node:true*/
+/* eslint no-var:0*/
 /* global require, module */
+
 var EmberAddon = require('ember-cli/lib/broccoli/ember-addon');
 
 module.exports = function(defaults) {
   var app = new EmberAddon(defaults, {
-    // Add options here
+    sassOptions: {
+      extension: 'sass'
+    }
   });
 
   /*
@@ -14,5 +17,6 @@ module.exports = function(defaults) {
     behave. You most likely want to be modifying `./index.js` or app's build file
   */
 
+  app.import('bower_components/bootstrap/dist/js/bootstrap.min.js');
   return app.toTree();
 };

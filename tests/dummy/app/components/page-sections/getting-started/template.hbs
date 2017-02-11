@@ -1,0 +1,46 @@
+<div id="getting-started">
+  <div class="container">
+    <div class="text-center">
+      <h1>Getting started</h1>
+      <h2 class="lead">How to start with ember-custom-actions</h2>
+    </div>
+    <br>
+
+    <h3>1. Instalation</h3>
+
+    <p>Run: <code>ember install ember-custom-actions</code></p>
+
+    <h3>2. Setup actions</h3>
+
+    <p>Define in your models proper actions by choosing one of the following methods:</p>
+    <ul>
+      <li><code>modelAction(path, options = {})</code> - will generate request: <b>https://your.api.server/resources/1/action</b></li>
+      <li><code>resourceAction(path, options = {})</code> - will generate request: <b>https://your.api.server/resources/action</b></li>
+    </ul>
+
+    <h4>Example implementation</h4>
+
+    <pre>
+      // app/models/post.js
+
+      import Model from 'ember-data/model';
+      import { modelAction, resourceAction } from 'ember-custom-actions';
+
+      export default Model.extend({
+        publish: modelAction('publish', { promiseType: 'object' }),
+        search: resourceAction('search', { type: 'GET', normalizeOperation: 'dasherize' })
+      });
+    </pre>
+
+    <h3>3. Usage example</h3>
+    <p>You can call custom action by resolving a promise on model object, eg:</p>
+    <pre>
+      this.get('post').publish({ publisherId: 1 }).then((response) => {
+        // you can make some operations on your server's response data
+      })
+    </pre>
+
+    <h3>3. Configuration</h3>
+    To check possible <code>options</code> and set default config go to documentation.
+  </div>
+</div>
