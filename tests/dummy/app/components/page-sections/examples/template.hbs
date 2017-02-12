@@ -1,15 +1,61 @@
-<div id="examples" class="examples">
+<div id="examples">
   <div class="container">
     <div class="section-heading">
       <h1 data-wow-delay=".3s" class="title wow fadeInDown" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInDown;">Live Examples</h1>
-      <div data-wow-delay=".5s" class="wow fadeInUp" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInUp;">
-        <h2 class="lead">COMING SOON</h2>
-        <div class="progress">
-          <div role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%" class="progress-bar progress-bar-striped active">
-            <span class="sr-only">75% Complete</span>
-          </div>
-        </div>
-      </div>
+    </div>
+
+    <div class="table-responsive">
+      <table class="table">
+        <thead>
+          <tr>
+            <th class="col-sm-4">Custom Actions</th>
+            <th class="col-sm-4">Requests</th>
+            <th class="col-sm-4">Results</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="action">
+            <td>
+              <a class="btn btn-lg btn-outline btn-ember">Publish post</a>
+            </td>
+            <td>
+              <p class="status text-muted">Pending</p>
+              <h4 class="request">posts/1/publish</h4>
+            </td>
+            <td>
+              <span class="text-muted">Published:</span> <span class="h4 text-success">TRUE</span>
+            </td>
+          </tr>
+
+          <tr class="action">
+            <td>
+              <a class="btn btn-lg btn-outline btn-ember">Generate Profile</a>
+            </td>
+            <td>
+              <p class="status text-muted">Pending</p>
+              <h4 class="request">users/1/generate</h4>
+            </td>
+            <td>
+              <span class="h4">
+                {{ember-initials name="Maciej Kwaśniak" class="img-circle"}} Maciej Kwaśniak
+              </span>
+            </td>
+          </tr>
+
+          <tr class="action">
+            <td>
+              <a class="btn btn-lg btn-outline btn-ember">Burn all bridges</a>
+            </td>
+            <td>
+              <p class="status text-muted">Pending</p>
+              <h4 class="request">bridges/burn</h4>
+            </td>
+            <td>
+              <span class="h4 text-success">Success</span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 </div>

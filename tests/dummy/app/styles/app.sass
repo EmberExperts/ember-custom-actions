@@ -41,23 +41,60 @@ $orange-color: #fec434
   background: linear-gradient(45deg, #fefdf0 0%, $orange-color 50%, $red-color 100%)
 
 #examples
-  text-align: center
   padding: 80px 0
-  text-transform: uppercase
-  .progress-bar
-    background-color: $red-color
+
+  .section-heading
+    text-align: center
+
+  table
+    text-align: center
+    margin-top: 50px
+    thead
+      th
+        border: none
+        text-align: center
+        @extend .lead
+        padding-bottom: 30px
+
+    tbody
+      td
+        vertical-align: middle
+        border-top: none
+
+      td:nth-child(even)
+        text-align: left
+        border-left: 1px dashed black
+        border-right: 1px dashed black
+
+      .action
+        .status,.request
+          margin: 0
+        .btn-ember
+
+
+
 
 .btn-outline
     background-color: transparent
-    color: black
+    color: inherit
     transition: all .5s
     border: black 1px solid
 
     &:hover
       background-color: transparent
-      color: white
-      border-color: white
 
+
+.btn-default.btn-outline:hover
+    border-color: white
+
+.btn-ember
+  &.btn-outline
+    color: $red-color
+    border-color: $red-color
+
+    &:hover
+      color: $orange-color
+      border-color: $orange-color
 
 
 #footer
