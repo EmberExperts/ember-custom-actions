@@ -8,6 +8,8 @@ Ember Custom Actions is a package for defining custom API actions, dedicated for
 
 # Getting started
 
+[![Join the chat at https://gitter.im/Exelord/ember-custom-actions](https://badges.gitter.im/Exelord/ember-custom-actions.svg)](https://gitter.im/Exelord/ember-custom-actions?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 ## Installation
 
 `ember install ember-custom-actions`
