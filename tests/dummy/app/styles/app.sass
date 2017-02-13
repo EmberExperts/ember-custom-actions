@@ -41,23 +41,86 @@ $orange-color: #fec434
   background: linear-gradient(45deg, #fefdf0 0%, $orange-color 50%, $red-color 100%)
 
 #examples
-  text-align: center
   padding: 80px 0
-  text-transform: uppercase
-  .progress-bar
-    background-color: $red-color
+
+  .call-to-action
+    animation: zoomIn .3s linear
+
+  .show-result
+    visibility: visible
+    opacity: 1
+    animation: fade 3s linear
+
+  @keyframes fade
+    0%,100%
+      opacity: 0
+      visibility: hidden
+    50%
+      opacity: 1
+      visibility: visible
+
+  @keyframes zoomIn
+    0%
+      font-size: 50%
+    50%
+      font-size: 120%
+    100%
+      font-size: 100%
+
+  .section-heading
+    text-align: center
+
+  table
+    text-align: center
+    margin-top: 50px
+    thead
+      th
+        border: none
+        text-align: center
+        @extend .lead
+        padding-bottom: 30px
+
+    tbody
+      td
+        vertical-align: middle
+        border-top: none
+
+      td:nth-child(even)
+        text-align: left
+        border-left: 1px dashed black
+        border-right: 1px dashed black
+
+      .action
+        .status,.request
+          margin: 0
+        .btn-ember
 
 .btn-outline
+  background-color: transparent
+  color: inherit
+  transition: all .5s
+  border: black 1px solid
+
+  &.disabled
+    border-color: #777 !important
+    color: #777 !important
+
+  &:hover
     background-color: transparent
-    color: black
-    transition: all .5s
-    border: black 1px solid
+
+
+.btn-default.btn-outline:hover
+    border-color: white
+    color: white
+
+.btn-ember
+  &.btn-outline
+    color: $red-color
+    border-color: $red-color
 
     &:hover
-      background-color: transparent
-      color: white
-      border-color: white
-
+      color: $orange-color
+      border-color: $orange-color
 
 
 #footer

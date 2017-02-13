@@ -2036,6 +2036,10 @@ ember-export-application-global@^1.0.5:
   dependencies:
     ember-cli-babel "^5.1.10"
 
+ember-faker@1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/ember-faker/-/ember-faker-1.1.1.tgz#90ca83edef385d8f43bed3ceaed263b59f68773c"
+
 ember-font-awesome@3.0.3:
   version "3.0.3"
   resolved "https://registry.yarnpkg.com/ember-font-awesome/-/ember-font-awesome-3.0.3.tgz#98286eea43d2fb827fa6da40fbf1a5d8a78ca67e"
@@ -2052,6 +2056,12 @@ ember-inflector@^1.9.4:
   resolved "https://registry.yarnpkg.com/ember-inflector/-/ember-inflector-1.11.0.tgz#99baae18e2bee53cfa97d8db1d739280289a174f"
   dependencies:
     ember-cli-babel "^5.1.7"
+
+ember-initials@2.2.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/ember-initials/-/ember-initials-2.2.0.tgz#e4b08baa4a4a2a23644181126c7f33760ec71fda"
+  dependencies:
+    ember-cli-babel "^5.2.1"
 
 ember-load-initializers@^0.6.0:
   version "0.6.3"
@@ -5305,7 +5315,7 @@ request-progress@~2.0.1:
   dependencies:
     throttleit "^1.0.0"
 
-request@2, request@^2.65.0, request@^2.74.0, request@~2.74.0:
+request@2, request@^2.61.0, request@^2.65.0, request@^2.74.0, request@~2.74.0:
   version "2.74.0"
   resolved "https://registry.yarnpkg.com/request/-/request-2.74.0.tgz#7693ca768bbb0ea5c8ce08c084a45efa05b892ab"
   dependencies:
@@ -5331,7 +5341,7 @@ request@2, request@^2.65.0, request@^2.74.0, request@~2.74.0:
     tough-cookie "~2.3.0"
     tunnel-agent "~0.4.1"
 
-request@^2.61.0, request@~2.79.0:
+request@~2.79.0:
   version "2.79.0"
   resolved "https://registry.yarnpkg.com/request/-/request-2.79.0.tgz#4dfe5bf6be8b8cdc37fcf93e04b65577722710de"
   dependencies:

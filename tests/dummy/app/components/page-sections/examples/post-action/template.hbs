@@ -1,0 +1,20 @@
+<td>
+  <a class="btn btn-lg btn-outline btn-ember {{if post.published 'disabled'}}" {{action 'publish' post}}>Publish post</a>
+</td>
+<td>
+  {{#if pending}}
+    <p class="status text-warning">Pending</p>
+  {{else}}
+    <p class="status text-success">Waiting</p>
+  {{/if}}
+  <h4 class="request">posts/1/publish</h4>
+</td>
+<td>
+  {{#if post.published}}
+    <div class="{{if post.published 'show-result'}}">
+      <span class="text-muted">Published:</span> <span class="h4 text-success">{{post.published}}</span>
+    </div>
+  {{else}}
+    <span class="text-muted call-to-action">Call custom action</span>
+  {{/if}}
+</td>

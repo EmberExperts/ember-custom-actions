@@ -1,0 +1,20 @@
+<td>
+  <a class="btn btn-lg btn-outline btn-ember {{if user.name 'disabled'}}" {{action 'generate' user}}>Generate Profile</a>
+</td>
+<td>
+  {{#if pending}}
+    <p class="status text-warning">Pending</p>
+  {{else}}
+    <p class="status text-success">Waiting</p>
+  {{/if}}
+  <h4 class="request">users/1/generate</h4>
+</td>
+<td>
+  {{#if user.name}}
+    <div class="{{if user.name 'show-result'}}">
+      {{ember-initials name=user.name class="img-circle"}} <span class="h4">{{user.name}}</span>
+    </div>
+  {{else}}
+    <span class="text-muted call-to-action">Call custom action</span>
+  {{/if}}
+</td>
