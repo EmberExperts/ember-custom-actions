@@ -4,7 +4,7 @@ import { modelAction, resourceAction } from 'ember-custom-actions';
 
 export default Model.extend({
   name: attr(),
-  published: attr(),
+  published: attr('boolean', { defaultValue: false }),
 
   publish: modelAction('publish', { promiseType: 'object' }),
   list: resourceAction('list'),

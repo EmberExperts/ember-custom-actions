@@ -2,5 +2,8 @@
   "name": "ember-custom-actions",
   "devDependencies": {
     "bootstrap": "^3.3.7"
+  },
+  "dependencies": {
+    "Faker": "^3.1.0"
   }
 }

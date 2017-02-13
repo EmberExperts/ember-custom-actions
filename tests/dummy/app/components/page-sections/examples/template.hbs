@@ -14,46 +14,9 @@
           </tr>
         </thead>
         <tbody>
-          <tr class="action">
-            <td>
-              <a class="btn btn-lg btn-outline btn-ember">Publish post</a>
-            </td>
-            <td>
-              <p class="status text-muted">Pending</p>
-              <h4 class="request">posts/1/publish</h4>
-            </td>
-            <td>
-              <span class="text-muted">Published:</span> <span class="h4 text-success">TRUE</span>
-            </td>
-          </tr>
-
-          <tr class="action">
-            <td>
-              <a class="btn btn-lg btn-outline btn-ember">Generate Profile</a>
-            </td>
-            <td>
-              <p class="status text-muted">Pending</p>
-              <h4 class="request">users/1/generate</h4>
-            </td>
-            <td>
-              <span class="h4">
-                {{ember-initials name="Maciej Kwaśniak" class="img-circle"}} Maciej Kwaśniak
-              </span>
-            </td>
-          </tr>
-
-          <tr class="action">
-            <td>
-              <a class="btn btn-lg btn-outline btn-ember">Burn all bridges</a>
-            </td>
-            <td>
-              <p class="status text-muted">Pending</p>
-              <h4 class="request">bridges/burn</h4>
-            </td>
-            <td>
-              <span class="h4 text-success">Success</span>
-            </td>
-          </tr>
+          {{page-sections/examples/post-action}}
+          {{page-sections/examples/burn-action}}
+          {{page-sections/examples/user-action}}
         </tbody>
       </table>
     </div>

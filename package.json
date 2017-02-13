@@ -53,6 +53,7 @@
     "ember-data": "^2.11.0",
     "ember-disable-prototype-extensions": "^1.1.0",
     "ember-export-application-global": "^1.0.5",
+    "ember-faker": "1.1.1",
     "ember-font-awesome": "3.0.3",
     "ember-initials": "2.2.0",
     "ember-load-initializers": "^0.6.0",

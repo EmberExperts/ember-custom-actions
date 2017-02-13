@@ -43,6 +43,30 @@ $orange-color: #fec434
 #examples
   padding: 80px 0
 
+  .call-to-action
+    animation: zoomIn .3s linear
+
+  .show-result
+    visibility: visible
+    opacity: 1
+    animation: fade 3s linear
+
+  @keyframes fade
+    0%,100%
+      opacity: 0
+      visibility: hidden
+    50%
+      opacity: 1
+      visibility: visible
+
+  @keyframes zoomIn
+    0%
+      font-size: 50%
+    50%
+      font-size: 120%
+    100%
+      font-size: 100%
+
   .section-heading
     text-align: center
 
@@ -71,21 +95,23 @@ $orange-color: #fec434
           margin: 0
         .btn-ember
 
-
-
-
 .btn-outline
-    background-color: transparent
-    color: inherit
-    transition: all .5s
-    border: black 1px solid
+  background-color: transparent
+  color: inherit
+  transition: all .5s
+  border: black 1px solid
 
-    &:hover
-      background-color: transparent
+  &.disabled
+    border-color: #777 !important
+    color: #777 !important
+
+  &:hover
+    background-color: transparent
 
 
 .btn-default.btn-outline:hover
     border-color: white
+    color: white
 
 .btn-ember
   &.btn-outline
