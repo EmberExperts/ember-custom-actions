@@ -1,0 +1,48 @@
+<div id="getting-started">
+  <div class="container">
+    <div class="text-center">
+      <h1>Getting started</h1>
+      <h2 class="lead">How to start with ember-custom-actions</h2>
+    </div>
+    <br>
+
+    <h3>1. Instalation</h3>
+
+    <p>Run: <code>ember install ember-custom-actions</code></p>
+
+    <h3>2. Setup actions</h3>
+
+    <p>Define proper actions in your models by choosing one of the following methods:</p>
+    <ul>
+      <li><code>modelAction(path, options = {})</code> - will generate request: <b>https://your.api.server/resources/1/action</b></li>
+      <li><code>resourceAction(path, options = {})</code> - will generate request: <b>https://your.api.server/resources/action</b></li>
+    </ul>
+
+    <h4>Example implementation</h4>
+
+    <pre class="rich-diff-level-zero">
+  <span class="pl-c rich-diff-level-one"><span class="pl-c">//</span> app/models/post.js</span>
+
+  <span class="pl-k rich-diff-level-one">import</span> <span class="pl-smi rich-diff-level-one">Model</span> <span class="pl-k rich-diff-level-one">from</span> <span class="pl-s rich-diff-level-one"><span class="pl-pds">'</span>ember-data/model<span class="pl-pds">'</span></span>;
+  <span class="pl-k rich-diff-level-one">import</span> { <span class="pl-smi rich-diff-level-one">modelAction</span>, <span class="pl-smi rich-diff-level-one">resourceAction</span> } <span class="pl-k rich-diff-level-one">from</span> <span class="pl-s rich-diff-level-one"><span class="pl-pds">'</span>ember-custom-actions<span class="pl-pds">'</span></span>;
+
+  <span class="pl-k rich-diff-level-one">export</span> <span class="pl-c1 rich-diff-level-one">default</span> <span class="pl-smi rich-diff-level-one">Model</span>.<span class="pl-en rich-diff-level-one">extend</span>({
+    publish<span class="pl-k rich-diff-level-one">:</span> <span class="pl-en rich-diff-level-one">modelAction</span>(<span class="pl-s rich-diff-level-one"><span class="pl-pds">'</span>publish<span class="pl-pds">'</span></span>, { promiseType<span class="pl-k rich-diff-level-one">:</span> <span class="pl-s rich-diff-level-one"><span class="pl-pds">'</span>object<span class="pl-pds">'</span></span> }),
+    search<span class="pl-k rich-diff-level-one">:</span> <span class="pl-en rich-diff-level-one">resourceAction</span>(<span class="pl-s rich-diff-level-one"><span class="pl-pds">'</span>search<span class="pl-pds">'</span></span>, { type<span class="pl-k rich-diff-level-one">:</span> <span class="pl-s rich-diff-level-one"><span class="pl-pds">'</span>GET<span class="pl-pds">'</span></span>, normalizeOperation<span class="pl-k rich-diff-level-one">:</span> <span class="pl-s rich-diff-level-one"><span class="pl-pds">'</span>dasherize<span class="pl-pds">'</span></span> })
+  });
+    </pre>
+
+    <h3>3. Usage example</h3>
+    <p>You can call custom action by resolving a promise on model object, eg:</p>
+    <pre class="rich-diff-level-zero"><span class="pl-c rich-diff-level-one">
+  <span class="pl-c">//</span> app/models/post.js</span>
+
+  <span class="pl-c1 rich-diff-level-one">this</span>.<span class="pl-c1 rich-diff-level-one">get</span>(<span class="pl-s rich-diff-level-one"><span class="pl-pds">'</span>post<span class="pl-pds">'</span></span>).<span class="pl-en rich-diff-level-one">publish</span>({ publisherId<span class="pl-k rich-diff-level-one">:</span> <span class="pl-c1 rich-diff-level-one">1</span> }).<span class="pl-en rich-diff-level-one">then</span>((<span class="pl-smi rich-diff-level-one">response</span>) <span class="pl-k rich-diff-level-one">=&gt;</span> {
+    <span class="pl-c rich-diff-level-one"><span class="pl-c">//</span> you can make some operations on your server's response data</span>
+  })
+    </pre>
+
+    <h3>4. Configuration</h3>
+    To check possible <code>options</code> and set default config go to documentation.
+  </div>
+</div>
