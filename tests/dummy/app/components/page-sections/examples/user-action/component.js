@@ -1,5 +1,5 @@
 import Ember from 'ember';
-import Faker from 'faker';
+import Faker from 'npm:faker';
 
 const { Component, computed, inject, run, observer } = Ember;
 
