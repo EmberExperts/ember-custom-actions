@@ -1,5 +1,14 @@
 # Change Log
 
+## [v1.2.1](https://github.com/Exelord/ember-custom-actions/tree/v1.2.1) (2017-02-13)
+[Full Changelog](https://github.com/Exelord/ember-custom-actions/compare/v1.2.0...v1.2.1)
+
+**Implemented enhancements:**
+
+- Live examples [\#9](https://github.com/Exelord/ember-custom-actions/pull/9) ([Exelord](https://github.com/Exelord))
+- Add a Gitter chat badge to README.md [\#8](https://github.com/Exelord/ember-custom-actions/pull/8) ([gitter-badger](https://github.com/gitter-badger))
+- Landing page [\#6](https://github.com/Exelord/ember-custom-actions/pull/6) ([Exelord](https://github.com/Exelord))
+
 ## [v1.2.0](https://github.com/Exelord/ember-custom-actions/tree/v1.2.0) (2017-02-09)
 [Full Changelog](https://github.com/Exelord/ember-custom-actions/compare/v1.1.1...v1.2.0)
 
