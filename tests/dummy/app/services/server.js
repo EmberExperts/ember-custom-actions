@@ -1,5 +1,5 @@
 import Ember from 'ember';
-import Pretender from 'pretender';
+import Pretender from 'npm:pretender';
 
 const { Service } = Ember;
 
