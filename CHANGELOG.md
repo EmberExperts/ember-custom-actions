@@ -1,5 +1,21 @@
 # Change Log
 
+## [v1.2.2](https://github.com/Exelord/ember-custom-actions/tree/v1.2.2) (2017-03-01)
+[Full Changelog](https://github.com/Exelord/ember-custom-actions/compare/v1.2.1...v1.2.2)
+
+**Fixed bugs:**
+
+- Fix normalizer [\#13](https://github.com/Exelord/ember-custom-actions/pull/13) ([Exelord](https://github.com/Exelord))
+
+**Closed issues:**
+
+- Resource actions .then\(\) returning undefined [\#12](https://github.com/Exelord/ember-custom-actions/issues/12)
+
+**Merged pull requests:**
+
+- Add analytics [\#11](https://github.com/Exelord/ember-custom-actions/pull/11) ([Exelord](https://github.com/Exelord))
+- Fixed a typo [\#10](https://github.com/Exelord/ember-custom-actions/pull/10) ([acorncom](https://github.com/acorncom))
+
 ## [v1.2.1](https://github.com/Exelord/ember-custom-actions/tree/v1.2.1) (2017-02-13)
 [Full Changelog](https://github.com/Exelord/ember-custom-actions/compare/v1.2.0...v1.2.1)
 
