@@ -1,9 +1,9 @@
 import Ember from 'ember';
 
-const { assert, String } = Ember;
+const { assert, String, isArray } = Ember;
 
 function transformObject(object, operation) {
-  if (object instanceof Object) {
+  if (object instanceof Object && !isArray(object)) {
     let data = {};
 
     Object.keys(object).forEach((key) => {
