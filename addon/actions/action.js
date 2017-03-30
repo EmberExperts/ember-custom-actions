@@ -6,7 +6,16 @@ import UrlBuilder from '../utils/url-builder';
 import normalizePayload from '../utils/normalize-payload';
 import defaultConfig from '../config';
 
-const { assign, getOwner, computed, Object, ObjectProxy, ArrayProxy, PromiseProxyMixin } = Ember;
+const {
+  assign,
+  getOwner,
+  computed,
+  Object,
+  ObjectProxy,
+  ArrayProxy,
+  PromiseProxyMixin,
+  typeOf
+} = Ember;
 
 const promiseTypes = {
   array: ArrayProxy.extend(PromiseProxyMixin),
@@ -80,7 +89,7 @@ export default Object.extend({
 
   _promise() {
     return this.get('adapter').ajax(this.get('url'), this.get('requestType'), this.get('data')).then((response) => {
-      if (this.get('config.pushToStore') && response.data) {
+      if (this.get('config.pushToStore') && typeOf(response) === 'object') {
         return this.get('serializer').pushPayload(this.get('store'), response);
       } else {
         return response;
