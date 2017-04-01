@@ -12,7 +12,7 @@ export default Component.extend({
     this._super(...arguments);
 
     this.get('server').server.get('/bridges/burn', () => {
-      return [200, { }, '{}'];
+      return [200, { }, 'true'];
     });
   },
 

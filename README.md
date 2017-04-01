@@ -104,13 +104,26 @@ Base of the URL which is generated for the action. If not defined, `urlType` is 
 Your own ajax options (e.g. headers)
 
 #### `pushToStore`
-If you want to push the received data to the store, set this option to `true` and change your application `JSONAPISerializer` to:
+If you want to push the received data to the store, set this option to `true` and change your application serializer:
+
+- If you are using `JSONAPISerializer`:
+
 ``` js
 // app/serializers/application.js
 
 import { JSONAPISerializer } from 'ember-custom-actions';
 export default JSONAPISerializer.extend();
 ```
+
+- If you are using `RESTSerializer`:
+
+``` js
+// app/serializers/application.js
+
+import { RESTSerializer } from 'ember-custom-actions';
+export default RESTSerializer.extend();
+```
+
 #### `normalizeOperation`
 You can define how your outgoing data should be serialized
 

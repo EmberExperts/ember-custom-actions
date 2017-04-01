@@ -6,14 +6,23 @@ import UrlBuilder from '../utils/url-builder';
 import normalizePayload from '../utils/normalize-payload';
 import defaultConfig from '../config';
 
-const { assign, getOwner, computed, Object, ObjectProxy, ArrayProxy, PromiseProxyMixin } = Ember;
+const {
+  assign,
+  getOwner,
+  computed,
+  Object: emberObject,
+  ObjectProxy,
+  ArrayProxy,
+  PromiseProxyMixin,
+  typeOf: emberTypeOf
+} = Ember;
 
 const promiseTypes = {
   array: ArrayProxy.extend(PromiseProxyMixin),
   object: ObjectProxy.extend(PromiseProxyMixin)
 };
 
-export default Object.extend({
+export default emberObject.extend({
   model: null,
   options: {},
   payload: {},
@@ -36,15 +45,15 @@ export default Object.extend({
 
   appConfig: computed('model', function() {
     let config = getOwner(this.get('model')).resolveRegistration('config:environment').emberCustomActions || {};
-    return Object.create(config);
+    return emberObject.create(config);
   }),
 
   defaultConfig: computed(function() {
-    return Object.create(defaultConfig);
+    return emberObject.create(defaultConfig);
   }),
 
   config: computed('defaultConfig', 'options', 'appConfig', function() {
-    return Object.create(assign(this.get('defaultConfig'), this.get('appConfig'), this.get('options')));
+    return emberObject.create(assign(this.get('defaultConfig'), this.get('appConfig'), this.get('options')));
   }),
 
   requestType: computed('config.type', function() {
@@ -64,7 +73,7 @@ export default Object.extend({
   }),
 
   data: computed('config.{normalizeOperation,ajaxOptions}', 'payload', function() {
-    let payload = (this.get('payload') instanceof window.Object) ? this.get('payload') : {};
+    let payload = emberTypeOf(this.get('payload')) === 'object' ? this.get('payload') : {};
     let data = normalizePayload(payload, this.get('config.normalizeOperation'));
     return assign(this.get('config.ajaxOptions'), { data });
   }),
@@ -80,11 +89,15 @@ export default Object.extend({
 
   _promise() {
     return this.get('adapter').ajax(this.get('url'), this.get('requestType'), this.get('data')).then((response) => {
-      if (this.get('config.pushToStore') && response.data) {
+      if (this.get('config.pushToStore') && this._validResponse(response)) {
         return this.get('serializer').pushPayload(this.get('store'), response);
       } else {
         return response;
       }
     });
+  },
+
+  _validResponse(object) {
+    return emberTypeOf(object) === 'object' && Object.keys(object).length > 0;
   }
 });
