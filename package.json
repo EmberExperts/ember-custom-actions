@@ -55,7 +55,7 @@
     "ember-disable-prototype-extensions": "^1.1.0",
     "ember-export-application-global": "^2.0.0",
     "ember-font-awesome": "3.0.5",
-    "ember-initials": "exelord/ember-initials#master",
+    "ember-initials": "3.1.0",
     "ember-load-initializers": "^1.0.0",
     "ember-resolver": "^4.1.0",
     "ember-scroll-to": "0.6.4",
