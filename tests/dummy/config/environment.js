@@ -1,7 +1,8 @@
+/* eslint no-var: 0 */
 /* eslint-env node */
 
 module.exports = function(environment) {
-  let ENV = {
+  var ENV = {
     modulePrefix: 'dummy',
     environment,
     rootURL: '/',

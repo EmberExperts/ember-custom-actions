@@ -1,10 +1,11 @@
+/* eslint no-var:0*/
 /* eslint-env node */
 const EmberAddon = require('ember-cli/lib/broccoli/ember-addon');
 
 module.exports = function(defaults) {
-  let config = defaults.project.config(EmberAddon.env());
+  var config = defaults.project.config(EmberAddon.env());
 
-  let app = new EmberAddon(defaults, {
+  var app = new EmberAddon(defaults, {
     sassOptions: {
       extension: 'sass'
     },
