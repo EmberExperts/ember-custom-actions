@@ -1,8 +1,4 @@
-/* eslint ember-suave/no-direct-property-access:1 */
-
 import Ember from 'ember';
-import { InvalidError } from 'ember-data/adapters/errors';
-
 import UrlBuilder from '../utils/url-builder';
 import normalizePayload from '../utils/normalize-payload';
 import defaultConfig from '../config';
@@ -15,7 +11,9 @@ const {
   ObjectProxy,
   ArrayProxy,
   PromiseProxyMixin,
-  typeOf: emberTypeOf
+  typeOf: emberTypeOf,
+  isArray,
+  RSVP
 } = Ember;
 
 const promiseTypes = {
@@ -97,20 +95,19 @@ export default emberObject.extend({
   _onSuccess(response) {
     if (this.get('config.pushToStore') && this._validResponse(response)) {
       return this.get('serializer').pushPayload(this.get('store'), response);
-    } else {
-      return response;
     }
+
+    return response;
   },
 
-  _onError(reason) {
-    if (this.get('config.pushToStore') && (reason instanceof InvalidError)) {
-      let model = this.get('model');
-      let store = this.get('store');
-      let errors = this.get('serializer').extractErrors(store, model.constructor, reason);
-      store.recordWasInvalid(model._internalModel, errors);
+  _onError(error) {
+    if (this.get('config.pushToStore') && isArray(error.errors)) {
+      let id = this.get('model.id');
+      let typeClass = this.get('model').constructor;
+      error.serializedErrors = this.get('serializer').extractErrors(this.get('store'), typeClass, error, id);
     }
 
-    throw reason;
+    RSVP.rethrow(error);
   },
 
   _validResponse(object) {

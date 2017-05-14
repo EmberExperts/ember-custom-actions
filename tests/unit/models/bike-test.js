@@ -62,8 +62,8 @@ test('model action pushes to store', function(assert) {
   });
 });
 
-test('model action set errors on the model', function(assert) {
-  assert.expect(4);
+test('model action set serialized errors in error object', function(assert) {
+  assert.expect(1);
 
   let done = assert.async();
   let errorText = 'This name is taken';
@@ -79,13 +79,8 @@ test('model action set errors on the model', function(assert) {
     name: 'Mikael'
   });
 
-  model.ride({ name: 'new-name' }).catch((reason) => {
-    // errors are set on the model
-    assert.notOk(model.get('isValid'));
-    assert.ok(model.get('errors.length'));
-    assert.equal(model.get('errors.name.firstObject.message'), errorText);
-    // error object is properly thrown
-    assert.deepEqual(reason.errors, [error]);
+  model.ride({ name: 'new-name' }).catch((error) => {
+    assert.deepEqual(error.serializedErrors, { name: [errorText] });
     done();
   });
 });
