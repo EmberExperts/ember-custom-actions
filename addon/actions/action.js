@@ -88,8 +88,8 @@ export default emberObject.extend({
 
   _promise() {
     return this.get('adapter')
-               .ajax(this.get('url'), this.get('requestType'), this.get('data'))
-               .then(this._onSuccess.bind(this), this._onError.bind(this));
+      .ajax(this.get('url'), this.get('requestType'), this.get('data'))
+      .then(this._onSuccess.bind(this), this._onError.bind(this));
   },
 
   _onSuccess(response) {
@@ -107,7 +107,7 @@ export default emberObject.extend({
       error.serializedErrors = this.get('serializer').extractErrors(this.get('store'), typeClass, error, id);
     }
 
-    RSVP.rethrow(error);
+    return RSVP.reject(error);
   },
 
   _validResponse(object) {
