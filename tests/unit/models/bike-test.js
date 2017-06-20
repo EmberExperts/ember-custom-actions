@@ -14,12 +14,14 @@ moduleForModel('bike', 'Unit | Model | bike', {
 });
 
 test('model action', function(assert) {
-  assert.expect(3);
+  assert.expect(4);
 
   this.server.put('/bikes/:id/ride', (request) => {
     let data = JSON.parse(request.requestBody);
+
     assert.deepEqual(data, { myParam: 'My first param' });
-    assert.equal(request.url, '/bikes/1/ride');
+    assert.deepEqual(request.queryParams, { enduro: 'true', include: 'owner' });
+    assert.equal(request.url, '/bikes/1/ride?enduro=true&include=owner');
 
     return [200, { }, 'true'];
   });
@@ -30,7 +32,7 @@ test('model action', function(assert) {
   let model = this.subject();
   model.set('id', 1);
 
-  model.ride(payload).then((response) => {
+  model.ride(payload, { params: { enduro: true, include: 'owner' } }).then((response) => {
     assert.ok(response, true);
     done();
   });

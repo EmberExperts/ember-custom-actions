@@ -89,11 +89,16 @@ test('resource action', function(assert) {
 });
 
 test('resource action with params in GET', function(assert) {
-  assert.expect(3);
+  assert.expect(4);
 
   this.server.get('/posts/search', (request) => {
-    assert.equal(request.url, '/posts/search?my-param=My%20first%20param');
+    assert.equal(request.url, '/posts/search?showAll=true&my-param=My%20first%20param');
     assert.equal(request.requestHeaders.test, 'Custom header');
+    assert.deepEqual(request.queryParams, {
+      'my-param': 'My first param',
+      'showAll': 'true'
+    });
+
     return [200, { }, 'true'];
   });
 

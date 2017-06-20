@@ -8,7 +8,7 @@ export default function(path, options = {}) {
     return Action.create({
       model: this,
       instance: true,
-      options: assign(options, customOptions),
+      options: assign({}, options, customOptions),
       payload,
       path
     }).callAction();

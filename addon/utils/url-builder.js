@@ -1,8 +1,10 @@
 import Ember from 'ember';
 
-const { assert, computed, Object } = Ember;
+const { assert, computed, Object: EmberObject, $ } = Ember;
 
-export default Object.extend({
+export default EmberObject.extend({
+  params: {},
+
   modelName: computed('model', function() {
     let { constructor } = this.get('model');
     return constructor.modelName || constructor.typeKey;
@@ -21,14 +23,28 @@ export default Object.extend({
   },
 
   _buildUrl(id) {
-    return this.get('adapter').buildURL(this.get('modelName'), id, this.get('snapshot'), this.get('urlType'));
+    let query = this.get('params');
+    let snapshot = this.get('snapshot');
+    let modelName = this.get('modelName');
+    let requestType = this.get('urlType');
+
+    return this.get('adapter').buildURL(modelName, id, snapshot, requestType, query);
   },
 
   _makeUrl(url) {
+    let pathUrl = '';
+    let query = $.param(this.get('params'));
+
     if (url.charAt(url.length - 1) === '/') {
-      return `${url}${this.get('path')}`;
+      pathUrl = `${url}${this.get('path')}`;
     } else {
-      return `${url}/${this.get('path')}`;
+      pathUrl = `${url}/${this.get('path')}`;
+    }
+
+    if (query) {
+      return `${pathUrl}?${query}`;
+    } else {
+      return pathUrl;
     }
   }
 });
