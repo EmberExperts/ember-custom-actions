@@ -1,7 +1,13 @@
 # Change Log
 
-## [v1.3.0](https://github.com/Exelord/ember-custom-actions/tree/v1.3.0)
+## [v1.4.0](https://github.com/Exelord/ember-custom-actions/tree/v1.4.0) (2017-06-20)
+[Full Changelog](https://github.com/Exelord/ember-custom-actions/compare/v1.3.0...v1.4.0)
 
+**Implemented enhancements:**
+
+- Handle backend errors deserialization + support RESTSerializer [\#15](https://github.com/Exelord/ember-custom-actions/pull/15) ([dcyriller](https://github.com/dcyriller))
+
+## [v1.3.0](https://github.com/Exelord/ember-custom-actions/tree/v1.3.0) (2017-04-10)
 [Full Changelog](https://github.com/Exelord/ember-custom-actions/compare/v1.2.2...v1.3.0)
 
 **Merged pull requests:**
