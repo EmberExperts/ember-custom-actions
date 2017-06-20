@@ -43,6 +43,8 @@ let payload = { publisher: user };
 
 postToPublish.publish(payload).then((status) => {
   alert(`Post has been: ${status}`)
+}).catch((error) => {
+  console.log('Here are you serialized model errors', error.serializedErrors);
 });
 ```
 

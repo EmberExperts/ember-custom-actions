@@ -1,7 +1,4 @@
-/* eslint ember-suave/no-direct-property-access:1 */
-
 import Ember from 'ember';
-
 import UrlBuilder from '../utils/url-builder';
 import normalizePayload from '../utils/normalize-payload';
 import defaultConfig from '../config';
@@ -14,7 +11,9 @@ const {
   ObjectProxy,
   ArrayProxy,
   PromiseProxyMixin,
-  typeOf: emberTypeOf
+  typeOf: emberTypeOf,
+  isArray,
+  RSVP
 } = Ember;
 
 const promiseTypes = {
@@ -88,13 +87,27 @@ export default emberObject.extend({
   },
 
   _promise() {
-    return this.get('adapter').ajax(this.get('url'), this.get('requestType'), this.get('data')).then((response) => {
-      if (this.get('config.pushToStore') && this._validResponse(response)) {
-        return this.get('serializer').pushPayload(this.get('store'), response);
-      } else {
-        return response;
-      }
-    });
+    return this.get('adapter')
+      .ajax(this.get('url'), this.get('requestType'), this.get('data'))
+      .then(this._onSuccess.bind(this), this._onError.bind(this));
+  },
+
+  _onSuccess(response) {
+    if (this.get('config.pushToStore') && this._validResponse(response)) {
+      return this.get('serializer').pushPayload(this.get('store'), response);
+    }
+
+    return response;
+  },
+
+  _onError(error) {
+    if (this.get('config.pushToStore') && isArray(error.errors)) {
+      let id = this.get('model.id');
+      let typeClass = this.get('model').constructor;
+      error.serializedErrors = this.get('serializer').extractErrors(this.get('store'), typeClass, error, id);
+    }
+
+    return RSVP.reject(error);
   },
 
   _validResponse(object) {

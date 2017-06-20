@@ -8,7 +8,6 @@ const router = Router.extend({
   rootURL: config.rootURL
 });
 
-router.map(function() {
-});
+router.map();
 
 export default router;

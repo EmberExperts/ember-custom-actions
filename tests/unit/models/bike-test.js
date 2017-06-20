@@ -61,3 +61,26 @@ test('model action pushes to store', function(assert) {
     done();
   });
 });
+
+test('model action set serialized errors in error object', function(assert) {
+  assert.expect(1);
+
+  let done = assert.async();
+  let errorText = 'This name is taken';
+  let error = { detail: errorText, source: { pointer: 'data/attributes/name' } };
+
+  this.server.put('/bikes/:id/ride', () => {
+    let payload = JSON.stringify({ errors: [error] });
+    return [422, {}, payload];
+  });
+
+  let model = this.subject({
+    id: 1,
+    name: 'Mikael'
+  });
+
+  model.ride({ name: 'new-name' }).catch((error) => {
+    assert.deepEqual(error.serializedErrors, { name: [errorText] });
+    done();
+  });
+});

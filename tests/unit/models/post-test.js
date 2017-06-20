@@ -153,3 +153,26 @@ test('promiseTypes', function(assert) {
   assert.equal(promiseArray.constructor.superclass, ArrayProxy);
   assert.equal(promiseObject.constructor.superclass, ObjectProxy);
 });
+
+test('model action set serialized errors in error object', function(assert) {
+  assert.expect(1);
+
+  let done = assert.async();
+  let errorText = 'This name is taken';
+  let error = { detail: errorText, source: { pointer: 'data/attributes/name' } };
+
+  this.server.put('/posts/:id/publish', () => {
+    let payload = JSON.stringify({ errors: [error] });
+    return [422, {}, payload];
+  });
+
+  let model = this.subject({
+    id: 1,
+    name: 'Mikael'
+  });
+
+  model.publish({ name: 'new-name' }).catch((error) => {
+    assert.deepEqual(error.serializedErrors, { name: [errorText] });
+    done();
+  });
+});
