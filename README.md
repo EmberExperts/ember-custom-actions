@@ -41,7 +41,7 @@ let user = this.get('currentUser');
 let postToPublish = this.get('store').findRecord('post', 1);
 let payload = { publisher: user };
 
-postToPublish.publish(payload).then((status) => {
+postToPublish.publish(payload, /*{ custom options }*/).then((status) => {
   alert(`Post has been: ${status}`)
 }).catch((error) => {
   console.log('Here are you serialized model errors', error.serializedErrors);
@@ -70,7 +70,7 @@ let user = this.get('currentUser');
 let emptyPost = this.get('store').createRecord('post');
 let payload = { user };
 
-emptyPost.favorites(payload).then((favoritesPosts) => {
+emptyPost.favorites(payload, /*{ custom options }*/).then((favoritesPosts) => {
   console.log(favoritesPosts);
 }).finally(()=>{
   emptyPost.deleteRecord();
@@ -174,6 +174,10 @@ When `null` (default):
 model.customAction({}, { promiseType: null }) // returns Promise
 ```
 `null` is useful if you don't care about the response or just want to use `then` on the promise without using `binding` or display it in the template.
+
+#### `params`
+You can pass a query params for a request by passing an `{}` with properties, eg: `{ include: 'owner' }`
+** Remember: Query params are not normalized! You have to pass it in the correct format. **
 
 # Development
 

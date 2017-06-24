@@ -7,7 +7,7 @@ const {
   assign,
   getOwner,
   computed,
-  Object: emberObject,
+  Object: EmberObject,
   ObjectProxy,
   ArrayProxy,
   PromiseProxyMixin,
@@ -21,13 +21,18 @@ const promiseTypes = {
   object: ObjectProxy.extend(PromiseProxyMixin)
 };
 
-export default emberObject.extend({
+export default EmberObject.extend({
   model: null,
   options: {},
   payload: {},
   instance: false,
 
   store: computed.reads('model.store'),
+
+  params: computed('config.params', 'adapter', function() {
+    let params = emberTypeOf(this.get('config.params')) === 'object' ? this.get('config.params') : {};
+    return this.get('adapter').sortQueryParams(params);
+  }),
 
   modelName: computed('model', function() {
     let { constructor } = this.get('model');
@@ -44,15 +49,15 @@ export default emberObject.extend({
 
   appConfig: computed('model', function() {
     let config = getOwner(this.get('model')).resolveRegistration('config:environment').emberCustomActions || {};
-    return emberObject.create(config);
+    return EmberObject.create(config);
   }),
 
   defaultConfig: computed(function() {
-    return emberObject.create(defaultConfig);
+    return EmberObject.create(defaultConfig);
   }),
 
   config: computed('defaultConfig', 'options', 'appConfig', function() {
-    return emberObject.create(assign(this.get('defaultConfig'), this.get('appConfig'), this.get('options')));
+    return EmberObject.create(assign({}, this.get('defaultConfig'), this.get('appConfig'), this.get('options')));
   }),
 
   requestType: computed('config.type', function() {
@@ -67,14 +72,16 @@ export default emberObject.extend({
       adapter: this.get('adapter'),
       urlType: this.get('urlType'),
       instance: this.get('instance'),
-      model: this.get('model')
+      model: this.get('model'),
+      params: this.get('params')
     }).build();
   }),
 
   data: computed('config.{normalizeOperation,ajaxOptions}', 'payload', function() {
     let payload = emberTypeOf(this.get('payload')) === 'object' ? this.get('payload') : {};
     let data = normalizePayload(payload, this.get('config.normalizeOperation'));
-    return assign(this.get('config.ajaxOptions'), { data });
+
+    return assign({}, this.get('config.ajaxOptions'), { data });
   }),
 
   promiseType: computed('config.promiseType', function() {

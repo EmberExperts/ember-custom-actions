@@ -8,5 +8,9 @@ export default Model.extend({
 
   publish: modelAction('publish', { promiseType: 'object' }),
   list: resourceAction('list'),
-  search: resourceAction('search', { type: 'GET', normalizeOperation: 'dasherize' })
+  search: resourceAction('search', {
+    type: 'GET',
+    normalizeOperation: 'dasherize',
+    params: { showAll: true }
+  })
 });
