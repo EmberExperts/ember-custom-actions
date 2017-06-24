@@ -1,5 +1,13 @@
 # Change Log
 
+## [v1.5.0](https://github.com/Exelord/ember-custom-actions/tree/v1.5.0) (2017-06-24)
+[Full Changelog](https://github.com/Exelord/ember-custom-actions/compare/v1.4.0...v1.5.0)
+
+**Implemented enhancements:**
+
+- Include params [\#14](https://github.com/Exelord/ember-custom-actions/issues/14)
+- Custom Query Params [\#19](https://github.com/Exelord/ember-custom-actions/pull/19) ([Exelord](https://github.com/Exelord))
+
 ## [v1.4.0](https://github.com/Exelord/ember-custom-actions/tree/v1.4.0) (2017-06-20)
 [Full Changelog](https://github.com/Exelord/ember-custom-actions/compare/v1.3.0...v1.4.0)
 
