@@ -8,7 +8,11 @@ sudo: false
 cache:
   directories:
     - $HOME/.npm
-    - $HOME/.cache # includes bowers cache
+
+dist: trusty
+
+addons:
+  chrome: stable
 
 env:
   # we recommend testing LTS's and latest stable release (bonus points to beta/canary)
@@ -25,13 +29,10 @@ matrix:
 
 before_install:
   - npm config set spin false
-  - npm install -g bower phantomjs-prebuilt
-  - bower --version
-  - phantomjs --version
+  - google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 http://localhost
 
 install:
   - npm install
-  - bower install
 
 script:
   # Usually, it's ok to finish the test scenario without reverting
