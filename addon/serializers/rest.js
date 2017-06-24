@@ -3,10 +3,9 @@
 
 import Ember from 'ember';
 import DS from 'ember-data';
-import { warn } from '@ember/debug';
 
 const { RESTSerializer } = DS;
-const { makeArray } = Ember;
+const { makeArray, warn } = Ember;
 
 export default RESTSerializer.extend({
   pushPayload(store, payload) {
