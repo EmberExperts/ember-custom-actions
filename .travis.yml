@@ -29,7 +29,6 @@ matrix:
 
 before_install:
   - npm config set spin false
-  - google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 http://localhost
 
 install:
   - npm install

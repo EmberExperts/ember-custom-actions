@@ -3,7 +3,7 @@
 
 import Ember from 'ember';
 import DS from 'ember-data';
-import { warn } from 'ember-data/-private/debug';
+import { warn } from '@ember/debug';
 
 const { RESTSerializer } = DS;
 const { makeArray } = Ember;
