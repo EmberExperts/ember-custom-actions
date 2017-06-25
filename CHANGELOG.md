@@ -1,5 +1,16 @@
 # Change Log
 
+## [v1.6.0](https://github.com/Exelord/ember-custom-actions/tree/v1.6.0) (2017-06-25)
+[Full Changelog](https://github.com/Exelord/ember-custom-actions/compare/v1.5.0...v1.6.0)
+
+**Implemented enhancements:**
+
+- Upgrade packages [\#21](https://github.com/Exelord/ember-custom-actions/pull/21) ([Exelord](https://github.com/Exelord))
+
+**Fixed bugs:**
+
+- Could not find module `ember-data/-private/debug` imported from `ember-custom-actions/serializers/rest` [\#20](https://github.com/Exelord/ember-custom-actions/issues/20)
+
 ## [v1.5.0](https://github.com/Exelord/ember-custom-actions/tree/v1.5.0) (2017-06-24)
 [Full Changelog](https://github.com/Exelord/ember-custom-actions/compare/v1.4.0...v1.5.0)
 
