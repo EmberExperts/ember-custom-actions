@@ -60,18 +60,11 @@ export default EmberObject.extend({
     return EmberObject.create(assign({}, this.get('defaultConfig'), this.get('appConfig'), this.get('options')));
   }),
 
-  requestType: computed('config.type', 'adapter', function() {
-    // console.log(this.get('adapter'))
-    const adapter = this.get('adapter')
-    if(adapter) {
-      console.log(this.get('modelName'))
-      console.log(adapter.toString())
-      console.log(adapter.methodForModelAction)
-    } else {
-
-    }
-    const type = this.get('config.type');
-    console.log(type);
+  requestType: computed('config.type', 'adapter', 'path', function() {
+    let adapter = this.get('adapter');
+    let actionName = this.get('path');
+    let adapterType = adapter.methodForModelAction && adapter.methodForModelAction({ actionName });
+    let type = adapterType || this.get('config.type');
     return type.toUpperCase();
   }),
 
