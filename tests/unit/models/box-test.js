@@ -53,9 +53,23 @@ test("model action uses type specified in action definition, if provided", funct
   });
 })
 
-// test("model action uses type from adapter, if provided", function(assert){
+test("model action uses type from adapter, if provided", function(assert){
+  assert.expect(1);
 
-// })
+  this.server.patch('/boxes/:id/fix', (request) => {
+    return [200, { }, 'true'];
+  });
+
+  let done = assert.async();
+
+  let model = this.subject();
+  model.set('id', 1);
+
+  model.fix().then((response) => {
+    assert.ok(response, true);
+    done();
+  });
+})
 
 
 
