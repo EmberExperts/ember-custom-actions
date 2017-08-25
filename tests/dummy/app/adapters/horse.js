@@ -7,5 +7,12 @@ export default RESTAdapter.extend({
       let id = snapshot.id;
       return `/secret-horses/${id}/custom-ride`;
     }
+  },
+
+  urlForResourceAction(params) {
+    let { actionName } = params;
+    if (actionName === 'feed') {
+      return `/secret-horses/custom-feed`;
+    }
   }
 });

@@ -17,7 +17,7 @@ moduleForModel('horse', 'Unit | Model | horse', {
   }
 });
 
-test('it uses url specified via adapter#urlForCustomAction', function(assert) {
+test('it uses url specified via adapter#urlForModelAction', function(assert) {
   assert.expect(1);
 
   this.server.put('/secret-horses/:id/custom-ride', () => {
@@ -35,3 +35,20 @@ test('it uses url specified via adapter#urlForCustomAction', function(assert) {
   });
 });
 
+test('it uses url specified via adapter#urlForResourceAction', function(assert) {
+  assert.expect(1);
+
+  this.server.put('/secret-horses/custom-feed', () => {
+    return [200, { }, 'true'];
+  });
+
+  let done = assert.async();
+
+  let model = this.subject();
+  model.set('id', 1);
+
+  model.feed().then((response) => {
+    assert.ok(response, true);
+    done();
+  });
+});

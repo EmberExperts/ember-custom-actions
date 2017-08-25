@@ -27,7 +27,15 @@ export default EmberObject.extend({
     let requestType = this.get('urlType');
     let adapter = this.get('adapter');
     let actionName = this.get('path');
-    let urlFromAdapter = adapter.urlForModelAction && adapter.urlForModelAction({ actionName, snapshot })
+    let urlFromAdapter = null;
+    let instance = this.get('instance');
+
+    if (instance) {
+      urlFromAdapter = adapter.urlForModelAction && adapter.urlForModelAction({ actionName, snapshot })
+    } else {
+      urlFromAdapter = adapter.urlForResourceAction && adapter.urlForResourceAction({ actionName })
+    }
+
     if(urlFromAdapter) {
       let parameterisedQuery = $.param(this.get('params'));
 
