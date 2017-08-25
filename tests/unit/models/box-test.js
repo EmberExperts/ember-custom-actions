@@ -70,3 +70,57 @@ test('model action uses type from adapter, if provided', function(assert) {
     done();
   });
 });
+
+test('resource action sends \'PUT\' request by default', function(assert) {
+  assert.expect(1);
+
+  this.server.put('/boxes/stack', () => {
+    return [200, { }, 'true'];
+  });
+
+  let done = assert.async();
+
+  let model = this.subject();
+  model.set('id', 1);
+
+  model.stack().then((response) => {
+    assert.ok(response, true);
+    done();
+  });
+});
+
+test('resource action uses type specified in action definition, if provided', function(assert) {
+  assert.expect(1);
+
+  this.server.post('/boxes/rearrange', () => {
+    return [200, { }, 'true'];
+  });
+
+  let done = assert.async();
+
+  let model = this.subject();
+  model.set('id', 1);
+
+  model.rearrange().then((response) => {
+    assert.ok(response, true);
+    done();
+  });
+});
+
+test('resource action uses type from adapter, if provided', function(assert) {
+  assert.expect(1);
+
+  this.server.patch('/boxes/clean', () => {
+    return [200, { }, 'true'];
+  });
+
+  let done = assert.async();
+
+  let model = this.subject();
+  model.set('id', 1);
+
+  model.clean().then((response) => {
+    assert.ok(response, true);
+    done();
+  });
+});

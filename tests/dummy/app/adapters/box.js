@@ -6,5 +6,12 @@ export default RESTAdapter.extend({
     if (actionName === 'fix') {
       return 'PATCH';
     }
+  },
+
+  methodForResourceAction(params) {
+    let { actionName } = params;
+    if (actionName === 'clean') {
+      return 'PATCH';
+    }
   }
 });
