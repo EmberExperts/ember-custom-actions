@@ -19,32 +19,53 @@ export default EmberObject.extend({
     assert('Model has to be persisted!', !(this.get('instance') && !this.get('model.id')));
 
     let id = this.get('instance') ? this.get('model.id') : null;
-    return this._makeUrl(this._buildUrl(id));
-  },
+    // return this._makeUrl(this._buildUrl(id));
 
-  _buildUrl(id) {
     let query = this.get('params');
     let snapshot = this.get('snapshot');
     let modelName = this.get('modelName');
     let requestType = this.get('urlType');
+    let adapter = this.get('adapter');
+    let actionName = this.get('path');
+    let urlFromAdapter = null;
+    let instance = this.get('instance');
 
-    return this.get('adapter').buildURL(modelName, id, snapshot, requestType, query);
-  },
-
-  _makeUrl(url) {
-    let pathUrl = '';
-    let query = $.param(this.get('params'));
-
-    if (url.charAt(url.length - 1) === '/') {
-      pathUrl = `${url}${this.get('path')}`;
+    if (instance) {
+      urlFromAdapter = adapter.urlForModelAction && adapter.urlForModelAction({ actionName, snapshot });
     } else {
-      pathUrl = `${url}/${this.get('path')}`;
+      urlFromAdapter = adapter.urlForResourceAction && adapter.urlForResourceAction({ actionName });
     }
 
-    if (query) {
-      return `${pathUrl}?${query}`;
+    if (urlFromAdapter) {
+      let parameterisedQuery = $.param(this.get('params'));
+
+      if (parameterisedQuery) {
+        return `${urlFromAdapter}?${parameterisedQuery}`;
+      } else {
+        return urlFromAdapter;
+      }
     } else {
-      return pathUrl;
+      let url = adapter.buildURL(modelName, id, snapshot, requestType, query);
+      let pathUrl = '';
+      let parameterisedQuery = $.param(this.get('params'));
+
+      if (url.charAt(url.length - 1) === '/') {
+        pathUrl = `${url}${this.get('path')}`;
+      } else {
+        pathUrl = `${url}/${this.get('path')}`;
+      }
+
+      if (parameterisedQuery) {
+        return `${pathUrl}?${parameterisedQuery}`;
+      } else {
+        return pathUrl;
+      }
     }
   }
+
+  // _buildUrl(id) {
+  // },
+
+  // _makeUrl(url) {
+  // }
 });

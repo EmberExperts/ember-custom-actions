@@ -60,8 +60,18 @@ export default EmberObject.extend({
     return EmberObject.create(assign({}, this.get('defaultConfig'), this.get('appConfig'), this.get('options')));
   }),
 
-  requestType: computed('config.type', function() {
-    return this.get('config.type').toUpperCase();
+  requestType: computed('config.type', 'adapter', 'path', function() {
+    let adapter = this.get('adapter');
+    let actionName = this.get('path');
+    let instance = this.get('instance');
+    let adapterType = null;
+    if (instance) {
+      adapterType = adapter.methodForModelAction && adapter.methodForModelAction({ actionName });
+    } else {
+      adapterType = adapter.methodForResourceAction && adapter.methodForResourceAction({ actionName });
+    }
+    let type = adapterType || this.get('config.type');
+    return type.toUpperCase();
   }),
 
   urlType: computed.or('config.urlType', 'requestType'),
@@ -77,11 +87,28 @@ export default EmberObject.extend({
     }).build();
   }),
 
-  data: computed('config.{normalizeOperation,ajaxOptions}', 'payload', function() {
+  data: computed('config.{normalizeOperation,ajaxOptions}', 'payload', 'adapter', 'model', 'actionName', 'instance', function() {
     let payload = emberTypeOf(this.get('payload')) === 'object' ? this.get('payload') : {};
     let data = normalizePayload(payload, this.get('config.normalizeOperation'));
+    let options = assign({}, this.get('config.ajaxOptions'), { data });
+    let adapter = this.get('adapter');
+    let actionName = this.get('path');
+    let instance = this.get('instance');
+    let adapterHeaders = null;
+    if (instance) {
+      let snapshot = this.get('model')._createSnapshot();
+      adapterHeaders = adapter.headersForModelAction && adapter.headersForModelAction({ actionName, snapshot });
+    } else {
+      adapterHeaders = adapter.headersForResourceAction && adapter.headersForResourceAction({ actionName });
+    }
 
-    return assign({}, this.get('config.ajaxOptions'), { data });
+    if (!options.headers) {
+      options.headers = {};
+    }
+
+    assign(options.headers, adapterHeaders);
+
+    return options;
   }),
 
   promiseType: computed('config.promiseType', function() {
