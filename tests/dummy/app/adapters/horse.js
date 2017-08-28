@@ -23,5 +23,14 @@ export default RESTAdapter.extend({
         'If-Match': snapshot.attr('etag')
       };
     }
+  },
+
+  headersForResourceAction(params) {
+    let { actionName } = params;
+    if (actionName === 'feed') {
+      return {
+        'If-Match': 'secret-key'
+      };
+    }
   }
 });
