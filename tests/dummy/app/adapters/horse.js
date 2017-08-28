@@ -4,7 +4,7 @@ export default RESTAdapter.extend({
   urlForModelAction(params) {
     let { actionName, snapshot } = params;
     if (actionName === 'ride') {
-      let id = snapshot.id;
+      let { id } = snapshot;
       return `/secret-horses/${id}/custom-ride`;
     }
   },
@@ -12,7 +12,7 @@ export default RESTAdapter.extend({
   urlForResourceAction(params) {
     let { actionName } = params;
     if (actionName === 'feed') {
-      return `/secret-horses/custom-feed`;
+      return '/secret-horses/custom-feed';
     }
   }
 });

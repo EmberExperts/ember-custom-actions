@@ -65,7 +65,7 @@ export default EmberObject.extend({
     let actionName = this.get('path');
     let instance = this.get('instance');
     let adapterType = null;
-    if(instance) {
+    if (instance) {
       adapterType = adapter.methodForModelAction && adapter.methodForModelAction({ actionName });
     } else {
       adapterType = adapter.methodForResourceAction && adapter.methodForResourceAction({ actionName });

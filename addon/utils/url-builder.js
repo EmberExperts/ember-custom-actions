@@ -31,12 +31,12 @@ export default EmberObject.extend({
     let instance = this.get('instance');
 
     if (instance) {
-      urlFromAdapter = adapter.urlForModelAction && adapter.urlForModelAction({ actionName, snapshot })
+      urlFromAdapter = adapter.urlForModelAction && adapter.urlForModelAction({ actionName, snapshot });
     } else {
-      urlFromAdapter = adapter.urlForResourceAction && adapter.urlForResourceAction({ actionName })
+      urlFromAdapter = adapter.urlForResourceAction && adapter.urlForResourceAction({ actionName });
     }
 
-    if(urlFromAdapter) {
+    if (urlFromAdapter) {
       let parameterisedQuery = $.param(this.get('params'));
 
       if (parameterisedQuery) {
@@ -60,11 +60,8 @@ export default EmberObject.extend({
       } else {
         return pathUrl;
       }
-
     }
-
-
-  },
+  }
 
   // _buildUrl(id) {
   // },
