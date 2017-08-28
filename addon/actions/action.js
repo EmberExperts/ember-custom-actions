@@ -87,11 +87,22 @@ export default EmberObject.extend({
     }).build();
   }),
 
-  data: computed('config.{normalizeOperation,ajaxOptions}', 'payload', function() {
+  data: computed('config.{normalizeOperation,ajaxOptions}', 'payload', 'adapter', 'model', 'actionName', function() {
     let payload = emberTypeOf(this.get('payload')) === 'object' ? this.get('payload') : {};
     let data = normalizePayload(payload, this.get('config.normalizeOperation'));
+    let options = assign({}, this.get('config.ajaxOptions'), { data });
+    let adapter = this.get('adapter');
+    let snapshot = this.get('model')._createSnapshot();
+    let actionName = this.get('path');
+    let adapterHeaders = adapter.headersForModelAction && adapter.headersForModelAction({ actionName, snapshot });
 
-    return assign({}, this.get('config.ajaxOptions'), { data });
+    if (!options.headers) {
+      options.headers = {};
+    }
+
+    assign(options.headers, adapterHeaders);
+
+    return options;
   }),
 
   promiseType: computed('config.promiseType', function() {

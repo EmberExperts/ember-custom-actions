@@ -14,5 +14,14 @@ export default RESTAdapter.extend({
     if (actionName === 'feed') {
       return '/secret-horses/custom-feed';
     }
+  },
+
+  headersForModelAction(params) {
+    let { actionName, snapshot } = params;
+    if (actionName === 'ride') {
+      return {
+        'If-Match': snapshot.attr('etag')
+      };
+    }
   }
 });
