@@ -155,13 +155,7 @@ It's great for API with request data format restrictions
   - underscore
 
 #### `adapterOptions`
-If you want to customize you request in your adapter and use `adapterOptions` please, implement our adapter mixin, eg:
-```js
-import JSONAPIAdapter from 'ember-data/adapters/json-api';
-import { AdapterMixin } from 'ember-custom-actions';
-
-export default JSONAPIAdapter.extend(AdapterMixin);
-```
+Pass custom adapter options to handle them in `urlForCustomAction`. Required `AdpaterMixin` (instruction bellow).
 
 #### `responseType`
 You can easily observe the returned model by changing `responseType` to `array` or `object` according to what type of data
@@ -186,6 +180,47 @@ model.customAction({}, { responseType: null }) // returns Promise
 #### `queryParams`
 You can pass a query params for a request by passing an `{}` with properties, eg: `{ include: 'owner' }`
 ** Remember: Query params are not normalized! You have to pass it in the correct format. **
+
+### Adapter customization
+If you want to customize your request in your adapter please, implement our adapter mixin, eg:
+```js
+import JSONAPIAdapter from 'ember-data/adapters/json-api';
+import { AdapterMixin } from 'ember-custom-actions';
+
+export default JSONAPIAdapter.extend(AdapterMixin);
+```
+
+Then you can customize following methods:
+
+#### urlForCustomAction
+```js
+export default JSONAPIAdapter.extend(AdapterMixin, {
+  urlForCustomAction(modelName, id, snapshot, requestType, query) {
+    if (requestType === 'myPublishAction') {
+      return 'https://my-custom-api.com/publish'
+    }
+    
+    return this._super(...arguments);
+    let url = this._buildURL(modelName, id);
+
+    return urlBuilder(url, requestType, query);
+  }
+});
+```
+
+You can also use a shorthand for the default api server:
+
+```js
+export default JSONAPIAdapter.extend(AdapterMixin, {
+  urlForCustomAction(modelName, id, snapshot, requestType, query) {
+    if (requestType === 'myPublishAction') {
+      return `${this._buildURL(modelName, id)}/publish`;
+    }
+    
+    return this._super(...arguments);
+  }
+});
+```
 
 # Development
 
