@@ -22,7 +22,7 @@ Before you will start with documentation check our demo app: [Ember-Custom-Actio
 ### Model actions
 To define custom action like: `posts/1/publish` you can use
 `modelAction(path, options)` method with arguments:
-- `path` - the url of the action (in our case it's `publish`)
+- `actionId/path` -  if you want to override methods like `urlForCustomAction` use it as `actionId` otherwise, use it as url of the action (in our case it's `publish`)
 - `options` - optional parameter which will overwrite the configuration options
 
 ```js
@@ -59,7 +59,7 @@ import Model from 'ember-data/model';
 import { resourceAction } from 'ember-custom-actions';
 
 export default Model.extend({
-  favorites: resourceAction('favorites', { type: 'GET' }),
+  favorites: resourceAction('favorites', { method: 'GET' }),
 });
 
 ```
@@ -85,22 +85,20 @@ You can define your custom options in your `config/environment.js` file
 module.exports = function(environment) {
   var ENV = {
     'emberCustomActions': {
-      type: 'PUT',
+      method: 'POST',
       ajaxOptions: {},
+      adapterOptions: {},
       pushToStore: false,
       normalizeOperation: '',
-      promiseType: null
+      responseType: null
     },
   };
 
   return ENV;
 }
 ```
-#### `type`
-Default type of the request (GET, PUT, POST, DELETE, etc..)
-
-#### `urlType`
-Base of the URL which is generated for the action. If not defined, `urlType` is equal to the `type` option
+#### `method`
+Default method of the request (GET, PUT, POST, DELETE, etc..)
 
 #### `ajaxOptions`
 Your own ajax options (e.g. headers)
@@ -129,6 +127,8 @@ export default RESTSerializer.extend();
 #### `normalizeOperation`
 You can define how your outgoing data should be serialized
 
+```
+
 Exemplary data:
 ```js
 {
@@ -154,28 +154,36 @@ It's great for API with request data format restrictions
   - decamelize
   - underscore
 
+#### `adapterOptions`
+If you want to customize you request in your adapter and use `adapterOptions` please, implement our adapter mixin, eg:
+```js
+import JSONAPIAdapter from 'ember-data/adapters/json-api';
+import { AdapterMixin } from 'ember-custom-actions';
 
-#### `promiseType`
-You can easily observe a returned model by changing promiseType to `array` or `object` according to what type of data
+export default JSONAPIAdapter.extend(AdapterMixin);
+```
+
+#### `responseType`
+You can easily observe the returned model by changing `responseType` to `array` or `object` according to what type of data
 your server will return.
 
 When `array`:
 ```js
-model.customAction({}, { promiseType: 'array' }) // returns DS.PromiseArray
+model.customAction({}, { responseType: 'array' }) // returns DS.PromiseArray
 ```
 
 When `object`:
 ```js
-model.customAction({}, { promiseType: 'object' }) // returns DS.PromiseObject
+model.customAction({}, { responseType: 'object' }) // returns DS.PromiseObject
 ```
 
 When `null` (default):
 ```js
-model.customAction({}, { promiseType: null }) // returns Promise
+model.customAction({}, { responseType: null }) // returns Promise
 ```
 `null` is useful if you don't care about the response or just want to use `then` on the promise without using `binding` or display it in the template.
 
-#### `params`
+#### `queryParams`
 You can pass a query params for a request by passing an `{}` with properties, eg: `{ include: 'owner' }`
 ** Remember: Query params are not normalized! You have to pass it in the correct format. **
 
