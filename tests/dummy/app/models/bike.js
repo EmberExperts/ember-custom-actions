@@ -4,5 +4,5 @@ import { modelAction } from 'ember-custom-actions';
 
 export default Model.extend({
   name: attr(),
-  ride: modelAction('ride', { type: 'PUT' })
+  ride: modelAction('ride', { method: 'PUT' })
 });

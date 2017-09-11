@@ -6,11 +6,11 @@ export default Model.extend({
   name: attr(),
   published: attr('boolean', { defaultValue: false }),
 
-  publish: modelAction('publish', { promiseType: 'object' }),
+  publish: modelAction('publish', { responseType: 'object' }),
   list: resourceAction('list'),
   search: resourceAction('search', {
-    type: 'GET',
+    method: 'GET',
     normalizeOperation: 'dasherize',
-    params: { showAll: true }
+    queryParams: { showAll: true }
   })
 });

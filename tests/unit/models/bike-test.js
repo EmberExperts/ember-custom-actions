@@ -2,7 +2,7 @@ import { moduleForModel, test } from 'ember-qunit';
 import Pretender from 'pretender';
 
 moduleForModel('bike', 'Unit | Model | bike', {
-  needs: ['config:environment', 'serializer:bike'],
+  needs: ['config:environment', 'serializer:bike', 'adapter:bike'],
 
   beforeEach() {
     this.server = new Pretender();
@@ -32,7 +32,7 @@ test('model action', function(assert) {
   let model = this.subject();
   model.set('id', 1);
 
-  model.ride(payload, { params: { enduro: true, include: 'owner' } }).then((response) => {
+  model.ride(payload, { queryParams: { enduro: true, include: 'owner' } }).then((response) => {
     assert.ok(response, true);
     done();
   });

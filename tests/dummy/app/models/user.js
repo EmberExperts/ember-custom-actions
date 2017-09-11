@@ -5,5 +5,5 @@ import { modelAction } from 'ember-custom-actions';
 export default Model.extend({
   name: attr(),
 
-  profile: modelAction('profile', { promiseType: 'object', type: 'get' })
+  profile: modelAction('profile', { responseType: 'object', method: 'get' })
 });
