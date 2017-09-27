@@ -224,6 +224,12 @@ export default JSONAPIAdapter.extend(AdapterMixin, {
 });
 ```
 
+# Migrations
+
+## Migration from v1.6.0
+If you used `buildUrl` in you adapter to customize URL, then you can use from now on [urlForCustomAction](#urlForCustomAction).
+
+
 # Development
 
 ## Installation
