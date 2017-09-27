@@ -32,6 +32,10 @@ export default EmberObject.extend({
   init() {
     this._super(...arguments);
     assert('Model has to be persisted!', !(this.get('instance') && !this.get('model.id')));
+
+    let payload = this.get('payload') || {};
+    assert('payload should be an object',  emberTypeOf(payload) === 'object');
+    this.set('payload', payload);
   },
 
   /**
@@ -130,8 +134,7 @@ export default EmberObject.extend({
    * @return {Object}
    */
   requestData() {
-    let payload = emberTypeOf(this.get('payload')) === 'object' ? this.get('payload') : {};
-    let data = normalizePayload(payload, this.get('config.normalizeOperation'));
+    let data = normalizePayload(this.get('payload'), this.get('config.normalizeOperation'));
 
     return deepMerge({}, this.get('config.ajaxOptions'), { data });
   },
