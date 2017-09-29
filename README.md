@@ -201,9 +201,6 @@ export default JSONAPIAdapter.extend(AdapterMixin, {
     }
     
     return this._super(...arguments);
-    let url = this._buildURL(modelName, id);
-
-    return urlBuilder(url, requestType, query);
   }
 });
 ```

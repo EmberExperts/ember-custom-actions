@@ -35,35 +35,35 @@ export default EmberObject.extend({
   },
 
   /**
-   * @return {DS.Store}
-   */
+    @return {DS.Store}
+  */
   store: computed.readOnly('model.store'),
 
   /**
-   * @return {String}
-   */
+    @return {String}
+  */
   modelName: computed('model', function() {
     let { constructor } = this.get('model');
     return constructor.modelName || constructor.typeKey;
   }).readOnly(),
 
   /**
-   * @return {DS.Adapter}
-   */
+    @return {DS.Adapter}
+  */
   adapter: computed('modelName', 'store', function() {
     return this.get('store').adapterFor(this.get('modelName'));
   }).readOnly(),
 
   /**
-   * @return {DS.Serializer}
-   */
+    @return {DS.Serializer}
+  */
   serializer: computed('modelName', 'store', function() {
     return this.get('store').serializerFor(this.get('modelName'));
   }).readOnly(),
 
   /**
-   * @return {Ember.Object}
-   */
+    @return {Ember.Object}
+  */
   config: computed('options', function() {
     let appConfig = getOwner(this.get('model')).resolveRegistration('config:environment').emberCustomActions || {};
     let mergedConfig = deepMerge({}, appConfig, this.get('options'));
@@ -72,10 +72,10 @@ export default EmberObject.extend({
   }).readOnly(),
 
   /**
-   * @public
-   * @method callAction
-   * @return {Promise}
-   */
+    @public
+    @method callAction
+    @return {Promise}
+  */
   callAction() {
     let promise = this._promise();
     let responseType = EmberString.camelize(this.get('config.responseType') || '');
@@ -85,49 +85,49 @@ export default EmberObject.extend({
   },
 
   /**
-   * @private
-   * @method queryParams
-   * @return {Object}
-   */
+    @private
+    @method queryParams
+    @return {Object}
+  */
   queryParams() {
     let queryParams = emberTypeOf(this.get('config.queryParams')) === 'object' ? this.get('config.queryParams') : {};
     return this.get('adapter').sortQueryParams(queryParams);
   },
 
   /**
-   * @private
-   * @method requestMethod
-   * @return {String}
-   */
+    @private
+    @method requestMethod
+    @return {String}
+  */
   requestMethod() {
     return this.get('config.method').toUpperCase();
   },
 
   /**
-   * @private
-   * @method requestUrl
-   * @return {String}
-   */
+    @private
+    @method requestUrl
+    @return {String}
+  */
   requestUrl() {
     let modelName = this.get('modelName');
     let id = this.get('instance') ? this.get('model.id') : null;
     let snapshot = this.get('model')._createSnapshot(this.get('config.adapterOptions'));
-    let requestType = this.get('path');
-    let query = this.queryParams();
+    let actionId = this.get('path');
+    let queryParams = this.queryParams();
 
     if (this.get('adapter').urlForCustomAction) {
-      return this.get('adapter').urlForCustomAction(modelName, id, snapshot, requestType, query);
+      return this.get('adapter').urlForCustomAction(modelName, id, snapshot, actionId, queryParams);
     } else {
       let url = this.get('adapter')._buildURL(modelName, id);
-      return urlBuilder(url, requestType, query);
+      return urlBuilder(url, actionId, queryParams);
     }
   },
 
   /**
-   * @private
-   * @method requestData
-   * @return {Object}
-   */
+    @private
+    @method requestData
+    @return {Object}
+  */
   requestData() {
     let payload = emberTypeOf(this.get('payload')) === 'object' ? this.get('payload') : {};
     let data = normalizePayload(payload, this.get('config.normalizeOperation'));
