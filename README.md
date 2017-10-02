@@ -21,8 +21,8 @@ Before you will start with documentation check our demo app: [Ember-Custom-Actio
 
 ### Model actions
 To define custom action like: `posts/1/publish` you can use
-`modelAction(actionId/path, options)` method with arguments:
-- `actionId/path` -  if you want to override methods like `urlForCustomAction` (more details in [Adapter customization](#Adapter-customization)) use it as `actionId` otherwise, use it as url of the action (in our case it's `publish`)
+`modelAction(actionId, options)` method with arguments:
+- `actionId` -  if you want to integrate it with adapter/serializer use it as `actionId` (more details in [Adapter customization](#Adapter-customization)) otherwise, use it as url of the action (in our case it's `publish`)
 - `options` - optional parameter which will overwrite the configuration options
 
 ```js
@@ -51,7 +51,7 @@ postToPublish.publish(payload, /*{ custom options }*/).then((status) => {
 ### Resource actions
 To a define custom action like: `posts/favorites` you can use
 `resourceAction(actionId/path, options)` method with arguments:
-- `actionId/path` - if you want to override methods like `urlForCustomAction` (more details in [Adapter customization](#Adapter-customization)) use it as `actionId` otherwise, use it as url of the action (in our case it's `favorites`)
+- `actionId/path` - if you want to integrate it with adapter/serializer use it as `actionId` (more details in [Adapter customization](#Adapter-customization)) otherwise, use it as url of the action (in our case it's `favorites`)
 - `options` - optional parameter which will overwrite the configuration options
 
 ```js
@@ -207,7 +207,7 @@ export default JSONAPIAdapter.extend(AdapterMixin, {
 });
 ```
 requestType - `actionId/path` defined during constructing [modelAction](#Model-actions) or [resourceAction](#Resource-actions)
-returnValue - full URL to action
+The function returns a full URL of the action
 
 
 You can also use a shorthand for the default api server:
@@ -223,11 +223,6 @@ export default JSONAPIAdapter.extend(AdapterMixin, {
   }
 });
 ```
-
-# Migrations
-
-## Migration from v1.6.0
-If you used `buildUrl` in you adapter to customize URL, then you can use from now on [urlForCustomAction](#urlForCustomAction).
 
 
 # Development
