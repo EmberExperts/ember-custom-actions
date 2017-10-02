@@ -1,4 +1,4 @@
-// tests for integration with adapter - custom url
+// tests for integration with adapter - url customization
 import { moduleForModel, test } from 'ember-qunit';
 import Pretender from 'pretender';
 
