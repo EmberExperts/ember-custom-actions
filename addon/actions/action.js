@@ -115,8 +115,7 @@ export default EmberObject.extend({
   requestUrl() {
     let modelName = this.get('modelName');
     let id = this.get('instance') ? this.get('model.id') : null;
-    let snapshot = this.get('model')._createSnapshot();
-    snapshot.adapterOptions = deepMerge(snapshot.adapterOptions, this.get('config.adapterOptions'));
+    let snapshot = this.get('model')._internalModel.createSnapshot({ adapterOptions: this.get('config.adapterOptions') });
     let actionId = this.get('path');
     let queryParams = this.queryParams();
 
