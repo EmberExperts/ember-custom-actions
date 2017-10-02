@@ -21,8 +21,8 @@ Before you will start with documentation check our demo app: [Ember-Custom-Actio
 
 ### Model actions
 To define custom action like: `posts/1/publish` you can use
-`modelAction(actionId, options)` method with arguments:
-- `actionId` -  if you want to integrate it with adapter/serializer use it as `actionId` (more details in [Adapter customization](#Adapter-customization)) otherwise, use it as url of the action (in our case it's `publish`)
+`modelAction(actionId/path, options)` method with arguments:
+- `actionId/path` -  if you want to integrate it with adapter/serializer use it as `actionId` (more details in [Adapter customization](#Adapter-customization)) otherwise, use it as url of the action (in our case it's `publish`)
 - `options` - optional parameter which will overwrite the configuration options
 
 ```js
