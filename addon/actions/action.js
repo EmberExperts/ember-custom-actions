@@ -26,17 +26,22 @@ export default EmberObject.extend({
   path: '',
   model: null,
   options: {},
-  payload: {},
   instance: false,
 
   init() {
     this._super(...arguments);
     assert('Model has to be persisted!', !(this.get('instance') && !this.get('model.id')));
-
-    let payload = this.get('payload') || {};
-    assert('payload should be an object',  emberTypeOf(payload) === 'object');
-    this.set('payload', payload);
   },
+
+  payload: computed({
+    set(key, value) {
+      if (value === null || value === undefined) {
+        return {};
+      }
+      assert('payload should be an object',  emberTypeOf(value) === 'object');
+      return value;
+    }
+  }),
 
   /**
     @return {DS.Store}
