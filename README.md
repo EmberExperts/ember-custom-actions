@@ -21,8 +21,8 @@ Before you will start with documentation check our demo app: [Ember-Custom-Actio
 
 ### Model actions
 To define custom action like: `posts/1/publish` you can use
-`modelAction(path, options)` method with arguments:
-- `actionId/path` -  if you want to override methods like `urlForCustomAction` use it as `actionId` otherwise, use it as url of the action (in our case it's `publish`)
+`modelAction(actionId/path, options)` method with arguments:
+- `actionId/path` -  if you want to integrate it with adapter/serializer use it as `actionId` (more details in [Adapter customization](#Adapter-customization)) otherwise, use it as url of the action (in our case it's `publish`)
 - `options` - optional parameter which will overwrite the configuration options
 
 ```js
@@ -50,8 +50,8 @@ postToPublish.publish(payload, /*{ custom options }*/).then((status) => {
 
 ### Resource actions
 To a define custom action like: `posts/favorites` you can use
-`resourceAction(path, options)` method with arguments:
-- `path` - the url of the action (in our case it's `favorites`)
+`resourceAction(actionId/path, options)` method with arguments:
+- `actionId/path` - if you want to integrate it with adapter/serializer use it as `actionId` (more details in [Adapter customization](#Adapter-customization)) otherwise, use it as url of the action (in our case it's `favorites`)
 - `options` - optional parameter which will overwrite the configuration options
 
 ```js
@@ -190,7 +190,9 @@ import { AdapterMixin } from 'ember-custom-actions';
 export default JSONAPIAdapter.extend(AdapterMixin);
 ```
 
-Then you can customize following methods:
+Then you can customize following methods (for both - modelAction and resourceAction):
+* [urlForCustomAction](#urlForCustomAction)
+
 
 #### urlForCustomAction
 ```js
@@ -204,6 +206,9 @@ export default JSONAPIAdapter.extend(AdapterMixin, {
   }
 });
 ```
+requestType - `actionId/path` defined during constructing [modelAction](#Model-actions) or [resourceAction](#Resource-actions)
+The function returns a full URL of the action
+
 
 You can also use a shorthand for the default api server:
 
@@ -218,6 +223,7 @@ export default JSONAPIAdapter.extend(AdapterMixin, {
   }
 });
 ```
+
 
 # Development
 

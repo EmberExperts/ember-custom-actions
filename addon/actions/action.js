@@ -26,13 +26,22 @@ export default EmberObject.extend({
   path: '',
   model: null,
   options: {},
-  payload: {},
   instance: false,
 
   init() {
     this._super(...arguments);
     assert('Model has to be persisted!', !(this.get('instance') && !this.get('model.id')));
   },
+
+  payload: computed({
+    set(key, value) {
+      if (value === null || value === undefined) {
+        return {};
+      }
+      assert('payload should be an object',  emberTypeOf(value) === 'object');
+      return value;
+    }
+  }),
 
   /**
     @return {DS.Store}
@@ -111,7 +120,7 @@ export default EmberObject.extend({
   requestUrl() {
     let modelName = this.get('modelName');
     let id = this.get('instance') ? this.get('model.id') : null;
-    let snapshot = this.get('model')._createSnapshot(this.get('config.adapterOptions'));
+    let snapshot = this.get('model')._internalModel.createSnapshot({ adapterOptions: this.get('config.adapterOptions') });
     let actionId = this.get('path');
     let queryParams = this.queryParams();
 
@@ -129,8 +138,7 @@ export default EmberObject.extend({
     @return {Object}
   */
   requestData() {
-    let payload = emberTypeOf(this.get('payload')) === 'object' ? this.get('payload') : {};
-    let data = normalizePayload(payload, this.get('config.normalizeOperation'));
+    let data = normalizePayload(this.get('payload'), this.get('config.normalizeOperation'));
 
     return deepMerge({}, this.get('config.ajaxOptions'), { data });
   },
