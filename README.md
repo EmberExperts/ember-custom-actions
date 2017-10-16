@@ -21,8 +21,8 @@ Before you will start with documentation check our demo app: [Ember-Custom-Actio
 
 ### Model actions
 To define custom action like: `posts/1/publish` you can use
-`modelAction(actionId/path, options)` method with arguments:
-- `actionId/path` -  if you want to integrate it with adapter/serializer use it as `actionId` (more details in [Adapter customization](#Adapter-customization)) otherwise, use it as url of the action (in our case it's `publish`)
+`modelAction(path, options)` method with arguments:
+- `path` - url of the action scoped to our api (in our case it's `publish`)
 - `options` - optional parameter which will overwrite the configuration options
 
 ```js
@@ -51,7 +51,7 @@ postToPublish.publish(payload, /*{ custom options }*/).then((status) => {
 ### Resource actions
 To a define custom action like: `posts/favorites` you can use
 `resourceAction(actionId/path, options)` method with arguments:
-- `actionId/path` - if you want to integrate it with adapter/serializer use it as `actionId` (more details in [Adapter customization](#Adapter-customization)) otherwise, use it as url of the action (in our case it's `favorites`)
+- `path` - url of the action scoped to our api (in our case it's `favorites`)
 - `options` - optional parameter which will overwrite the configuration options
 
 ```js
@@ -74,6 +74,52 @@ emptyPost.favorites(payload, /*{ custom options }*/).then((favoritesPosts) => {
   console.log(favoritesPosts);
 }).finally(()=>{
   emptyPost.deleteRecord();
+});
+```
+
+### Custom actions
+To define `customAction` and customize it by using ember-data flow, adapters and serializer you can use `customAction(actionId, options)` method with arguments:
+- `actionId` - id of the action which can be handled later on in adpaters and serializers
+- `options` - optional parameter which will overwrite the configuration options
+
+If you want to customize your request in your adapter please, implement our adapter mixin, eg:
+```js
+import JSONAPIAdapter from 'ember-data/adapters/json-api';
+import { AdapterMixin } from 'ember-custom-actions';
+
+export default JSONAPIAdapter.extend(AdapterMixin);
+```
+
+You can customize following methods in the adpater:
+* [urlForCustomAction](#urlForCustomAction)
+
+
+#### urlForCustomAction
+You can define your custom path for every `customAction` by adding a conditional:
+
+```js
+export default JSONAPIAdapter.extend(AdapterMixin, {
+  urlForCustomAction(modelName, id, snapshot, actionId, queryParams) {
+    if (requestType === 'myPublishAction') {
+      return 'https://my-custom-api.com/publish'
+    }
+    
+    return this._super(...arguments);
+  }
+});
+```
+
+If you would like to build custom `modelAction` you can do it by:
+
+```js
+export default JSONAPIAdapter.extend(AdapterMixin, {
+  urlForCustomAction(modelName, id, snapshot, actionId, queryParams) {
+    if (requestType === 'myPublishAction') {
+      return `${this._buildURL(modelName, id)}/publish`;
+    }
+    
+    return this._super(...arguments);
+  }
 });
 ```
 
@@ -155,7 +201,7 @@ It's great for API with request data format restrictions
   - underscore
 
 #### `adapterOptions`
-Pass custom adapter options to handle them in `urlForCustomAction`. Required `AdpaterMixin` (instruction bellow).
+Pass custom adapter options to handle them in `urlForCustomAction` in case of using `customActions`. Required usage of`AdpaterMixin`.
 
 #### `responseType`
 You can easily observe the returned model by changing `responseType` to `array` or `object` according to what type of data
@@ -180,50 +226,6 @@ model.customAction({}, { responseType: null }) // returns Promise
 #### `queryParams`
 You can pass a query params for a request by passing an `{}` with properties, eg: `{ include: 'owner' }`
 ** Remember: Query params are not normalized! You have to pass it in the correct format. **
-
-### Adapter customization
-If you want to customize your request in your adapter please, implement our adapter mixin, eg:
-```js
-import JSONAPIAdapter from 'ember-data/adapters/json-api';
-import { AdapterMixin } from 'ember-custom-actions';
-
-export default JSONAPIAdapter.extend(AdapterMixin);
-```
-
-Then you can customize following methods (for both - modelAction and resourceAction):
-* [urlForCustomAction](#urlForCustomAction)
-
-
-#### urlForCustomAction
-```js
-export default JSONAPIAdapter.extend(AdapterMixin, {
-  urlForCustomAction(modelName, id, snapshot, requestType, query) {
-    if (requestType === 'myPublishAction') {
-      return 'https://my-custom-api.com/publish'
-    }
-    
-    return this._super(...arguments);
-  }
-});
-```
-requestType - `actionId/path` defined during constructing [modelAction](#Model-actions) or [resourceAction](#Resource-actions)
-The function returns a full URL of the action
-
-
-You can also use a shorthand for the default api server:
-
-```js
-export default JSONAPIAdapter.extend(AdapterMixin, {
-  urlForCustomAction(modelName, id, snapshot, requestType, query) {
-    if (requestType === 'myPublishAction') {
-      return `${this._buildURL(modelName, id)}/publish`;
-    }
-    
-    return this._super(...arguments);
-  }
-});
-```
-
 
 # Development
 

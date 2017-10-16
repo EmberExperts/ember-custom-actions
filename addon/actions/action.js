@@ -1,19 +1,19 @@
 import Ember from 'ember';
+import deepMerge from 'lodash/merge';
 import normalizePayload from '../utils/normalize-payload';
 import urlBuilder from 'ember-custom-actions/utils/url-builder';
-import deepMerge from 'lodash/merge';
 
 const {
-  getOwner,
-  computed,
-  Object: EmberObject,
-  ObjectProxy,
-  ArrayProxy,
-  PromiseProxyMixin,
-  typeOf: emberTypeOf,
-  isArray,
   RSVP,
   assert,
+  isArray,
+  getOwner,
+  computed,
+  ArrayProxy,
+  ObjectProxy,
+  PromiseProxyMixin,
+  Object: EmberObject,
+  typeOf: emberTypeOf,
   String: EmberString
 } = Ember;
 
@@ -23,23 +23,27 @@ const promiseProxies = {
 };
 
 export default EmberObject.extend({
-  path: '',
+  id: '',
   model: null,
   options: {},
   instance: false,
+  integrated: false,
 
   init() {
     this._super(...arguments);
-    assert('Model has to be persisted!', !(this.get('instance') && !this.get('model.id')));
+    assert('Custom actions require model property to be passed!', this.get('model'));
+    assert('Custom action model has to be persisted!', !(this.get('instance') && !this.get('model.id')));
   },
 
-  payload: computed({
+  /**
+    @return {Object}
+  */
+  payload: computed('config.normalizeOperation', {
     set(key, value) {
-      if (value === null || value === undefined) {
-        return {};
-      }
-      assert('payload should be an object',  emberTypeOf(value) === 'object');
-      return value;
+      let payload = value || {};
+      assert('Custom action payload has to be an object',  emberTypeOf(payload) === 'object');
+
+      return payload;
     }
   }),
 
@@ -73,8 +77,9 @@ export default EmberObject.extend({
   /**
     @return {Ember.Object}
   */
-  config: computed('options', function() {
-    let appConfig = getOwner(this.get('model')).resolveRegistration('config:environment').emberCustomActions || {};
+  config: computed('options', 'model', function() {
+    let model = this.get('model');
+    let appConfig = model ? (getOwner(model).resolveRegistration('config:environment').emberCustomActions || {}) : {};
     let mergedConfig = deepMerge({}, appConfig, this.get('options'));
 
     return EmberObject.create(mergedConfig);
@@ -118,18 +123,8 @@ export default EmberObject.extend({
     @return {String}
   */
   requestUrl() {
-    let modelName = this.get('modelName');
-    let id = this.get('instance') ? this.get('model.id') : null;
-    let snapshot = this.get('model')._internalModel.createSnapshot({ adapterOptions: this.get('config.adapterOptions') });
-    let actionId = this.get('path');
-    let queryParams = this.queryParams();
-
-    if (this.get('adapter').urlForCustomAction) {
-      return this.get('adapter').urlForCustomAction(modelName, id, snapshot, actionId, queryParams);
-    } else {
-      let url = this.get('adapter')._buildURL(modelName, id);
-      return urlBuilder(url, actionId, queryParams);
-    }
+    let integrated = this.get('integrated') && this.get('adapter').urlForCustomAction;
+    return integrated ? this._urlForCustomAction() : this._urlFromBuilder();
   },
 
   /**
@@ -139,7 +134,6 @@ export default EmberObject.extend({
   */
   requestData() {
     let data = normalizePayload(this.get('payload'), this.get('config.normalizeOperation'));
-
     return deepMerge({}, this.get('config.ajaxOptions'), { data });
   },
 
@@ -163,6 +157,7 @@ export default EmberObject.extend({
     if (this.get('config.pushToStore') && isArray(error.errors)) {
       let id = this.get('model.id');
       let typeClass = this.get('model').constructor;
+
       error.serializedErrors = this.get('serializer').extractErrors(this.get('store'), typeClass, error, id);
     }
 
@@ -171,5 +166,26 @@ export default EmberObject.extend({
 
   _validResponse(object) {
     return emberTypeOf(object) === 'object' && Object.keys(object).length > 0;
+  },
+
+  _urlFromBuilder() {
+    let path = this.get('id');
+    let queryParams = this.queryParams();
+    let modelName = this.get('modelName');
+    let id = this.get('instance') ? this.get('model.id') : null;
+    let url = this.get('adapter')._buildURL(modelName, id);
+
+    return urlBuilder(url, path, queryParams);
+  },
+
+  _urlForCustomAction() {
+    let id = this.get('model.id');
+    let actionId = this.get('id');
+    let queryParams = this.queryParams();
+    let modelName = this.get('modelName');
+    let adapterOptions = this.get('config.adapterOptions');
+    let snapshot = this.get('model')._internalModel.createSnapshot({ adapterOptions });
+
+    return this.get('adapter').urlForCustomAction(modelName, id, snapshot, actionId, queryParams);
   }
 });

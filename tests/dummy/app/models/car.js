@@ -1,12 +1,12 @@
 import Model from 'ember-data/model';
-import { modelAction, resourceAction } from 'ember-custom-actions';
+import { customAction } from 'ember-custom-actions';
 
 export default Model.extend({
-  drive: modelAction('drive'),
-  clean: modelAction('clean'),
-  fix: modelAction('fix'),
+  drive: customAction('drive'),
+  clean: customAction('clean'),
+  fix: customAction('fix'),
 
-  moveAll: resourceAction('move-all'),
-  cleanAll: resourceAction('clean-all'),
-  fixAll: resourceAction('fix-all')
+  moveAll: customAction('move-all'),
+  cleanAll: customAction('clean-all'),
+  fixAll: customAction('fixAll')
 });

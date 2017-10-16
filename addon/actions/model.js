@@ -1,16 +1,14 @@
-import Ember from 'ember';
 import Action from './action';
-
-const { assign } = Ember;
+import deepMerge from 'lodash/merge';
 
 export default function(path, options = {}) {
   return function(payload = {}, customOptions = {}) {
     return Action.create({
+      payload,
+      id: path,
       model: this,
       instance: true,
-      options: assign({}, options, customOptions),
-      payload,
-      path
+      options: deepMerge({}, options, customOptions)
     }).callAction();
   };
 }

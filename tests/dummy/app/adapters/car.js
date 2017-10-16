@@ -14,7 +14,7 @@ export default JSONAPIAdapter.extend(AdapterMixin, {
     } else if (requestType === 'clean-all') {
       let baseUrl = this.buildURL(modelName, id, snapshot, requestType);
       return `${baseUrl}/custom-clean-all`;
-    } else if (requestType === 'fix-all') {
+    } else if (requestType === 'fixAll') {
       return `/custom-cars/custom-fix-all${suffix}`;
     }
 
