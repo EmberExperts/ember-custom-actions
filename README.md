@@ -22,7 +22,7 @@ Before you will start with documentation check our demo app: [Ember-Custom-Actio
 ### Model actions
 To define custom action like: `posts/1/publish` you can use
 `modelAction(path, options)` method with arguments:
-- `path` - the url of the action (in our case it's `publish`)
+- `path` - url of the action scoped to our api (in our case it's `publish`)
 - `options` - optional parameter which will overwrite the configuration options
 
 ```js
@@ -50,8 +50,8 @@ postToPublish.publish(payload, /*{ custom options }*/).then((status) => {
 
 ### Resource actions
 To a define custom action like: `posts/favorites` you can use
-`resourceAction(path, options)` method with arguments:
-- `path` - the url of the action (in our case it's `favorites`)
+`resourceAction(actionId/path, options)` method with arguments:
+- `path` - url of the action scoped to our api (in our case it's `favorites`)
 - `options` - optional parameter which will overwrite the configuration options
 
 ```js
@@ -59,7 +59,7 @@ import Model from 'ember-data/model';
 import { resourceAction } from 'ember-custom-actions';
 
 export default Model.extend({
-  favorites: resourceAction('favorites', { type: 'GET' }),
+  favorites: resourceAction('favorites', { method: 'GET' }),
 });
 
 ```
@@ -77,6 +77,52 @@ emptyPost.favorites(payload, /*{ custom options }*/).then((favoritesPosts) => {
 });
 ```
 
+### Custom actions
+To define `customAction` and customize it by using ember-data flow, adapters and serializer you can use `customAction(actionId, options)` method with arguments:
+- `actionId` - id of the action which can be handled later on in adpaters and serializers
+- `options` - optional parameter which will overwrite the configuration options
+
+If you want to customize your request in your adapter please, implement our adapter mixin, eg:
+```js
+import JSONAPIAdapter from 'ember-data/adapters/json-api';
+import { AdapterMixin } from 'ember-custom-actions';
+
+export default JSONAPIAdapter.extend(AdapterMixin);
+```
+
+You can customize following methods in the adpater:
+* [urlForCustomAction](#urlForCustomAction)
+
+
+#### urlForCustomAction
+You can define your custom path for every `customAction` by adding a conditional:
+
+```js
+export default JSONAPIAdapter.extend(AdapterMixin, {
+  urlForCustomAction(modelName, id, snapshot, actionId, queryParams) {
+    if (requestType === 'myPublishAction') {
+      return 'https://my-custom-api.com/publish'
+    }
+    
+    return this._super(...arguments);
+  }
+});
+```
+
+If you would like to build custom `modelAction` you can do it by:
+
+```js
+export default JSONAPIAdapter.extend(AdapterMixin, {
+  urlForCustomAction(modelName, id, snapshot, actionId, queryParams) {
+    if (requestType === 'myPublishAction') {
+      return `${this._buildURL(modelName, id)}/publish`;
+    }
+    
+    return this._super(...arguments);
+  }
+});
+```
+
 ### Configuration
 
 You can define your custom options in your `config/environment.js` file
@@ -85,22 +131,20 @@ You can define your custom options in your `config/environment.js` file
 module.exports = function(environment) {
   var ENV = {
     'emberCustomActions': {
-      type: 'PUT',
+      method: 'POST',
       ajaxOptions: {},
+      adapterOptions: {},
       pushToStore: false,
       normalizeOperation: '',
-      promiseType: null
+      responseType: null
     },
   };
 
   return ENV;
 }
 ```
-#### `type`
-Default type of the request (GET, PUT, POST, DELETE, etc..)
-
-#### `urlType`
-Base of the URL which is generated for the action. If not defined, `urlType` is equal to the `type` option
+#### `method`
+Default method of the request (GET, PUT, POST, DELETE, etc..)
 
 #### `ajaxOptions`
 Your own ajax options (e.g. headers)
@@ -129,6 +173,8 @@ export default RESTSerializer.extend();
 #### `normalizeOperation`
 You can define how your outgoing data should be serialized
 
+```
+
 Exemplary data:
 ```js
 {
@@ -154,28 +200,30 @@ It's great for API with request data format restrictions
   - decamelize
   - underscore
 
+#### `adapterOptions`
+Pass custom adapter options to handle them in `urlForCustomAction` in case of using `customActions`. Required usage of`AdpaterMixin`.
 
-#### `promiseType`
-You can easily observe a returned model by changing promiseType to `array` or `object` according to what type of data
+#### `responseType`
+You can easily observe the returned model by changing `responseType` to `array` or `object` according to what type of data
 your server will return.
 
 When `array`:
 ```js
-model.customAction({}, { promiseType: 'array' }) // returns DS.PromiseArray
+model.customAction({}, { responseType: 'array' }) // returns DS.PromiseArray
 ```
 
 When `object`:
 ```js
-model.customAction({}, { promiseType: 'object' }) // returns DS.PromiseObject
+model.customAction({}, { responseType: 'object' }) // returns DS.PromiseObject
 ```
 
 When `null` (default):
 ```js
-model.customAction({}, { promiseType: null }) // returns Promise
+model.customAction({}, { responseType: null }) // returns Promise
 ```
 `null` is useful if you don't care about the response or just want to use `then` on the promise without using `binding` or display it in the template.
 
-#### `params`
+#### `queryParams`
 You can pass a query params for a request by passing an `{}` with properties, eg: `{ include: 'owner' }`
 ** Remember: Query params are not normalized! You have to pass it in the correct format. **
 

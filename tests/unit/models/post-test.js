@@ -19,7 +19,7 @@ moduleForModel('post', 'Unit | Model | post', {
 test('model action', function(assert) {
   assert.expect(3);
 
-  this.server.put('/posts/:id/publish', (request) => {
+  this.server.post('/posts/:id/publish', (request) => {
     let data = JSON.parse(request.requestBody);
     assert.deepEqual(data, { myParam: 'My first param' });
     assert.equal(request.url, '/posts/1/publish');
@@ -42,7 +42,7 @@ test('model action', function(assert) {
 test('model action pushes to store', function(assert) {
   assert.expect(5);
 
-  this.server.put('/posts/:id/publish', (request) => {
+  this.server.post('/posts/:id/publish', (request) => {
     let data = JSON.parse(request.requestBody);
     assert.deepEqual(data, { myParam: 'My first param' });
     assert.equal(request.url, '/posts/1/publish');
@@ -68,7 +68,7 @@ test('model action pushes to store', function(assert) {
 test('resource action', function(assert) {
   assert.expect(3);
 
-  this.server.put('/posts/list', (request) => {
+  this.server.post('/posts/list', (request) => {
     let data = JSON.parse(request.requestBody);
     assert.deepEqual(data, { myParam: 'My first param' });
     assert.equal(request.url, '/posts/list');
@@ -116,7 +116,7 @@ test('resource action with params in GET', function(assert) {
 test('resource action pushes to store', function(assert) {
   assert.expect(5);
 
-  this.server.put('/posts/list', (request) => {
+  this.server.post('/posts/list', (request) => {
     let data = JSON.parse(request.requestBody);
     assert.deepEqual(data, { myParam: 'My first param' });
     assert.equal(request.url, '/posts/list');
@@ -139,10 +139,10 @@ test('resource action pushes to store', function(assert) {
   });
 });
 
-test('promiseTypes', function(assert) {
+test('responseTypes', function(assert) {
   assert.expect(6);
 
-  this.server.put('/posts/list', (request) => {
+  this.server.post('/posts/list', (request) => {
     assert.equal(request.url, '/posts/list');
 
     return [200, {}, '{"data": [{"id": "2", "type": "post"},{"id": "3", "type": "post"}]}'];
@@ -151,8 +151,8 @@ test('promiseTypes', function(assert) {
   let model = this.subject();
 
   let promise = model.list();
-  let promiseArray = model.list(null, { promiseType: 'array' });
-  let promiseObject = model.list(null, { promiseType: 'object' });
+  let promiseArray = model.list(null, { responseType: 'array' });
+  let promiseObject = model.list(null, { responseType: 'object' });
 
   assert.equal(promise.constructor, RSVP.Promise);
   assert.equal(promiseArray.constructor.superclass, ArrayProxy);
@@ -166,7 +166,7 @@ test('model action set serialized errors in error object', function(assert) {
   let errorText = 'This name is taken';
   let error = { detail: errorText, source: { pointer: 'data/attributes/name' } };
 
-  this.server.put('/posts/:id/publish', () => {
+  this.server.post('/posts/:id/publish', () => {
     let payload = JSON.stringify({ errors: [error] });
     return [422, {}, payload];
   });

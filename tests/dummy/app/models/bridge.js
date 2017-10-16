@@ -4,5 +4,5 @@ import { resourceAction } from 'ember-custom-actions';
 
 export default Model.extend({
   name: attr(),
-  burnAll: resourceAction('burn', { type: 'GET' })
+  burnAll: resourceAction('burn', { method: 'GET' })
 });
