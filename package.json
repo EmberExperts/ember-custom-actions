@@ -15,7 +15,7 @@
     "jsnapi"
   ],
   "license": "MIT",
-  "author": "Exelord (Maciej Kwaśniak)",
+  "author": "Exelord",
   "directories": {
     "test": "tests"
   },
@@ -26,42 +26,41 @@
     "test": "ember try:each"
   },
   "dependencies": {
-    "ember-cli-babel": "^6.0.0",
+    "ember-cli-babel": "^6.6.0",
     "ember-lodash": "^4.17.5"
   },
   "devDependencies": {
     "bootstrap-sass": "^3.3.7",
     "broccoli-asset-rev": "^2.4.5",
     "ember-ajax": "^3.0.0",
-    "ember-bootstrap": "1.0.0-beta.2",
-    "ember-browserify": "1.1.13",
-    "ember-cli": "2.13.3",
-    "ember-cli-app-version": "3.0.0",
+    "ember-bootstrap": "1.0.0-rc.3",
+    "ember-browserify": "1.2.0",
+    "ember-cli": "2.16.2",
     "ember-cli-code-coverage": "^0.4.0",
     "ember-cli-dependency-checker": "^2.0.0",
     "ember-cli-eslint": "^4.0.0",
     "ember-cli-favicon": "1.0.0-beta.4",
     "ember-cli-github-pages": "0.1.2",
-    "ember-cli-htmlbars": "^2.0.0",
-    "ember-cli-htmlbars-inline-precompile": "^0.4.0",
+    "ember-cli-htmlbars": "^2.0.1",
+    "ember-cli-htmlbars-inline-precompile": "^1.0.0",
     "ember-cli-inject-live-reload": "^1.4.1",
     "ember-cli-pretender": "1.0.1",
     "ember-cli-qunit": "^4.0.0",
     "ember-cli-release": "^1.0.0-beta.2",
-    "ember-cli-sass": "6.2.0",
+    "ember-cli-sass": "7.0.0",
     "ember-cli-shims": "^1.1.0",
     "ember-cli-sri": "^2.1.0",
     "ember-cli-test-loader": "^2.1.0",
-    "ember-cli-uglify": "^1.2.0",
-    "ember-data": "~2.14.3",
-    "ember-disable-prototype-extensions": "^1.1.0",
+    "ember-cli-uglify": "^2.0.0",
+    "ember-data": "~2.16.3",
+    "ember-disable-prototype-extensions": "^1.1.2",
     "ember-export-application-global": "^2.0.0",
     "ember-font-awesome": "3.0.5",
     "ember-initials": "3.3.0",
     "ember-load-initializers": "^1.0.0",
-    "ember-resolver": "^4.1.0",
+    "ember-resolver": "^4.0.0",
     "ember-scroll-to": "0.6.4",
-    "ember-source": "~2.13.0",
+    "ember-source": "~2.16.0",
     "ember-suave": "4.0.1",
     "eslint-plugin-ember-suave": "^1.0.0",
     "express": "^4.14.1",
@@ -69,10 +68,10 @@
     "glob": "^7.1.1",
     "loader.js": "^4.2.3",
     "morgan": "^1.8.0",
-    "pretender": "1.4.2"
+    "pretender": "1.6.0"
   },
   "engines": {
-    "node": ">= 4"
+    "node": "^4.5 || 6.* || >= 7.*"
   },
   "ember-addon": {
     "configPath": "tests/dummy/config",
