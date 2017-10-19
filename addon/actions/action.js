@@ -1,19 +1,19 @@
+import { readOnly } from '@ember/object/computed';
+import RSVP from 'rsvp';
+import { assert } from '@ember/debug';
+import { isArray } from '@ember/array';
+import { getOwner } from '@ember/application';
+import ArrayProxy from '@ember/array/proxy';
+import ObjectProxy from '@ember/object/proxy';
+import PromiseProxyMixin from '@ember/object/promise-proxy-mixin';
+import EmberObject, { computed } from '@ember/object';
+import { typeOf as emberTypeOf } from '@ember/utils';
 import Ember from 'ember';
 import deepMerge from 'lodash/merge';
 import normalizePayload from '../utils/normalize-payload';
 import urlBuilder from 'ember-custom-actions/utils/url-builder';
 
 const {
-  RSVP,
-  assert,
-  isArray,
-  getOwner,
-  computed,
-  ArrayProxy,
-  ObjectProxy,
-  PromiseProxyMixin,
-  Object: EmberObject,
-  typeOf: emberTypeOf,
   String: EmberString
 } = Ember;
 
@@ -50,7 +50,7 @@ export default EmberObject.extend({
   /**
     @return {DS.Store}
   */
-  store: computed.readOnly('model.store'),
+  store: readOnly('model.store'),
 
   /**
     @return {String}

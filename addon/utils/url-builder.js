@@ -1,6 +1,4 @@
-import Ember from 'ember';
-
-const { $: Ember$ } = Ember;
+import Ember$ from 'jquery';
 
 export default function(url, path, queryParams) {
   let query = Ember$.param(queryParams);

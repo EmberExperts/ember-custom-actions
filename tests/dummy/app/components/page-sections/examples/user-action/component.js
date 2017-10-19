@@ -1,13 +1,14 @@
-import Ember from 'ember';
+import { inject as service } from '@ember/service';
+import Component from '@ember/component';
+import { run } from '@ember/runloop';
+import { observer, computed } from '@ember/object';
 import Faker from 'npm:faker';
-
-const { Component, computed, inject, run, observer } = Ember;
 
 export default Component.extend({
   tagName: 'tr',
   classNames: 'action',
-  store: inject.service(),
-  server: inject.service(),
+  store: service(),
+  server: service(),
 
   init() {
     this._super(...arguments);

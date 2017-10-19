@@ -1,7 +1,5 @@
-import Ember from 'ember';
+import Mixin from '@ember/object/mixin';
 import urlBuilder from 'ember-custom-actions/utils/url-builder';
-
-const { Mixin } = Ember;
 
 export default Mixin.create({
   /**

@@ -1,9 +1,9 @@
-import Ember from 'ember';
-
-const { Component, inject, computed } = Ember;
+import { inject as service } from '@ember/service';
+import Component from '@ember/component';
+import { computed } from '@ember/object';
 
 export default Component.extend({
-  store: inject.service(),
+  store: service(),
 
   post: computed('property', function() {
     return this.get('store').createRecord('post', { id: 1 });

@@ -1,6 +1,10 @@
+import { assert } from '@ember/debug';
+import { isArray } from '@ember/array';
 import Ember from 'ember';
 
-const { assert, String, isArray } = Ember;
+const {
+  String
+} = Ember;
 
 function transformObject(object, operation) {
   if (object instanceof Object && !isArray(object)) {
