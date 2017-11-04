@@ -34,10 +34,10 @@ test('creates default url for model action', function(assert) {
   });
 });
 
-test('creates custom url with base url for model action', function(assert) {
+test('creates custom url with base url and custom request method for model action', function(assert) {
   assert.expect(2);
 
-  this.server.post('/cars/:id/custom-clean', () => {
+  this.server.patch('/cars/:id/custom-clean', () => {
     assert.ok(true);
     return [200, {}, 'true'];
   });

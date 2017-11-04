@@ -19,5 +19,13 @@ export default JSONAPIAdapter.extend(AdapterMixin, {
     }
 
     return this._super(...arguments);
+  },
+
+  methodForCustomAction({ actionId }) {
+    if (actionId === 'clean') {
+      return 'PATCH';
+    }
+
+    return this._super(...arguments);
   }
 });

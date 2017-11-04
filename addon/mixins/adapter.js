@@ -5,7 +5,7 @@ export default Mixin.create({
   /**
     @public
     @method urlForCustomAction
-    @param {type} modelName
+    @param {String} modelName
     @param {(String|Null)} id single id null
     @param {DS.Snapshot} snapshot single snapshot
     @param {String} actionId name or relative path of the action
@@ -16,5 +16,15 @@ export default Mixin.create({
     let url = this._buildURL(modelName, id);
 
     return urlBuilder(url, actionId, queryParams);
+  },
+
+  /**
+    @public
+    @method methodForCustomAction
+    @param {Object} params Contains method, modelId, actionId
+    @return {String} Full URL of custom action
+  */
+  methodForCustomAction({ method }) {
+    return method;
   }
 });
