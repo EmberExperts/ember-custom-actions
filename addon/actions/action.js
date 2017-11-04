@@ -1,21 +1,18 @@
-import Ember from 'ember';
-import deepMerge from 'lodash/merge';
-import normalizePayload from '../utils/normalize-payload';
-import urlBuilder from 'ember-custom-actions/utils/url-builder';
+import { assert } from '@ember/debug';
+import { isArray } from '@ember/array';
+import { camelize } from '@ember/string';
+import ArrayProxy from '@ember/array/proxy';
+import ObjectProxy from '@ember/object/proxy';
+import { getOwner } from '@ember/application';
+import { readOnly } from '@ember/object/computed';
+import { typeOf as emberTypeOf } from '@ember/utils';
+import EmberObject, { computed } from '@ember/object';
+import PromiseProxyMixin from '@ember/object/promise-proxy-mixin';
 
-const {
-  RSVP,
-  assert,
-  isArray,
-  getOwner,
-  computed,
-  ArrayProxy,
-  ObjectProxy,
-  PromiseProxyMixin,
-  Object: EmberObject,
-  typeOf: emberTypeOf,
-  String: EmberString
-} = Ember;
+import RSVP from 'rsvp';
+import deepMerge from 'lodash/merge';
+import normalizePayload from 'ember-custom-actions/utils/normalize-payload';
+import urlBuilder from 'ember-custom-actions/utils/url-builder';
 
 const promiseProxies = {
   array: ArrayProxy.extend(PromiseProxyMixin),
@@ -50,7 +47,7 @@ export default EmberObject.extend({
   /**
     @return {DS.Store}
   */
-  store: computed.readOnly('model.store'),
+  store: readOnly('model.store'),
 
   /**
     @return {String}
@@ -92,7 +89,7 @@ export default EmberObject.extend({
   */
   callAction() {
     let promise = this._promise();
-    let responseType = EmberString.camelize(this.get('config.responseType') || '');
+    let responseType = camelize(this.get('config.responseType') || '');
     let promiseProxy = promiseProxies[responseType];
 
     return promiseProxy ? promiseProxy.create({ promise }) : promise;

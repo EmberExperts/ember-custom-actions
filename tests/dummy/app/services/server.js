@@ -1,7 +1,5 @@
-import Ember from 'ember';
+import Service from '@ember/service';
 import Pretender from 'npm:pretender';
-
-const { Service } = Ember;
 
 export default Service.extend({
   init() {

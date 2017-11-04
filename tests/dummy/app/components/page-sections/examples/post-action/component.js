@@ -1,17 +1,18 @@
-import Ember from 'ember';
-
-const { Component, computed, inject, run, observer } = Ember;
+import { inject as service } from '@ember/service';
+import Component from '@ember/component';
+import { run } from '@ember/runloop';
+import { observer, computed } from '@ember/object';
 
 export default Component.extend({
   tagName: 'tr',
   classNames: 'action',
-  store: inject.service(),
-  server: inject.service(),
+  store: service(),
+  server: service(),
 
   init() {
     this._super(...arguments);
 
-    this.get('server').server.put('/posts/:id/publish', (request) => {
+    this.get('server').server.post('/posts/:id/publish', (request) => {
       let post = this.get('store').peekRecord('post', request.params.id);
       let data = post.serialize({ includeId: true });
       data.data.attributes.published = true;

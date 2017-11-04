@@ -1,11 +1,12 @@
 // Please Remove this serializer when feature flag 'ds-pushpayload-return' will be enabled by default
 // https://github.com/emberjs/data/pull/4110
 
-import Ember from 'ember';
+import { makeArray } from '@ember/array';
+
+import { warn } from '@ember/debug';
 import DS from 'ember-data';
 
 const { RESTSerializer } = DS;
-const { makeArray, warn } = Ember;
 
 export default RESTSerializer.extend({
   pushPayload(store, payload) {

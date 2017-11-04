@@ -1,8 +1,8 @@
-import Ember from 'ember';
+import RSVP from 'rsvp';
+import ArrayProxy from '@ember/array/proxy';
+import ObjectProxy from '@ember/object/proxy';
 import { moduleForModel, test } from 'ember-qunit';
 import Pretender from 'pretender';
-
-const { RSVP, ArrayProxy, ObjectProxy } = Ember;
 
 moduleForModel('post', 'Unit | Model | post', {
   needs: ['config:environment', 'serializer:application'],
