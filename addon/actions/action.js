@@ -111,7 +111,8 @@ export default EmberObject.extend({
     @return {String}
   */
   requestMethod() {
-    return this.get('config.method').toUpperCase();
+    let integrated = this.get('integrated') && this.get('adapter').urlForCustomAction;
+    return (integrated ? this._methodForCustomAction() : this.get('config.method')).toUpperCase();
   },
 
   /**
@@ -175,6 +176,8 @@ export default EmberObject.extend({
     return urlBuilder(url, path, queryParams);
   },
 
+  // Adapter INTEGRATION
+
   _urlForCustomAction() {
     let id = this.get('model.id');
     let actionId = this.get('id');
@@ -184,5 +187,13 @@ export default EmberObject.extend({
     let snapshot = this.get('model')._internalModel.createSnapshot({ adapterOptions });
 
     return this.get('adapter').urlForCustomAction(modelName, id, snapshot, actionId, queryParams);
+  },
+
+  _methodForCustomAction() {
+    let actionId = this.get('id');
+    let method = this.get('config.method');
+    let modelId = this.get('model.id');
+
+    return this.get('adapter').methodForCustomAction({ method, actionId, modelId });
   }
 });

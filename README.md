@@ -91,6 +91,7 @@ export default JSONAPIAdapter.extend(AdapterMixin);
 
 You can customize following methods in the adpater:
 * [urlForCustomAction](#urlForCustomAction)
+* [methodForCustomAction](#methodForCustomAction)
 
 
 #### urlForCustomAction
@@ -111,10 +112,29 @@ export default JSONAPIAdapter.extend(AdapterMixin, {
 If you would like to build custom `modelAction` you can do it by:
 
 ```js
+import { AdapterMixin } from 'ember-custom-actions';
+
 export default JSONAPIAdapter.extend(AdapterMixin, {
   urlForCustomAction(modelName, id, snapshot, actionId, queryParams) {
     if (requestType === 'myPublishAction') {
       return `${this._buildURL(modelName, id)}/publish`;
+    }
+    
+    return this._super(...arguments);
+  }
+});
+```
+
+#### methodForCustomAction
+You can define your custom method for every `customAction` by adding a conditional:
+
+```js
+import { AdapterMixin } from 'ember-custom-actions';
+
+export default JSONAPIAdapter.extend(AdapterMixin, {
+  methodForCustomAction(params) {
+    if (params.actionId === 'myPublishAction') {
+      return 'PUT';
     }
     
     return this._super(...arguments);
