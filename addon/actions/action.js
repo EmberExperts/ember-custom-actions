@@ -5,17 +5,13 @@ import { isArray } from '@ember/array';
 import { getOwner } from '@ember/application';
 import ArrayProxy from '@ember/array/proxy';
 import ObjectProxy from '@ember/object/proxy';
+import { camelize } from '@ember/string';
 import PromiseProxyMixin from '@ember/object/promise-proxy-mixin';
 import EmberObject, { computed } from '@ember/object';
 import { typeOf as emberTypeOf } from '@ember/utils';
-import Ember from 'ember';
 import deepMerge from 'lodash/merge';
 import normalizePayload from '../utils/normalize-payload';
 import urlBuilder from 'ember-custom-actions/utils/url-builder';
-
-const {
-  String: EmberString
-} = Ember;
 
 const promiseProxies = {
   array: ArrayProxy.extend(PromiseProxyMixin),
@@ -92,7 +88,7 @@ export default EmberObject.extend({
   */
   callAction() {
     let promise = this._promise();
-    let responseType = EmberString.camelize(this.get('config.responseType') || '');
+    let responseType = camelize(this.get('config.responseType') || '');
     let promiseProxy = promiseProxies[responseType];
 
     return promiseProxy ? promiseProxy.create({ promise }) : promise;

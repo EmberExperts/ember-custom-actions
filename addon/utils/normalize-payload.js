@@ -1,17 +1,30 @@
 import { assert } from '@ember/debug';
 import { isArray } from '@ember/array';
-import Ember from 'ember';
+import {
+  camelize,
+  capitalize,
+  classify,
+  dasherize,
+  decamelize,
+  underscore
+} from '@ember/string';
 
-const {
-  String
-} = Ember;
+const transformFunctions = {
+  camelize,
+  capitalize,
+  classify,
+  dasherize,
+  decamelize,
+  underscore
+};
 
 function transformObject(object, operation) {
   if (object instanceof Object && !isArray(object)) {
     let data = {};
 
     Object.keys(object).forEach((key) => {
-      data[String[operation](key)] = transformObject(object[key], operation);
+      let transform = transformFunctions[operation];
+      data[transform(key)] = transformObject(object[key], operation);
     });
 
     return data;
@@ -22,7 +35,7 @@ function transformObject(object, operation) {
 
 export default function(payload, operation) {
   if (operation) {
-    assert("This normalize method of custom action's payload does not exist. Check Ember.String documentation!", !!String[operation]);
+    assert("This normalize method of custom action's payload does not exist. Check Ember.String documentation!", !!transformFunctions[operation]);
     return transformObject(payload, operation);
   } else {
     return payload;
