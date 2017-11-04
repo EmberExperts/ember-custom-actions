@@ -1,4 +1,4 @@
-import Action from './action';
+import Action from 'ember-custom-actions/actions/action';
 import deepMerge from 'lodash/merge';
 
 export default function(path, options = {}) {

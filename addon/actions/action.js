@@ -1,16 +1,17 @@
-import { readOnly } from '@ember/object/computed';
-import RSVP from 'rsvp';
 import { assert } from '@ember/debug';
 import { isArray } from '@ember/array';
-import { getOwner } from '@ember/application';
+import { camelize } from '@ember/string';
 import ArrayProxy from '@ember/array/proxy';
 import ObjectProxy from '@ember/object/proxy';
-import { camelize } from '@ember/string';
-import PromiseProxyMixin from '@ember/object/promise-proxy-mixin';
-import EmberObject, { computed } from '@ember/object';
+import { getOwner } from '@ember/application';
+import { readOnly } from '@ember/object/computed';
 import { typeOf as emberTypeOf } from '@ember/utils';
+import EmberObject, { computed } from '@ember/object';
+import PromiseProxyMixin from '@ember/object/promise-proxy-mixin';
+
+import RSVP from 'rsvp';
 import deepMerge from 'lodash/merge';
-import normalizePayload from '../utils/normalize-payload';
+import normalizePayload from 'ember-custom-actions/utils/normalize-payload';
 import urlBuilder from 'ember-custom-actions/utils/url-builder';
 
 const promiseProxies = {
