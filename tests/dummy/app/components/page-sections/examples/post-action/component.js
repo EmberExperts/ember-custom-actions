@@ -12,7 +12,7 @@ export default Component.extend({
   init() {
     this._super(...arguments);
 
-    this.get('server').server.put('/posts/:id/publish', (request) => {
+    this.get('server').server.post('/posts/:id/publish', (request) => {
       let post = this.get('store').peekRecord('post', request.params.id);
       let data = post.serialize({ includeId: true });
       data.data.attributes.published = true;
