@@ -11,6 +11,7 @@ export default Model.extend({
   search: resourceAction('search', {
     method: 'GET',
     normalizeOperation: 'dasherize',
-    queryParams: { showAll: true }
+    queryParams: { showAll: true },
+    headers: { testHeader: 'ok' }
   })
 });

@@ -102,6 +102,7 @@ export default JSONAPIAdapter.extend(AdapterMixin);
 You can customize following methods in the adpater:
 * [urlForCustomAction](#urlForCustomAction)
 * [methodForCustomAction](#methodForCustomAction)
+* [headersForCustomAction](#headersForCustomAction)
 
 
 #### urlForCustomAction
@@ -152,6 +153,25 @@ export default JSONAPIAdapter.extend(AdapterMixin, {
 });
 ```
 
+#### headersForCustomAction
+You can define your custom headers for every `customAction` by adding a conditional:
+
+```js
+import { AdapterMixin } from 'ember-custom-actions';
+
+export default JSONAPIAdapter.extend(AdapterMixin, {
+  methodForCustomAction(params) {
+    if (params.actionId === 'myPublishAction') {
+      return {
+        'Authorization-For-Custom-Action': 'mySuperToken123'
+      };
+    }
+    
+    return this._super(...arguments);
+  }
+});
+```
+
 ### Configuration
 
 You can define your custom options in your `config/environment.js` file
@@ -175,8 +195,18 @@ module.exports = function(environment) {
 #### `method`
 Default method of the request (GET, PUT, POST, DELETE, etc..)
 
+#### `headers`
+An object `{}` of custom headers. Eg:
+```js
+{
+  'my-custom-auth': 'mySuperToken123'
+}
+```
+
 #### `ajaxOptions`
-Your own ajax options (e.g. headers)
+Your own ajax options.
+** USE ONLY IF YOU KNOW WHAT YOU ARE DOING! **
+Those properties will be overwritten by ECU.
 
 #### `pushToStore`
 If you want to push the received data to the store, set this option to `true` and change your application serializer:

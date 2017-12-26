@@ -27,5 +27,15 @@ export default JSONAPIAdapter.extend(AdapterMixin, {
     }
 
     return this._super(...arguments);
+  },
+
+  headersForCustomAction({ actionId }) {
+    if (actionId === 'clean') {
+      return {
+        myHeader: 'custom header'
+      };
+    }
+
+    return this._super(...arguments);
   }
 });
