@@ -1,8 +1,18 @@
 <p align="center">
   <img src="https://raw.githubusercontent.com/Exelord/ember-custom-actions/master/logo.png" alt="Ember Custom Actions Logo" width="100%">
 
-  <a href='https://travis-ci.org/Exelord/ember-custom-actions'><img src="https://travis-ci.org/Exelord/ember-custom-actions.svg?branch=master" alt="Dependency Status" /></a> <a href='https://gemnasium.com/github.com/Exelord/ember-custom-actions'><img src="https://gemnasium.com/badges/github.com/Exelord/ember-custom-actions.svg" alt="Dependency Status" /></a>
-  <a href='https://gitter.im/Exelord/ember-custom-actions?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge'><img src="https://badges.gitter.im/Exelord/ember-custom-actions.svg" alt="Gitter" /></a>
+  <a href='https://travis-ci.org/Exelord/ember-custom-actions'>
+    <img src="https://travis-ci.org/Exelord/ember-custom-actions.svg?branch=master"/>
+  </a>
+  <a href="https://david-dm.org/exelord/ember-custom-actions">
+    <img src="https://david-dm.org/exelord/ember-custom-actions/status.svg">
+  </a>
+  <a href='https://gitter.im/Exelord/ember-custom-actions?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge'>
+    <img src="https://badges.gitter.im/Exelord/ember-custom-actions.svg"/>
+  </a>
+  <a href="https://codeclimate.com/github/Exelord/ember-custom-actions/maintainability">
+    <img src="https://api.codeclimate.com/v1/badges/86c2ffb0d59e8f2b6016/maintainability" />
+  </a>
 </p>
 
 Ember Custom Actions is a package for defining custom API actions, dedicated for Ember 2.8 (and higher) applications.
