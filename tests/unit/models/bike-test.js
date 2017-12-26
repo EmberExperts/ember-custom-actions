@@ -13,13 +13,13 @@ moduleForModel('bike', 'Unit | Model | bike', {
   }
 });
 
-test('model action', function(assert) {
+test('model action with default and custom data', function(assert) {
   assert.expect(4);
 
   this.server.put('/bikes/:id/ride', (request) => {
     let data = JSON.parse(request.requestBody);
 
-    assert.deepEqual(data, { myParam: 'My first param' });
+    assert.deepEqual(data, { myParam: 'My first param', defaultParam: 'ok' });
     assert.deepEqual(request.queryParams, { enduro: 'true', include: 'owner' });
     assert.equal(request.url, '/bikes/1/ride?enduro=true&include=owner');
 
@@ -43,7 +43,7 @@ test('model action pushes to store', function(assert) {
 
   this.server.put('/bikes/:id/ride', (request) => {
     let data = JSON.parse(request.requestBody);
-    assert.deepEqual(data, { myParam: 'My first param' });
+    assert.deepEqual(data, { myParam: 'My first param', defaultParam: 'ok' });
     assert.equal(request.url, '/bikes/1/ride');
 
     return [200, {}, '{ "bikes": { "id": 2 } }'];

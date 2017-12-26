@@ -32,9 +32,19 @@ export default Mixin.create({
     @public
     @method headersForCustomAction
     @param {Object} params Contains headers, modelId, actionId
-    @return {String} Full URL of custom action
+    @return {Object} Custom action headers
   */
   headersForCustomAction({ headers }) {
     return headers;
+  },
+
+  /**
+    @public
+    @method dataForCustomAction
+    @param {Object} params Contains data, modelId, actionId
+    @return {Object} Payload for custom action
+  */
+  dataForCustomAction({ data }) {
+    return data;
   }
 });

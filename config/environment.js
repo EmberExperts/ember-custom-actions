@@ -4,6 +4,7 @@
 module.exports = function(environment, appConfig) {
   appConfig.emberCustomActions = {
     method: 'POST',
+    data: {},
     headers: {},
     ajaxOptions: {},
     adapterOptions: {},

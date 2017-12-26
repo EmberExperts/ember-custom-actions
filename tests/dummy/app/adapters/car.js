@@ -37,5 +37,15 @@ export default JSONAPIAdapter.extend(AdapterMixin, {
     }
 
     return this._super(...arguments);
+  },
+
+  dataForCustomAction({ actionId }) {
+    if (actionId === 'clean') {
+      return {
+        customParam: 'custom param'
+      };
+    }
+
+    return this._super(...arguments);
   }
 });
