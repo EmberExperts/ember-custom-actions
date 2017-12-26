@@ -160,10 +160,29 @@ You can define your custom headers for every `customAction` by adding a conditio
 import { AdapterMixin } from 'ember-custom-actions';
 
 export default JSONAPIAdapter.extend(AdapterMixin, {
-  methodForCustomAction(params) {
+  headersForCustomAction(params) {
     if (params.actionId === 'myPublishAction') {
       return {
         'Authorization-For-Custom-Action': 'mySuperToken123'
+      };
+    }
+    
+    return this._super(...arguments);
+  }
+});
+```
+
+#### dataForCustomAction
+You can define your custom headers for every `customAction` by adding a conditional:
+
+```js
+import { AdapterMixin } from 'ember-custom-actions';
+
+export default JSONAPIAdapter.extend(AdapterMixin, {
+  dataForCustomAction(params) {
+    if (params.actionId === 'myPublishAction') {
+      return {
+        myParam: 'send it to the server'
       };
     }
     
@@ -181,11 +200,13 @@ module.exports = function(environment) {
   var ENV = {
     'emberCustomActions': {
       method: 'POST',
+      data: {},
+      headers: {},
       ajaxOptions: {},
       adapterOptions: {},
       pushToStore: false,
-      normalizeOperation: '',
-      responseType: null
+      responseType: null,
+      normalizeOperation: ''
     },
   };
 
@@ -260,7 +281,7 @@ It's great for API with request data format restrictions
   - underscore
 
 #### `adapterOptions`
-Pass custom adapter options to handle them in `urlForCustomAction` in case of using `customActions`. Required usage of`AdpaterMixin`.
+Pass custom adapter options to handle them in `urlForCustomAction` in case of using `customAction`. Required usage of mixin: `AdpaterMixin`
 
 #### `responseType`
 You can easily observe the returned model by changing `responseType` to `array` or `object` according to what type of data

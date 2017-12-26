@@ -33,18 +33,6 @@ export default EmberObject.extend({
   },
 
   /**
-    @return {Object}
-  */
-  payload: computed('config.normalizeOperation', {
-    set(key, value) {
-      let payload = value || {};
-      assert('Custom action payload has to be an object',  emberTypeOf(payload) === 'object');
-
-      return payload;
-    }
-  }),
-
-  /**
     @return {DS.Store}
   */
   store: readOnly('model.store'),
@@ -145,7 +133,13 @@ export default EmberObject.extend({
     @return {Object}
   */
   requestData() {
-    return normalizePayload(this.get('payload'), this.get('config.normalizeOperation'));
+    let integrated = this.get('integrated') && this.get('adapter').dataForCustomAction;
+    let payload = this.get('config.data');
+    let data = (integrated ? this._dataForCustomAction(payload) : payload) || {};
+
+    assert('Custom action payload has to be an object',  emberTypeOf(data) === 'object');
+
+    return normalizePayload(data, this.get('config.normalizeOperation'));
   },
 
   /**
@@ -201,7 +195,7 @@ export default EmberObject.extend({
     return urlBuilder(url, path, queryParams);
   },
 
-  // Adapter INTEGRATION
+  // Adapter integration API
 
   _urlForCustomAction() {
     let id = this.get('model.id');
@@ -226,5 +220,12 @@ export default EmberObject.extend({
     let modelId = this.get('model.id');
 
     return this.get('adapter').headersForCustomAction({ headers, actionId, modelId });
+  },
+
+  _dataForCustomAction(data) {
+    let actionId = this.get('id');
+    let modelId = this.get('model.id');
+
+    return this.get('adapter').dataForCustomAction({ data, actionId, modelId });
   }
 });

@@ -181,3 +181,23 @@ test('creates custom url for resource action and passes adapterOptions', functio
     done();
   });
 });
+
+test('custom data from adapter', function(assert) {
+  assert.expect(2);
+
+  this.server.patch('/cars/:id/custom-clean', (request) => {
+    let data = JSON.parse(request.requestBody);
+
+    assert.deepEqual(data, { 'custom-param': 'custom param' });
+    return [200, {}, 'true'];
+  });
+
+  let done = assert.async();
+  let model = this.subject();
+  model.set('id', 1);
+
+  model.clean({}, { normalizeOperation: 'dasherize' }).then((response) => {
+    assert.ok(response, true);
+    done();
+  });
+});
