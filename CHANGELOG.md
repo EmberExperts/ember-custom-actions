@@ -1,5 +1,32 @@
 # Change Log
 
+## [v2.0.0-beta.0](https://github.com/Exelord/ember-custom-actions/tree/v2.0.0-beta.0) (2017-12-27)
+[Full Changelog](https://github.com/Exelord/ember-custom-actions/compare/v1.6.0...v2.0.0-beta.0)
+
+**Implemented enhancements:**
+
+- Support for adapters layer [\#25](https://github.com/Exelord/ember-custom-actions/issues/25)
+- Suppport for adapterOptions on modelActions [\#24](https://github.com/Exelord/ember-custom-actions/issues/24)
+- Cannot use Ember.Object as payload [\#23](https://github.com/Exelord/ember-custom-actions/issues/23)
+- Fix landing UI [\#37](https://github.com/Exelord/ember-custom-actions/pull/37) ([Exelord](https://github.com/Exelord))
+- Feature dataForCustomAction [\#36](https://github.com/Exelord/ember-custom-actions/pull/36) ([Exelord](https://github.com/Exelord))
+- Feature headersForCustomAction [\#35](https://github.com/Exelord/ember-custom-actions/pull/35) ([Exelord](https://github.com/Exelord))
+- Upgrade to Ember 2.17 [\#34](https://github.com/Exelord/ember-custom-actions/pull/34) ([Exelord](https://github.com/Exelord))
+- Upgrade packages [\#32](https://github.com/Exelord/ember-custom-actions/pull/32) ([Exelord](https://github.com/Exelord))
+- Add methodForCustomAction [\#31](https://github.com/Exelord/ember-custom-actions/pull/31) ([Exelord](https://github.com/Exelord))
+- Upgrades to 2.16 [\#29](https://github.com/Exelord/ember-custom-actions/pull/29) ([Exelord](https://github.com/Exelord))
+
+**Closed issues:**
+
+- Error in the readme? [\#33](https://github.com/Exelord/ember-custom-actions/issues/33)
+- No compatible version found 1.6.0 on npm install [\#22](https://github.com/Exelord/ember-custom-actions/issues/22)
+
+**Merged pull requests:**
+
+- Fix typo in readme [\#30](https://github.com/Exelord/ember-custom-actions/pull/30) ([louim](https://github.com/louim))
+- Ember custom actions - urlFor [\#28](https://github.com/Exelord/ember-custom-actions/pull/28) ([Krzyrok](https://github.com/Krzyrok))
+- Feature adpater integration [\#27](https://github.com/Exelord/ember-custom-actions/pull/27) ([Exelord](https://github.com/Exelord))
+
 ## [v1.6.0](https://github.com/Exelord/ember-custom-actions/tree/v1.6.0) (2017-06-25)
 [Full Changelog](https://github.com/Exelord/ember-custom-actions/compare/v1.5.0...v1.6.0)
 
