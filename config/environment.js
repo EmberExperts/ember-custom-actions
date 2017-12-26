@@ -4,10 +4,11 @@
 module.exports = function(environment, appConfig) {
   appConfig.emberCustomActions = {
     method: 'POST',
+    headers: {},
     ajaxOptions: {},
     adapterOptions: {},
     pushToStore: false,
-    normalizeOperation: '',
-    responseType: null
+    responseType: null,
+    normalizeOperation: ''
   };
 };

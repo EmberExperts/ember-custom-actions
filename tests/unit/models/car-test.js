@@ -52,6 +52,24 @@ test('creates custom url with base url and custom request method for model actio
   });
 });
 
+test('custom headers', function(assert) {
+  assert.expect(2);
+
+  this.server.patch('/cars/:id/custom-clean', (request) => {
+    assert.equal(request.requestHeaders.myHeader, 'custom header');
+    return [200, {}, 'true'];
+  });
+
+  let done = assert.async();
+  let model = this.subject();
+  model.set('id', 1);
+
+  model.clean().then((response) => {
+    assert.ok(response, true);
+    done();
+  });
+});
+
 test('creates custom url for model action', function(assert) {
   assert.expect(2);
 

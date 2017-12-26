@@ -181,3 +181,20 @@ test('model action set serialized errors in error object', function(assert) {
     done();
   });
 });
+
+test('custom headers in non-customAction', function(assert) {
+  assert.expect(2);
+
+  this.server.get('/posts/search', (request) => {
+    assert.equal(request.requestHeaders.testHeader, 'ok');
+    return [200, {}, 'true'];
+  });
+
+  let done = assert.async();
+  let model = this.subject();
+
+  model.search().then((response) => {
+    assert.ok(response, true);
+    done();
+  });
+});

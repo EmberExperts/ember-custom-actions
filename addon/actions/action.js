@@ -111,8 +111,10 @@ export default EmberObject.extend({
     @return {String}
   */
   requestMethod() {
-    let integrated = this.get('integrated') && this.get('adapter').urlForCustomAction;
-    return (integrated ? this._methodForCustomAction() : this.get('config.method')).toUpperCase();
+    let integrated = this.get('integrated') && this.get('adapter').methodForCustomAction;
+    let method = this.get('config.method').toUpperCase();
+
+    return integrated ? this._methodForCustomAction(method) : method;
   },
 
   /**
@@ -127,19 +129,42 @@ export default EmberObject.extend({
 
   /**
     @private
+    @method requestHeaders
+    @return {String}
+  */
+  requestHeaders() {
+    let integrated = this.get('integrated') && this.get('adapter').headersForCustomAction;
+    let headers = this.get('config.headers');
+
+    return integrated ? this._headersForCustomAction(headers) : headers;
+  },
+
+  /**
+    @private
     @method requestData
     @return {Object}
   */
   requestData() {
-    let data = normalizePayload(this.get('payload'), this.get('config.normalizeOperation'));
-    return deepMerge({}, this.get('config.ajaxOptions'), { data });
+    return normalizePayload(this.get('payload'), this.get('config.normalizeOperation'));
+  },
+
+  /**
+    @private
+    @method ajaxOptions
+    @return {Object}
+  */
+  ajaxOptions() {
+    return deepMerge({}, this.get('config.ajaxOptions'), {
+      data: this.requestData(),
+      headers: this.requestHeaders()
+    });
   },
 
   // Internals
 
   _promise() {
     return this.get('adapter')
-      .ajax(this.requestUrl(), this.requestMethod(), this.requestData())
+      .ajax(this.requestUrl(), this.requestMethod(), this.ajaxOptions())
       .then(this._onSuccess.bind(this), this._onError.bind(this));
   },
 
@@ -189,11 +214,17 @@ export default EmberObject.extend({
     return this.get('adapter').urlForCustomAction(modelName, id, snapshot, actionId, queryParams);
   },
 
-  _methodForCustomAction() {
+  _methodForCustomAction(method) {
     let actionId = this.get('id');
-    let method = this.get('config.method');
     let modelId = this.get('model.id');
 
     return this.get('adapter').methodForCustomAction({ method, actionId, modelId });
+  },
+
+  _headersForCustomAction(headers) {
+    let actionId = this.get('id');
+    let modelId = this.get('model.id');
+
+    return this.get('adapter').headersForCustomAction({ headers, actionId, modelId });
   }
 });
