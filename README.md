@@ -202,6 +202,7 @@ module.exports = function(environment) {
       method: 'POST',
       data: {},
       headers: {},
+      queryParams: {},
       ajaxOptions: {},
       adapterOptions: {},
       pushToStore: false,
