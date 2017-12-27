@@ -9,7 +9,7 @@ import { typeOf as emberTypeOf } from '@ember/utils';
 import EmberObject, { computed } from '@ember/object';
 import PromiseProxyMixin from '@ember/object/promise-proxy-mixin';
 
-import RSVP from 'rsvp';
+import { reject } from 'rsvp';
 import deepMerge from 'lodash/merge';
 import normalizePayload from 'ember-custom-actions/utils/normalize-payload';
 import urlBuilder from 'ember-custom-actions/utils/url-builder';
@@ -89,7 +89,9 @@ export default EmberObject.extend({
     @return {Object}
   */
   queryParams() {
-    let queryParams = emberTypeOf(this.get('config.queryParams')) === 'object' ? this.get('config.queryParams') : {};
+    let queryParams = this.get('config.queryParams');
+
+    assert('Custom action queryParams option has to be an object',  emberTypeOf(queryParams) === 'object');
     return this.get('adapter').sortQueryParams(queryParams);
   },
 
@@ -122,9 +124,11 @@ export default EmberObject.extend({
   */
   requestHeaders() {
     let integrated = this.get('integrated') && this.get('adapter').headersForCustomAction;
-    let headers = this.get('config.headers');
+    let configHeaders = this.get('config.headers');
+    let headers = integrated ? this._headersForCustomAction(configHeaders) : configHeaders;
 
-    return integrated ? this._headersForCustomAction(headers) : headers;
+    assert('Custom action headers option has to be an object',  emberTypeOf(headers) === 'object');
+    return headers;
   },
 
   /**
@@ -178,7 +182,7 @@ export default EmberObject.extend({
       error.serializedErrors = this.get('serializer').extractErrors(this.get('store'), typeClass, error, id);
     }
 
-    return RSVP.reject(error);
+    return reject(error);
   },
 
   _validResponse(object) {

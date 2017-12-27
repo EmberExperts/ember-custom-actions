@@ -6,6 +6,7 @@ module.exports = function(environment, appConfig) {
     method: 'POST',
     data: {},
     headers: {},
+    queryParams: {},
     ajaxOptions: {},
     adapterOptions: {},
     pushToStore: false,
