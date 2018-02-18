@@ -91,7 +91,7 @@ To define `customAction` and customize it by using ember-data flow, adapters and
 - `actionId` - id of the action which can be handled later on in adpaters and serializers
 - `options` - optional parameter which will overwrite the configuration options
 
-If you want to customize your request in your adapter please, implement our adapter mixin, eg:
+If you want to customize your request in your adapter please, implement our adapter mixin:
 ```js
 import JSONAPIAdapter from 'ember-data/adapters/json-api';
 import { AdapterMixin } from 'ember-custom-actions';
@@ -99,8 +99,9 @@ import { AdapterMixin } from 'ember-custom-actions';
 export default JSONAPIAdapter.extend(AdapterMixin);
 ```
 
-You can customize following methods in the adpater:
+Now you can customize following methods in the adpater:
 * [urlForCustomAction](#urlForCustomAction)
+* [dataForCustomAction](#dataForCustomAction)
 * [methodForCustomAction](#methodForCustomAction)
 * [headersForCustomAction](#headersForCustomAction)
 
@@ -111,10 +112,10 @@ You can define your custom path for every `customAction` by adding a conditional
 ```js
 export default JSONAPIAdapter.extend(AdapterMixin, {
   urlForCustomAction(modelName, id, snapshot, actionId, queryParams) {
-    if (requestType === 'myPublishAction') {
+    if (actionId === 'myPublishAction') {
       return 'https://my-custom-api.com/publish'
     }
-    
+
     return this._super(...arguments);
   }
 });
@@ -130,7 +131,7 @@ export default JSONAPIAdapter.extend(AdapterMixin, {
     if (requestType === 'myPublishAction') {
       return `${this._buildURL(modelName, id)}/publish`;
     }
-    
+
     return this._super(...arguments);
   }
 });
@@ -147,7 +148,7 @@ export default JSONAPIAdapter.extend(AdapterMixin, {
     if (params.actionId === 'myPublishAction') {
       return 'PUT';
     }
-    
+
     return this._super(...arguments);
   }
 });
@@ -166,14 +167,14 @@ export default JSONAPIAdapter.extend(AdapterMixin, {
         'Authorization-For-Custom-Action': 'mySuperToken123'
       };
     }
-    
+
     return this._super(...arguments);
   }
 });
 ```
 
 #### dataForCustomAction
-You can define your custom headers for every `customAction` by adding a conditional:
+You can define your custom data for every `customAction` by adding a conditional:
 
 ```js
 import { AdapterMixin } from 'ember-custom-actions';
@@ -185,7 +186,7 @@ export default JSONAPIAdapter.extend(AdapterMixin, {
         myParam: 'send it to the server'
       };
     }
-    
+
     return this._super(...arguments);
   }
 });
