@@ -1,6 +1,18 @@
 # Change Log
 
-## [v2.0.0-beta.0](https://github.com/Exelord/ember-custom-actions/tree/v2.0.0-beta.0) (2017-12-27)
+## [v2.0.0](https://github.com/Exelord/ember-custom-actions/tree/v2.0.0) (2018-03-07)
+[Full Changelog](https://github.com/Exelord/ember-custom-actions/compare/v2.0.0-beta.0...v2.0.0)
+
+**Implemented enhancements:**
+
+- Upgrade to ember 3.0 [\#40](https://github.com/Exelord/ember-custom-actions/pull/40) ([Exelord](https://github.com/Exelord))
+- Fix query params [\#38](https://github.com/Exelord/ember-custom-actions/pull/38) ([Exelord](https://github.com/Exelord))
+
+**Closed issues:**
+
+- Assertion Failed: You must provide a path for model action! [\#39](https://github.com/Exelord/ember-custom-actions/issues/39)
+
+## [v2.0.0-beta.0](https://github.com/Exelord/ember-custom-actions/tree/v2.0.0-beta.0) (2017-12-26)
 [Full Changelog](https://github.com/Exelord/ember-custom-actions/compare/v1.6.0...v2.0.0-beta.0)
 
 **Implemented enhancements:**
