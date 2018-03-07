@@ -9,6 +9,9 @@ module.exports = function(defaults) {
     sassOptions: {
       extension: 'sass'
     },
+    pretender: {
+      enabled: true
+    },
     favicons: {
       faviconsConfig: {
         appName: 'Ember Custom Actions',

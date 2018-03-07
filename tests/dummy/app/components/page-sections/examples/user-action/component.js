@@ -2,7 +2,6 @@ import { inject as service } from '@ember/service';
 import Component from '@ember/component';
 import { run } from '@ember/runloop';
 import { observer, computed } from '@ember/object';
-import Faker from 'faker';
 
 export default Component.extend({
   tagName: 'tr',
@@ -16,8 +15,7 @@ export default Component.extend({
     this.get('server').server.get('/users/:id/profile', (request) => {
       let user = this.get('store').peekRecord('user', request.params.id);
       let data = user.serialize({ includeId: true });
-      data.data.attributes.name = Faker.name.findName();
-      // debugger;
+      data.data.attributes.name = "Ember Custom Actions"
       return [200, { }, JSON.stringify(data)];
     });
   },
