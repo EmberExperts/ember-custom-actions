@@ -1,5 +1,5 @@
 import Service from '@ember/service';
-import Pretender from 'npm:pretender';
+import Pretender from 'pretender';
 
 export default Service.extend({
   init() {

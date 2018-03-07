@@ -2,7 +2,7 @@ import { inject as service } from '@ember/service';
 import Component from '@ember/component';
 import { run } from '@ember/runloop';
 import { observer, computed } from '@ember/object';
-import Faker from 'npm:faker';
+import Faker from 'faker';
 
 export default Component.extend({
   tagName: 'tr',
