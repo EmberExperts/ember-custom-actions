@@ -22,7 +22,6 @@ const promiseProxies = {
 export default EmberObject.extend({
   id: '',
   model: null,
-  options: {},
   instance: false,
   integrated: false,
 
@@ -33,11 +32,21 @@ export default EmberObject.extend({
   },
 
   /**
+    @private
     @return {DS.Store}
   */
   store: readOnly('model.store'),
 
   /**
+    @public
+    @return {Object}
+  */
+  options: computed(function() {
+    return {};
+  }),
+
+  /**
+    @private
     @return {String}
   */
   modelName: computed('model', function() {
@@ -46,6 +55,7 @@ export default EmberObject.extend({
   }).readOnly(),
 
   /**
+    @private
     @return {DS.Adapter}
   */
   adapter: computed('modelName', 'store', function() {
@@ -53,6 +63,7 @@ export default EmberObject.extend({
   }).readOnly(),
 
   /**
+    @private
     @return {DS.Serializer}
   */
   serializer: computed('modelName', 'store', function() {
@@ -60,6 +71,7 @@ export default EmberObject.extend({
   }).readOnly(),
 
   /**
+    @private
     @return {Ember.Object}
   */
   config: computed('options', 'model', function() {
