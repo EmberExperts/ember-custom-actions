@@ -1,3 +1,4 @@
+/*eslint no-console: 0*/
 'use strict';
 
 const fs = require('fs');
@@ -5,21 +6,35 @@ const path = require('path');
 const exec = require('child_process').exec;
 
 function generateChangelog(project, version) {
+  console.log('Generating changelog...');
+
   let content = `future-release=${version}\n`;
   let generatorPath = path.join(project.root, '.github_changelog_generator');
 
   return new Promise(function(resolve, reject) {
     fs.writeFile(generatorPath, content, (err) => err ? reject(err) : resolve());
   }).then(() => {
-    return new Promise(function(resolve, reject) {
-      exec('github_changelog_generator', (err) => err ? reject(err) : resolve());
-    });
-  });
+    return _commandPromise('github_changelog_generator');
+  })
 }
 
 function generateWebsite(version) {
-  let command = `ember github-pages:commit --message "${version}" && git push origin gh-pages:gh-pages`;
+  console.log('Generating website...');
 
+  let command = `ember github-pages:commit --message "${version}" && git push origin gh-pages:gh-pages`;
+  return _commandPromise(command);
+}
+
+function regeneratePackageLock() {
+  console.log('Regenerating package.lock...');
+
+  let removeCommand = `rm -rf tmp dist node_modules package-lock.json`;
+  let installCommand = `npm i`;
+
+  return _commandPromise(removeCommand).then(() => _commandPromise(installCommand));
+}
+
+function _commandPromise(command) {
   return new Promise(function(resolve, reject) {
     exec(command, (err) => err ? reject(err) : resolve());
   });
@@ -30,18 +45,18 @@ module.exports = {
   // local: true,
   // remote: 'some_remote',
   // annotation: "Release %@",
-  message: '%@',
+  message: "%@",
   // manifest: [ 'package.json', 'bower.json', 'someconfig.json' ],
   // publish: true,
   // strategy: 'date',
   // format: 'YYYY-MM-DD',
   // timezone: 'America/Los_Angeles',
 
-  beforeCommit(project, versions) {
-    return generateChangelog(project, versions.next);
+  beforeCommit: function(project, versions) {
+    return generateChangelog(project, versions.next).then(() => regeneratePackageLock());
   },
 
-  afterPush(project, versions) {
+  afterPush: function(project, versions) {
     return generateWebsite(versions.next);
   }
 };
