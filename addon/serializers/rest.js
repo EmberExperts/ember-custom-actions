@@ -17,7 +17,7 @@ export default RESTSerializer.extend({
 
     for (let prop in payload) {
       let modelName = this.modelNameFromPayloadKey(prop);
-      if (!store.modelFactoryFor(modelName)) {
+      if (!store._modelFactoryFor(modelName)) {
         warn(this.warnMessageNoModelForKey(prop, modelName), false, {
           id: 'ds.serializer.model-for-key-missing'
         });
