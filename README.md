@@ -232,25 +232,7 @@ Your own ajax options.
 Those properties will be overwritten by ECU.
 
 #### `pushToStore`
-If you want to push the received data to the store, set this option to `true` and change your application serializer:
-
-- If you are using `JSONAPISerializer`:
-
-``` js
-// app/serializers/application.js
-
-import { JSONAPISerializer } from 'ember-custom-actions';
-export default JSONAPISerializer.extend();
-```
-
-- If you are using `RESTSerializer`:
-
-``` js
-// app/serializers/application.js
-
-import { RESTSerializer } from 'ember-custom-actions';
-export default RESTSerializer.extend();
-```
+If you want to push the received data to the store, set this option to `true`
 
 #### `normalizeOperation`
 You can define how your outgoing data should be serialized
