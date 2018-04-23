@@ -1,25 +1,22 @@
 # Change Log
 
-## [v2.0.0](https://github.com/Exelord/ember-custom-actions/tree/v2.0.0) (2018-03-07)
-[Full Changelog](https://github.com/Exelord/ember-custom-actions/compare/v2.0.0-beta.0...v2.0.0)
+## [v2.0.1](https://github.com/Exelord/ember-custom-actions/tree/v2.0.1) (2018-04-23)
+[Full Changelog](https://github.com/Exelord/ember-custom-actions/compare/v2.0.0...v2.0.1)
 
 **Implemented enhancements:**
 
-- Upgrade to ember 3.0 [\#40](https://github.com/Exelord/ember-custom-actions/pull/40) ([Exelord](https://github.com/Exelord))
-- Fix query params [\#38](https://github.com/Exelord/ember-custom-actions/pull/38) ([Exelord](https://github.com/Exelord))
+- Fix ember data deprecation [\#42](https://github.com/Exelord/ember-custom-actions/pull/42) ([Exelord](https://github.com/Exelord))
 
-**Closed issues:**
-
-- Assertion Failed: You must provide a path for model action! [\#39](https://github.com/Exelord/ember-custom-actions/issues/39)
-
-## [v2.0.0-beta.0](https://github.com/Exelord/ember-custom-actions/tree/v2.0.0-beta.0) (2017-12-26)
-[Full Changelog](https://github.com/Exelord/ember-custom-actions/compare/v1.6.0...v2.0.0-beta.0)
+## [v2.0.0](https://github.com/Exelord/ember-custom-actions/tree/v2.0.0) (2018-03-07)
+[Full Changelog](https://github.com/Exelord/ember-custom-actions/compare/v1.6.0...v2.0.0)
 
 **Implemented enhancements:**
 
 - Support for adapters layer [\#25](https://github.com/Exelord/ember-custom-actions/issues/25)
 - Suppport for adapterOptions on modelActions [\#24](https://github.com/Exelord/ember-custom-actions/issues/24)
 - Cannot use Ember.Object as payload [\#23](https://github.com/Exelord/ember-custom-actions/issues/23)
+- Upgrade to ember 3.0 [\#40](https://github.com/Exelord/ember-custom-actions/pull/40) ([Exelord](https://github.com/Exelord))
+- Fix query params [\#38](https://github.com/Exelord/ember-custom-actions/pull/38) ([Exelord](https://github.com/Exelord))
 - Fix landing UI [\#37](https://github.com/Exelord/ember-custom-actions/pull/37) ([Exelord](https://github.com/Exelord))
 - Feature dataForCustomAction [\#36](https://github.com/Exelord/ember-custom-actions/pull/36) ([Exelord](https://github.com/Exelord))
 - Feature headersForCustomAction [\#35](https://github.com/Exelord/ember-custom-actions/pull/35) ([Exelord](https://github.com/Exelord))
@@ -30,6 +27,7 @@
 
 **Closed issues:**
 
+- Assertion Failed: You must provide a path for model action! [\#39](https://github.com/Exelord/ember-custom-actions/issues/39)
 - Error in the readme? [\#33](https://github.com/Exelord/ember-custom-actions/issues/33)
 - No compatible version found 1.6.0 on npm install [\#22](https://github.com/Exelord/ember-custom-actions/issues/22)
 
