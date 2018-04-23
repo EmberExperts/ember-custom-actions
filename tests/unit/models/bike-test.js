@@ -38,7 +38,7 @@ test('model action with default and custom data', function(assert) {
   });
 });
 
-test('model action pushes to store', function(assert) {
+test('model action pushes to store an object', function(assert) {
   assert.expect(5);
 
   this.server.put('/bikes/:id/ride', (request) => {
@@ -58,8 +58,35 @@ test('model action pushes to store', function(assert) {
   assert.equal(store.peekAll('bike').get('length'), 1);
 
   model.ride(payload).then((response) => {
-    assert.equal(response[0].get('id'), 2);
+    assert.equal(response.get('id'), 2);
     assert.equal(store.peekAll('bike').get('length'), 2);
+    done();
+  });
+});
+
+test('model action pushes to store an array of objects', function(assert) {
+  assert.expect(6);
+
+  this.server.put('/bikes/:id/ride', (request) => {
+    let data = JSON.parse(request.requestBody);
+    assert.deepEqual(data, { myParam: 'My first param', defaultParam: 'ok' });
+    assert.equal(request.url, '/bikes/1/ride');
+
+    return [200, {}, '{ "bikes": [ {"id": 2 }, {"id": 3 } ] }'];
+  });
+
+  let done = assert.async();
+  let payload = { myParam: 'My first param' };
+  let store = this.store();
+  let model = this.subject();
+
+  model.set('id', 1);
+  assert.equal(store.peekAll('bike').get('length'), 1);
+
+  model.ride(payload).then((response) => {
+    assert.equal(response[0].get('id'), 2);
+    assert.equal(response[1].get('id'), 3);
+    assert.equal(store.peekAll('bike').get('length'), 3);
     done();
   });
 });

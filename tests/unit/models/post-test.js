@@ -39,7 +39,7 @@ test('model action', function(assert) {
   });
 });
 
-test('model action pushes to store', function(assert) {
+test('model action pushes to store an object', function(assert) {
   assert.expect(5);
 
   this.server.post('/posts/:id/publish', (request) => {
@@ -61,6 +61,33 @@ test('model action pushes to store', function(assert) {
   model.publish(payload).then((response) => {
     assert.equal(response.get('id'), 2);
     assert.equal(store.peekAll('post').get('length'), 2);
+    done();
+  });
+});
+
+test('model action pushes to store an array of objects', function(assert) {
+  assert.expect(6);
+
+  this.server.post('/posts/:id/publish', (request) => {
+    let data = JSON.parse(request.requestBody);
+    assert.deepEqual(data, { myParam: 'My first param' });
+    assert.equal(request.url, '/posts/1/publish');
+
+    return [200, {}, '{"data": [{"id": 2, "type": "posts"}, {"id": 3, "type": "posts"}] }'];
+  });
+
+  let done = assert.async();
+  let payload = { myParam: 'My first param' };
+  let store = this.store();
+  let model = this.subject();
+
+  model.set('id', 1);
+  assert.equal(store.peekAll('post').get('length'), 1);
+
+  model.publish(payload).then((response) => {
+    assert.equal(response[0].get('id'), 2);
+    assert.equal(response[1].get('id'), 3);
+    assert.equal(store.peekAll('post').get('length'), 3);
     done();
   });
 });
