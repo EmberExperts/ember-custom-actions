@@ -4,7 +4,7 @@ import { camelize } from '@ember/string';
 import ArrayProxy from '@ember/array/proxy';
 import ObjectProxy from '@ember/object/proxy';
 import { getOwner } from '@ember/application';
-import { inject as service } from '@ember/service';
+import { readOnly } from '@ember/object/computed';
 import { typeOf as emberTypeOf } from '@ember/utils';
 import EmberObject, { computed } from '@ember/object';
 import PromiseProxyMixin from '@ember/object/promise-proxy-mixin';
@@ -20,8 +20,6 @@ const promiseProxies = {
 };
 
 export default EmberObject.extend({
-  store: service(),
-
   id: '',
   model: null,
   instance: false,
@@ -32,6 +30,12 @@ export default EmberObject.extend({
     assert('Custom actions require model property to be passed!', this.get('model'));
     assert('Custom action model has to be persisted!', !(this.get('instance') && !this.get('model.id')));
   },
+
+  /**
+    @private
+    @return {DS.Store}
+  */
+  store: readOnly('model.store'),
 
   /**
     @public
