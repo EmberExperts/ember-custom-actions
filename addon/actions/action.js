@@ -180,7 +180,13 @@ export default EmberObject.extend({
 
   _onSuccess(response) {
     if (this.get('config.pushToStore') && this._validResponse(response)) {
-      return this.get('serializer').pushPayload(this.get('store'), response);
+      let store = this.get('store');
+      let modelClass = this.get('model.constructor');
+      let modelId = this.get('model.id');
+      let actionId = this.get('id');
+
+      let documentHash = this.get('serializer').normalizeArrayResponse(store, modelClass, response, modelId, actionId);
+      return this.get('store').push(documentHash);
     }
 
     return response;
