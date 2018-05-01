@@ -1,5 +1,16 @@
 # Change Log
 
+## [v2.1.0](https://github.com/Exelord/ember-custom-actions/tree/v2.1.0) (2018-05-01)
+[Full Changelog](https://github.com/Exelord/ember-custom-actions/compare/v2.0.1...v2.1.0)
+
+**Implemented enhancements:**
+
+- Feature new pushToStore implementation [\#43](https://github.com/Exelord/ember-custom-actions/pull/43) ([Exelord](https://github.com/Exelord))
+
+**Merged pull requests:**
+
+- Upgrade to ember 3.1 [\#44](https://github.com/Exelord/ember-custom-actions/pull/44) ([Exelord](https://github.com/Exelord))
+
 ## [v2.0.1](https://github.com/Exelord/ember-custom-actions/tree/v2.0.1) (2018-04-23)
 [Full Changelog](https://github.com/Exelord/ember-custom-actions/compare/v2.0.0...v2.0.1)
 
