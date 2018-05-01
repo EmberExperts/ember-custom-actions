@@ -46,5 +46,20 @@ export default Mixin.create({
   */
   dataForCustomAction({ data }) {
     return data;
+  },
+
+  /**
+    @public
+    @method customRequest
+    @param {String} method Method of the request, eg: 'GET', 'POST' etc
+    @param {String} path Path of the request, eg. 'my/custom/endpoint'
+    @return {Promise} Response promise of the request
+  */
+  customRequest(method, path, options = {}) {
+    let queryParams = options.queryParams || {};
+    let ajaxOptions = options.ajaxOptions || {};
+
+    let url = urlBuilder(this._buildURL(), path, queryParams);
+    return this.ajax(url, method, ajaxOptions);
   }
 });

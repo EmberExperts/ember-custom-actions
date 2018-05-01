@@ -308,7 +308,7 @@ You can pass a query params for a request by passing an `{}` with properties, eg
 
 * `ember test` – Runs the test suite on the current Ember version
 * `ember test --server` – Runs the test suite in "watch mode"
-* `npm test` – Runs `ember try:each` to test your addon against multiple Ember versions
+* `ember try:each` – Runs the test suite against multiple Ember versions
 
 ### Running the dummy application
 
