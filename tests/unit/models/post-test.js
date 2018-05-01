@@ -166,7 +166,7 @@ test('resource action pushes to store', function(assert) {
   });
 });
 
-test('responseTypes', function(assert) {
+test('responseTypes', async function(assert) {
   assert.expect(6);
 
   this.server.post('/posts/list', (request) => {
@@ -177,9 +177,9 @@ test('responseTypes', function(assert) {
 
   let model = this.subject();
 
-  let promise = model.list();
-  let promiseArray = model.list(null, { responseType: 'array' });
-  let promiseObject = model.list(null, { responseType: 'object' });
+  let promise; await (promise = model.list());
+  let promiseArray; await (promiseArray = model.list(null, { responseType: 'array' }));
+  let promiseObject; await (promiseObject = model.list(null, { responseType: 'object' }));
 
   assert.equal(promise.constructor, RSVP.Promise);
   assert.equal(promiseArray.constructor.superclass, ArrayProxy);
