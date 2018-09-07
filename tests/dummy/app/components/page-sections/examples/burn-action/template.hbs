@@ -1,5 +1,5 @@
 <td>
-  <a class="btn btn-lg btn-outline btn-ember {{if burned 'disabled'}}" {{action 'burn'}}>Burn all bridges</a>
+  <a role="button" class="btn btn-lg btn-outline btn-ember {{if burned "disabled"}}" {{action "burn"}}>Burn all bridges</a>
 </td>
 <td>
   {{#if pending}}
@@ -11,7 +11,7 @@
 </td>
 <td>
   {{#if burned}}
-    <div class="{{if burned 'show-result'}}">
+    <div class={{if burned "show-result"}}>
       <span class="h4 text-danger">Bridges Burned</span>
     </div>
   {{else}}

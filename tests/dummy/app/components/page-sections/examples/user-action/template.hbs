@@ -1,5 +1,5 @@
 <td>
-  <a class="btn btn-lg btn-outline btn-ember {{if user.name 'disabled'}}" {{action 'generate' user}}>Generate Profile</a>
+  <a role="button" class="btn btn-lg btn-outline btn-ember {{if user.name "disabled"}}" {{action "generate" user}}>Generate Profile</a>
 </td>
 <td>
   {{#if pending}}
@@ -11,7 +11,7 @@
 </td>
 <td>
   {{#if user.name}}
-    <div class="{{if user.name 'show-result'}}">
+    <div class={{if user.name "show-result"}}>
       {{ember-initials name=user.name class="img-circle"}} <span class="h4">{{user.name}}</span>
     </div>
   {{else}}

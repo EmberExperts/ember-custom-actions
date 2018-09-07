@@ -11,6 +11,7 @@
 
 # misc
 /coverage/
+/concat-stats-for/
 
 # ember-try
 /.node_modules.ember-try/

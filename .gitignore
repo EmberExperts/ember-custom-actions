@@ -17,6 +17,7 @@
 /testem.log
 /yarn-error.log
 .DS_Store
+/concat-stats-for/
 
 # ember-try
 /.node_modules.ember-try/
