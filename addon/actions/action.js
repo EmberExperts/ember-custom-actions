@@ -10,7 +10,7 @@ import EmberObject, { computed } from '@ember/object';
 import PromiseProxyMixin from '@ember/object/promise-proxy-mixin';
 
 import { reject } from 'rsvp';
-import deepMerge from 'lodash/merge';
+import deepMerge from 'lodash.merge';
 import normalizePayload from 'ember-custom-actions/utils/normalize-payload';
 import urlBuilder from 'ember-custom-actions/utils/url-builder';
 

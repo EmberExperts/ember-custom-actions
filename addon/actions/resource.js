@@ -1,5 +1,5 @@
 import Action from 'ember-custom-actions/actions/action';
-import deepMerge from 'lodash/merge';
+import deepMerge from 'lodash.merge';
 
 export default function(path, options = {}) {
   return function(payload = {}, actionOptions = {}) {

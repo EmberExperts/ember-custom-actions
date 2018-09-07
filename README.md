@@ -15,7 +15,7 @@
   </a>
 </p>
 
-Ember Custom Actions is a package for defining custom API actions, dedicated for Ember 2.8 (and higher) applications.
+Ember Custom Actions is a package for defining custom API actions, dedicated for Ember 2.16 (and higher) applications.
 
 # Getting started
 
