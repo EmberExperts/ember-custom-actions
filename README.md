@@ -301,6 +301,7 @@ You can pass a query params for a request by passing an `{}` with properties, eg
 
 ### Linting
 
+* `npm run lint:hbs`
 * `npm run lint:js`
 * `npm run lint:js -- --fix`
 
