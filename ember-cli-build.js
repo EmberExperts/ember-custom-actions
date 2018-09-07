@@ -12,6 +12,9 @@ module.exports = function(defaults) {
     pretender: {
       enabled: true
     },
+    'ember-bootstrap': {
+      bootstrapVersion: 3
+    },
     favicons: {
       faviconsConfig: {
         appName: 'Ember Custom Actions',
