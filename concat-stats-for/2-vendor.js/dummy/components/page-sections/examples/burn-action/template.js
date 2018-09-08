@@ -1,0 +1,8 @@
+define("dummy/components/page-sections/examples/burn-action/template", ["exports"], function (exports) {
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = Ember.HTMLBars.template({ "id": "FUZm8nml", "block": "{\"symbols\":[],\"statements\":[[7,\"td\"],[9],[0,\"\\n  \"],[7,\"a\"],[11,\"role\",\"button\"],[12,\"class\",[28,[\"btn btn-lg btn-outline btn-ember \",[27,\"if\",[[23,[\"burned\"]],\"disabled\"],null]]]],[3,\"action\",[[22,0,[]],\"burn\"]],[9],[0,\"Burn all bridges\"],[10],[0,\"\\n\"],[10],[0,\"\\n\"],[7,\"td\"],[9],[0,\"\\n\"],[4,\"if\",[[23,[\"pending\"]]],null,{\"statements\":[[0,\"    \"],[7,\"p\"],[11,\"class\",\"status text-warning\"],[9],[0,\"Pending\"],[10],[0,\"\\n\"]],\"parameters\":[]},{\"statements\":[[0,\"    \"],[7,\"p\"],[11,\"class\",\"status text-success\"],[9],[0,\"Waiting\"],[10],[0,\"\\n\"]],\"parameters\":[]}],[0,\"  \"],[7,\"h4\"],[11,\"class\",\"request\"],[9],[0,\"bridges/burn\"],[10],[0,\"\\n\"],[10],[0,\"\\n\"],[7,\"td\"],[9],[0,\"\\n\"],[4,\"if\",[[23,[\"burned\"]]],null,{\"statements\":[[0,\"    \"],[7,\"div\"],[12,\"class\",[27,\"if\",[[23,[\"burned\"]],\"show-result\"],null]],[9],[0,\"\\n      \"],[7,\"span\"],[11,\"class\",\"h4 text-danger\"],[9],[0,\"Bridges Burned\"],[10],[0,\"\\n    \"],[10],[0,\"\\n\"]],\"parameters\":[]},{\"statements\":[[0,\"    \"],[7,\"span\"],[11,\"class\",\"text-muted call-to-action\"],[9],[0,\"Call custom action\"],[10],[0,\"\\n\"]],\"parameters\":[]}],[10]],\"hasEval\":false}", "meta": { "moduleName": "dummy/components/page-sections/examples/burn-action/template.hbs" } });
+});

@@ -1,0 +1,15 @@
+{
+  "outputFile": "/addon.lint-test.js",
+  "sizes": {
+    "addon/actions/action.lint-test.js": 150,
+    "addon/actions/custom.lint-test.js": 150,
+    "addon/actions/model.lint-test.js": 148,
+    "addon/actions/resource.lint-test.js": 154,
+    "addon/index.lint-test.js": 132,
+    "addon/mixins/adapter.lint-test.js": 150,
+    "addon/serializers/json-api.lint-test.js": 162,
+    "addon/serializers/rest.lint-test.js": 154,
+    "addon/utils/normalize-payload.lint-test.js": 168,
+    "addon/utils/url-builder.lint-test.js": 156
+  }
+}

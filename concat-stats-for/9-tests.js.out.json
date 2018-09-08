@@ -1,0 +1,525 @@
+{
+  "outputFile": "/Users/maciej/Developer/ember-custom-actions/tmp/source_map_concat-output_path-AqiexaXK.tmp/assets/tests.js",
+  "files": [
+    {
+      "relativePath": "vendor/ember-cli/tests-prefix.js",
+      "sizes": {
+        "raw": 14,
+        "uglified": 13,
+        "compressed": 2.6877425032333764
+      }
+    },
+    {
+      "relativePath": "dummy/tests/@ember/test-helpers/-utils.js",
+      "sizes": {
+        "raw": 1562,
+        "uglified": 421,
+        "compressed": 87.04150722009626
+      }
+    },
+    {
+      "relativePath": "dummy/tests/@ember/test-helpers/application.js",
+      "sizes": {
+        "raw": 1191,
+        "uglified": 330,
+        "compressed": 68.22730969746263
+      }
+    },
+    {
+      "relativePath": "dummy/tests/@ember/test-helpers/build-owner.js",
+      "sizes": {
+        "raw": 1620,
+        "uglified": 475,
+        "compressed": 98.20597607968107
+      }
+    },
+    {
+      "relativePath": "dummy/tests/@ember/test-helpers/dom/-get-element.js",
+      "sizes": {
+        "raw": 895,
+        "uglified": 430,
+        "compressed": 88.90225203002706
+      }
+    },
+    {
+      "relativePath": "dummy/tests/@ember/test-helpers/dom/-get-elements.js",
+      "sizes": {
+        "raw": 726,
+        "uglified": 323,
+        "compressed": 66.78006373418313
+      }
+    },
+    {
+      "relativePath": "dummy/tests/@ember/test-helpers/dom/-is-focusable.js",
+      "sizes": {
+        "raw": 688,
+        "uglified": 326,
+        "compressed": 67.40031200416006
+      }
+    },
+    {
+      "relativePath": "dummy/tests/@ember/test-helpers/dom/-is-form-control.js",
+      "sizes": {
+        "raw": 627,
+        "uglified": 280,
+        "compressed": 57.889838531180416
+      }
+    },
+    {
+      "relativePath": "dummy/tests/@ember/test-helpers/dom/-to-array.js",
+      "sizes": {
+        "raw": 501,
+        "uglified": 226,
+        "compressed": 46.72536967159562
+      }
+    },
+    {
+      "relativePath": "dummy/tests/@ember/test-helpers/dom/blur.js",
+      "sizes": {
+        "raw": 2141,
+        "uglified": 738,
+        "compressed": 152.58107441432554
+      }
+    },
+    {
+      "relativePath": "dummy/tests/@ember/test-helpers/dom/click.js",
+      "sizes": {
+        "raw": 2253,
+        "uglified": 841,
+        "compressed": 173.8762650168669
+      }
+    },
+    {
+      "relativePath": "dummy/tests/@ember/test-helpers/dom/fill-in.js",
+      "sizes": {
+        "raw": 1933,
+        "uglified": 932,
+        "compressed": 192.69046253950052
+      }
+    },
+    {
+      "relativePath": "dummy/tests/@ember/test-helpers/dom/find-all.js",
+      "sizes": {
+        "raw": 865,
+        "uglified": 428,
+        "compressed": 88.48875318337578
+      }
+    },
+    {
+      "relativePath": "dummy/tests/@ember/test-helpers/dom/find.js",
+      "sizes": {
+        "raw": 784,
+        "uglified": 364,
+        "compressed": 75.25679009053455
+      }
+    },
+    {
+      "relativePath": "dummy/tests/@ember/test-helpers/dom/fire-event.js",
+      "sizes": {
+        "raw": 5798,
+        "uglified": 2163,
+        "compressed": 447.1990026533687
+      }
+    },
+    {
+      "relativePath": "dummy/tests/@ember/test-helpers/dom/focus.js",
+      "sizes": {
+        "raw": 2321,
+        "uglified": 789,
+        "compressed": 163.1252950039334
+      }
+    },
+    {
+      "relativePath": "dummy/tests/@ember/test-helpers/dom/get-root-element.js",
+      "sizes": {
+        "raw": 1120,
+        "uglified": 444,
+        "compressed": 91.79674395658608
+      }
+    },
+    {
+      "relativePath": "dummy/tests/@ember/test-helpers/dom/tap.js",
+      "sizes": {
+        "raw": 2011,
+        "uglified": 688,
+        "compressed": 142.2436032480433
+      }
+    },
+    {
+      "relativePath": "dummy/tests/@ember/test-helpers/dom/trigger-event.js",
+      "sizes": {
+        "raw": 1368,
+        "uglified": 648,
+        "compressed": 133.97362631501753
+      }
+    },
+    {
+      "relativePath": "dummy/tests/@ember/test-helpers/dom/trigger-key-event.js",
+      "sizes": {
+        "raw": 5762,
+        "uglified": 2088,
+        "compressed": 431.6927959039454
+      }
+    },
+    {
+      "relativePath": "dummy/tests/@ember/test-helpers/dom/wait-for.js",
+      "sizes": {
+        "raw": 1788,
+        "uglified": 670,
+        "compressed": 138.5221136281817
+      }
+    },
+    {
+      "relativePath": "dummy/tests/@ember/test-helpers/global.js",
+      "sizes": {
+        "raw": 455,
+        "uglified": 266,
+        "compressed": 54.995346604621396
+      }
+    },
+    {
+      "relativePath": "dummy/tests/@ember/test-helpers/has-ember-version.js",
+      "sizes": {
+        "raw": 868,
+        "uglified": 269,
+        "compressed": 55.61559487459833
+      }
+    },
+    {
+      "relativePath": "dummy/tests/@ember/test-helpers/index.js",
+      "sizes": {
+        "raw": 6591,
+        "uglified": 4241,
+        "compressed": 876.8243043240576
+      }
+    },
+    {
+      "relativePath": "dummy/tests/@ember/test-helpers/resolver.js",
+      "sizes": {
+        "raw": 871,
+        "uglified": 198,
+        "compressed": 40.93638581847758
+      }
+    },
+    {
+      "relativePath": "dummy/tests/@ember/test-helpers/settled.js",
+      "sizes": {
+        "raw": 6831,
+        "uglified": 1642,
+        "compressed": 339.482553100708
+      }
+    },
+    {
+      "relativePath": "dummy/tests/@ember/test-helpers/setup-application-context.js",
+      "sizes": {
+        "raw": 2384,
+        "uglified": 952,
+        "compressed": 196.82545100601342
+      }
+    },
+    {
+      "relativePath": "dummy/tests/@ember/test-helpers/setup-context.js",
+      "sizes": {
+        "raw": 7289,
+        "uglified": 2254,
+        "compressed": 466.01320017600233
+      }
+    },
+    {
+      "relativePath": "dummy/tests/@ember/test-helpers/setup-rendering-context.js",
+      "sizes": {
+        "raw": 8256,
+        "uglified": 2569,
+        "compressed": 531.1392685235803
+      }
+    },
+    {
+      "relativePath": "dummy/tests/@ember/test-helpers/teardown-application-context.js",
+      "sizes": {
+        "raw": 301,
+        "uglified": 222,
+        "compressed": 45.89837197829304
+      }
+    },
+    {
+      "relativePath": "dummy/tests/@ember/test-helpers/teardown-context.js",
+      "sizes": {
+        "raw": 1231,
+        "uglified": 523,
+        "compressed": 108.12994839931198
+      }
+    },
+    {
+      "relativePath": "dummy/tests/@ember/test-helpers/teardown-rendering-context.js",
+      "sizes": {
+        "raw": 1050,
+        "uglified": 413,
+        "compressed": 85.38751183349112
+      }
+    },
+    {
+      "relativePath": "dummy/tests/@ember/test-helpers/validate-error-handler.js",
+      "sizes": {
+        "raw": 1848,
+        "uglified": 507,
+        "compressed": 104.82195762610168
+      }
+    },
+    {
+      "relativePath": "dummy/tests/@ember/test-helpers/wait-until.js",
+      "sizes": {
+        "raw": 2098,
+        "uglified": 515,
+        "compressed": 106.47595301270684
+      }
+    },
+    {
+      "relativePath": "dummy/tests/ember-cli-test-loader/test-support/index.js",
+      "sizes": {
+        "raw": 2406,
+        "uglified": 1097,
+        "compressed": 226.80411738823184
+      }
+    },
+    {
+      "relativePath": "dummy/tests/ember-qunit/adapter.js",
+      "sizes": {
+        "raw": 1882,
+        "uglified": 769,
+        "compressed": 158.9903065374205
+      }
+    },
+    {
+      "relativePath": "dummy/tests/ember-qunit/index.js",
+      "sizes": {
+        "raw": 11126,
+        "uglified": 5126,
+        "compressed": 1059.797543967253
+      }
+    },
+    {
+      "relativePath": "dummy/tests/ember-qunit/legacy-2-x/module-for-component.js",
+      "sizes": {
+        "raw": 487,
+        "uglified": 282,
+        "compressed": 58.3033373778317
+      }
+    },
+    {
+      "relativePath": "dummy/tests/ember-qunit/legacy-2-x/module-for-model.js",
+      "sizes": {
+        "raw": 471,
+        "uglified": 274,
+        "compressed": 56.64934199122655
+      }
+    },
+    {
+      "relativePath": "dummy/tests/ember-qunit/legacy-2-x/module-for.js",
+      "sizes": {
+        "raw": 447,
+        "uglified": 260,
+        "compressed": 53.75485006466753
+      }
+    },
+    {
+      "relativePath": "dummy/tests/ember-qunit/legacy-2-x/qunit-module.js",
+      "sizes": {
+        "raw": 1965,
+        "uglified": 778,
+        "compressed": 160.8510513473513
+      }
+    },
+    {
+      "relativePath": "dummy/tests/ember-qunit/test-isolation-validation.js",
+      "sizes": {
+        "raw": 1737,
+        "uglified": 635,
+        "compressed": 131.28588381178417
+      }
+    },
+    {
+      "relativePath": "dummy/tests/ember-qunit/test-loader.js",
+      "sizes": {
+        "raw": 1503,
+        "uglified": 687,
+        "compressed": 142.03685382471767
+      }
+    },
+    {
+      "relativePath": "dummy/tests/ember-raf-scheduler/test-support/register-waiter.js",
+      "sizes": {
+        "raw": 560,
+        "uglified": 257,
+        "compressed": 53.134601794690596
+      }
+    },
+    {
+      "relativePath": "dummy/tests/ember-test-helpers/has-ember-version.js",
+      "sizes": {
+        "raw": 373,
+        "uglified": 260,
+        "compressed": 53.75485006466753
+      }
+    },
+    {
+      "relativePath": "dummy/tests/ember-test-helpers/index.js",
+      "sizes": {
+        "raw": 1394,
+        "uglified": 899,
+        "compressed": 185.86773156975426
+      }
+    },
+    {
+      "relativePath": "dummy/tests/ember-test-helpers/legacy-0-6-x/-legacy-overrides.js",
+      "sizes": {
+        "raw": 2926,
+        "uglified": 1699,
+        "compressed": 351.26727023026973
+      }
+    },
+    {
+      "relativePath": "dummy/tests/ember-test-helpers/legacy-0-6-x/abstract-test-module.js",
+      "sizes": {
+        "raw": 5538,
+        "uglified": 3324,
+        "compressed": 687.2350831344419
+      }
+    },
+    {
+      "relativePath": "dummy/tests/ember-test-helpers/legacy-0-6-x/build-registry.js",
+      "sizes": {
+        "raw": 4796,
+        "uglified": 2072,
+        "compressed": 428.38480513073506
+      }
+    },
+    {
+      "relativePath": "dummy/tests/ember-test-helpers/legacy-0-6-x/ext/rsvp.js",
+      "sizes": {
+        "raw": 1003,
+        "uglified": 382,
+        "compressed": 78.97827971039614
+      }
+    },
+    {
+      "relativePath": "dummy/tests/ember-test-helpers/legacy-0-6-x/test-module-for-acceptance.js",
+      "sizes": {
+        "raw": 932,
+        "uglified": 595,
+        "compressed": 123.01590687875837
+      }
+    },
+    {
+      "relativePath": "dummy/tests/ember-test-helpers/legacy-0-6-x/test-module-for-component.js",
+      "sizes": {
+        "raw": 10724,
+        "uglified": 5831,
+        "compressed": 1205.5558874118321
+      }
+    },
+    {
+      "relativePath": "dummy/tests/ember-test-helpers/legacy-0-6-x/test-module-for-model.js",
+      "sizes": {
+        "raw": 2179,
+        "uglified": 1022,
+        "compressed": 211.2979106388085
+      }
+    },
+    {
+      "relativePath": "dummy/tests/ember-test-helpers/legacy-0-6-x/test-module.js",
+      "sizes": {
+        "raw": 8367,
+        "uglified": 4646,
+        "compressed": 960.5578207709436
+      }
+    },
+    {
+      "relativePath": "dummy/tests/ember-test-helpers/wait.js",
+      "sizes": {
+        "raw": 2458,
+        "uglified": 1090,
+        "compressed": 225.35687142495235
+      }
+    },
+    {
+      "relativePath": "dummy/tests/lint/app.lint-test.js",
+      "sizes": {
+        "raw": 3031,
+        "uglified": 2316,
+        "compressed": 478.83166442219226
+      }
+    },
+    {
+      "relativePath": "dummy/tests/lint/templates.template.lint-test.js",
+      "sizes": {
+        "raw": 2836,
+        "uglified": 2355,
+        "compressed": 486.89489193189246
+      }
+    },
+    {
+      "relativePath": "dummy/tests/lint/tests.lint-test.js",
+      "sizes": {
+        "raw": 741,
+        "uglified": 572,
+        "compressed": 118.26067014226857
+      }
+    },
+    {
+      "relativePath": "dummy/tests/qunit/index.js",
+      "sizes": {
+        "raw": 416,
+        "uglified": 227,
+        "compressed": 46.93211909492127
+      }
+    },
+    {
+      "relativePath": "dummy/tests/test-helper.js",
+      "sizes": {
+        "raw": 344,
+        "uglified": 244,
+        "compressed": 50.446859291457216
+      }
+    },
+    {
+      "relativePath": "dummy/tests/unit/models/bike-test.js",
+      "sizes": {
+        "raw": 3532,
+        "uglified": 2257,
+        "compressed": 466.6334484459793
+      }
+    },
+    {
+      "relativePath": "dummy/tests/unit/models/car-test.js",
+      "sizes": {
+        "raw": 5241,
+        "uglified": 3107,
+        "compressed": 642.370458272777
+      }
+    },
+    {
+      "relativePath": "dummy/tests/unit/models/post-test.js",
+      "sizes": {
+        "raw": 6704,
+        "uglified": 4153,
+        "compressed": 858.6303550714009
+      }
+    },
+    {
+      "relativePath": "vendor/ember-cli/app-config.js",
+      "sizes": {
+        "raw": 513,
+        "uglified": 336,
+        "compressed": 69.4678062374165
+      }
+    },
+    {
+      "relativePath": "vendor/ember-cli/tests-suffix.js",
+      "sizes": {
+        "raw": 71,
+        "uglified": 65,
+        "compressed": 13.438712516166882
+      }
+    }
+  ]
+}

@@ -1,0 +1,517 @@
+{
+  "outputFile": "/Users/maciej/Developer/ember-custom-actions/tmp/source_map_concat-output_path-fkFPyNCT.tmp/assets/test-support.js",
+  "files": [
+    {
+      "relativePath": "vendor/ember-cli/test-support-prefix.js",
+      "sizes": {
+        "raw": 1,
+        "uglified": 0,
+        "compressed": 0
+      }
+    },
+    {
+      "relativePath": "vendor/ember/ember-testing.js",
+      "sizes": {
+        "raw": 82469,
+        "uglified": 26058,
+        "compressed": 6822.974039666594
+      }
+    },
+    {
+      "relativePath": "vendor/monkey-patches.js",
+      "sizes": {
+        "raw": 1350,
+        "uglified": 591,
+        "compressed": 154.74624520081957
+      }
+    },
+    {
+      "relativePath": "vendor/qunit/qunit.js",
+      "sizes": {
+        "raw": 151752,
+        "uglified": 52452,
+        "compressed": 13733.925640056495
+      }
+    },
+    {
+      "relativePath": "vendor/ember-qunit/qunit-configuration.js",
+      "sizes": {
+        "raw": 491,
+        "uglified": 364,
+        "compressed": 95.30902411691766
+      }
+    },
+    {
+      "relativePath": "vendor/qunit-dom.js",
+      "sizes": {
+        "raw": 34047,
+        "uglified": 10694,
+        "compressed": 2800.0953404019706
+      }
+    },
+    {
+      "relativePath": "vendor/define-dummy-module.js",
+      "sizes": {
+        "raw": 54,
+        "uglified": 44,
+        "compressed": 11.520871047099936
+      }
+    },
+    {
+      "relativePath": "vendor/overwrite-qunit-dom-root-element.js",
+      "sizes": {
+        "raw": 181,
+        "uglified": 150,
+        "compressed": 39.27569675147706
+      }
+    },
+    {
+      "relativePath": "tests/addon-test-support/@ember/test-helpers/-utils.js",
+      "sizes": {
+        "raw": 1562,
+        "uglified": 421,
+        "compressed": 110.23378888247893
+      }
+    },
+    {
+      "relativePath": "tests/addon-test-support/@ember/test-helpers/application.js",
+      "sizes": {
+        "raw": 1191,
+        "uglified": 330,
+        "compressed": 86.40653285324953
+      }
+    },
+    {
+      "relativePath": "tests/addon-test-support/@ember/test-helpers/build-owner.js",
+      "sizes": {
+        "raw": 1620,
+        "uglified": 475,
+        "compressed": 124.37303971301067
+      }
+    },
+    {
+      "relativePath": "tests/addon-test-support/@ember/test-helpers/dom/-get-element.js",
+      "sizes": {
+        "raw": 895,
+        "uglified": 430,
+        "compressed": 112.59033068756756
+      }
+    },
+    {
+      "relativePath": "tests/addon-test-support/@ember/test-helpers/dom/-get-elements.js",
+      "sizes": {
+        "raw": 726,
+        "uglified": 323,
+        "compressed": 84.57366700484725
+      }
+    },
+    {
+      "relativePath": "tests/addon-test-support/@ember/test-helpers/dom/-is-focusable.js",
+      "sizes": {
+        "raw": 688,
+        "uglified": 326,
+        "compressed": 85.3591809398768
+      }
+    },
+    {
+      "relativePath": "tests/addon-test-support/@ember/test-helpers/dom/-is-form-control.js",
+      "sizes": {
+        "raw": 627,
+        "uglified": 280,
+        "compressed": 73.3146339360905
+      }
+    },
+    {
+      "relativePath": "tests/addon-test-support/@ember/test-helpers/dom/-to-array.js",
+      "sizes": {
+        "raw": 501,
+        "uglified": 226,
+        "compressed": 59.17538310555876
+      }
+    },
+    {
+      "relativePath": "tests/addon-test-support/@ember/test-helpers/dom/blur.js",
+      "sizes": {
+        "raw": 2141,
+        "uglified": 738,
+        "compressed": 193.2364280172671
+      }
+    },
+    {
+      "relativePath": "tests/addon-test-support/@ember/test-helpers/dom/click.js",
+      "sizes": {
+        "raw": 2253,
+        "uglified": 841,
+        "compressed": 220.20573978661469
+      }
+    },
+    {
+      "relativePath": "tests/addon-test-support/@ember/test-helpers/dom/fill-in.js",
+      "sizes": {
+        "raw": 1933,
+        "uglified": 932,
+        "compressed": 244.0329958158441
+      }
+    },
+    {
+      "relativePath": "tests/addon-test-support/@ember/test-helpers/dom/find-all.js",
+      "sizes": {
+        "raw": 865,
+        "uglified": 428,
+        "compressed": 112.0666547308812
+      }
+    },
+    {
+      "relativePath": "tests/addon-test-support/@ember/test-helpers/dom/find.js",
+      "sizes": {
+        "raw": 784,
+        "uglified": 364,
+        "compressed": 95.30902411691766
+      }
+    },
+    {
+      "relativePath": "tests/addon-test-support/@ember/test-helpers/dom/fire-event.js",
+      "sizes": {
+        "raw": 5798,
+        "uglified": 2163,
+        "compressed": 566.355547156299
+      }
+    },
+    {
+      "relativePath": "tests/addon-test-support/@ember/test-helpers/dom/focus.js",
+      "sizes": {
+        "raw": 2321,
+        "uglified": 789,
+        "compressed": 206.59016491276932
+      }
+    },
+    {
+      "relativePath": "tests/addon-test-support/@ember/test-helpers/dom/get-root-element.js",
+      "sizes": {
+        "raw": 1120,
+        "uglified": 444,
+        "compressed": 116.25606238437207
+      }
+    },
+    {
+      "relativePath": "tests/addon-test-support/@ember/test-helpers/dom/tap.js",
+      "sizes": {
+        "raw": 2011,
+        "uglified": 688,
+        "compressed": 180.1445291001081
+      }
+    },
+    {
+      "relativePath": "tests/addon-test-support/@ember/test-helpers/dom/trigger-event.js",
+      "sizes": {
+        "raw": 1368,
+        "uglified": 648,
+        "compressed": 169.67100996638086
+      }
+    },
+    {
+      "relativePath": "tests/addon-test-support/@ember/test-helpers/dom/trigger-key-event.js",
+      "sizes": {
+        "raw": 5762,
+        "uglified": 2088,
+        "compressed": 546.7176987805606
+      }
+    },
+    {
+      "relativePath": "tests/addon-test-support/@ember/test-helpers/dom/wait-for.js",
+      "sizes": {
+        "raw": 1788,
+        "uglified": 670,
+        "compressed": 175.43144548993084
+      }
+    },
+    {
+      "relativePath": "tests/addon-test-support/@ember/test-helpers/global.js",
+      "sizes": {
+        "raw": 455,
+        "uglified": 266,
+        "compressed": 69.64890223928597
+      }
+    },
+    {
+      "relativePath": "tests/addon-test-support/@ember/test-helpers/has-ember-version.js",
+      "sizes": {
+        "raw": 868,
+        "uglified": 269,
+        "compressed": 70.43441617431552
+      }
+    },
+    {
+      "relativePath": "tests/addon-test-support/@ember/test-helpers/index.js",
+      "sizes": {
+        "raw": 6591,
+        "uglified": 4241,
+        "compressed": 1110.454866153428
+      }
+    },
+    {
+      "relativePath": "tests/addon-test-support/@ember/test-helpers/resolver.js",
+      "sizes": {
+        "raw": 871,
+        "uglified": 198,
+        "compressed": 51.84391971194971
+      }
+    },
+    {
+      "relativePath": "tests/addon-test-support/@ember/test-helpers/settled.js",
+      "sizes": {
+        "raw": 6831,
+        "uglified": 1642,
+        "compressed": 429.93796043950215
+      }
+    },
+    {
+      "relativePath": "tests/addon-test-support/@ember/test-helpers/setup-application-context.js",
+      "sizes": {
+        "raw": 2384,
+        "uglified": 952,
+        "compressed": 249.2697553827077
+      }
+    },
+    {
+      "relativePath": "tests/addon-test-support/@ember/test-helpers/setup-context.js",
+      "sizes": {
+        "raw": 7289,
+        "uglified": 2254,
+        "compressed": 590.1828031855285
+      }
+    },
+    {
+      "relativePath": "tests/addon-test-support/@ember/test-helpers/setup-rendering-context.js",
+      "sizes": {
+        "raw": 8256,
+        "uglified": 2569,
+        "compressed": 672.6617663636302
+      }
+    },
+    {
+      "relativePath": "tests/addon-test-support/@ember/test-helpers/teardown-application-context.js",
+      "sizes": {
+        "raw": 301,
+        "uglified": 222,
+        "compressed": 58.128031192186036
+      }
+    },
+    {
+      "relativePath": "tests/addon-test-support/@ember/test-helpers/teardown-context.js",
+      "sizes": {
+        "raw": 1231,
+        "uglified": 523,
+        "compressed": 136.94126267348332
+      }
+    },
+    {
+      "relativePath": "tests/addon-test-support/@ember/test-helpers/teardown-rendering-context.js",
+      "sizes": {
+        "raw": 1050,
+        "uglified": 413,
+        "compressed": 108.13908505573349
+      }
+    },
+    {
+      "relativePath": "tests/addon-test-support/@ember/test-helpers/validate-error-handler.js",
+      "sizes": {
+        "raw": 1848,
+        "uglified": 507,
+        "compressed": 132.75185501999246
+      }
+    },
+    {
+      "relativePath": "tests/addon-test-support/@ember/test-helpers/wait-until.js",
+      "sizes": {
+        "raw": 2098,
+        "uglified": 515,
+        "compressed": 134.84655884673788
+      }
+    },
+    {
+      "relativePath": "tests/addon-test-support/ember-cli-test-loader/test-support/index.js",
+      "sizes": {
+        "raw": 2406,
+        "uglified": 1097,
+        "compressed": 287.23626224246885
+      }
+    },
+    {
+      "relativePath": "tests/addon-test-support/ember-qunit/adapter.js",
+      "sizes": {
+        "raw": 1882,
+        "uglified": 769,
+        "compressed": 201.3534053459057
+      }
+    },
+    {
+      "relativePath": "tests/addon-test-support/ember-qunit/index.js",
+      "sizes": {
+        "raw": 11126,
+        "uglified": 5126,
+        "compressed": 1342.1814769871426
+      }
+    },
+    {
+      "relativePath": "tests/addon-test-support/ember-qunit/legacy-2-x/module-for-component.js",
+      "sizes": {
+        "raw": 487,
+        "uglified": 282,
+        "compressed": 73.83830989277686
+      }
+    },
+    {
+      "relativePath": "tests/addon-test-support/ember-qunit/legacy-2-x/module-for-model.js",
+      "sizes": {
+        "raw": 471,
+        "uglified": 274,
+        "compressed": 71.74360606603142
+      }
+    },
+    {
+      "relativePath": "tests/addon-test-support/ember-qunit/legacy-2-x/module-for.js",
+      "sizes": {
+        "raw": 447,
+        "uglified": 260,
+        "compressed": 68.07787436922689
+      }
+    },
+    {
+      "relativePath": "tests/addon-test-support/ember-qunit/legacy-2-x/qunit-module.js",
+      "sizes": {
+        "raw": 1965,
+        "uglified": 778,
+        "compressed": 203.7099471509943
+      }
+    },
+    {
+      "relativePath": "tests/addon-test-support/ember-qunit/test-isolation-validation.js",
+      "sizes": {
+        "raw": 1737,
+        "uglified": 635,
+        "compressed": 166.26711624791952
+      }
+    },
+    {
+      "relativePath": "tests/addon-test-support/ember-qunit/test-loader.js",
+      "sizes": {
+        "raw": 1503,
+        "uglified": 687,
+        "compressed": 179.8826911217649
+      }
+    },
+    {
+      "relativePath": "tests/addon-test-support/ember-raf-scheduler/test-support/register-waiter.js",
+      "sizes": {
+        "raw": 560,
+        "uglified": 257,
+        "compressed": 67.29236043419735
+      }
+    },
+    {
+      "relativePath": "tests/addon-test-support/ember-test-helpers/has-ember-version.js",
+      "sizes": {
+        "raw": 373,
+        "uglified": 260,
+        "compressed": 68.07787436922689
+      }
+    },
+    {
+      "relativePath": "tests/addon-test-support/ember-test-helpers/index.js",
+      "sizes": {
+        "raw": 1394,
+        "uglified": 899,
+        "compressed": 235.39234253051916
+      }
+    },
+    {
+      "relativePath": "tests/addon-test-support/ember-test-helpers/legacy-0-6-x/-legacy-overrides.js",
+      "sizes": {
+        "raw": 2926,
+        "uglified": 1699,
+        "compressed": 444.86272520506344
+      }
+    },
+    {
+      "relativePath": "tests/addon-test-support/ember-test-helpers/legacy-0-6-x/abstract-test-module.js",
+      "sizes": {
+        "raw": 5538,
+        "uglified": 3324,
+        "compressed": 870.3494400127314
+      }
+    },
+    {
+      "relativePath": "tests/addon-test-support/ember-test-helpers/legacy-0-6-x/build-registry.js",
+      "sizes": {
+        "raw": 4796,
+        "uglified": 2072,
+        "compressed": 542.5282911270697
+      }
+    },
+    {
+      "relativePath": "tests/addon-test-support/ember-test-helpers/legacy-0-6-x/ext/rsvp.js",
+      "sizes": {
+        "raw": 1003,
+        "uglified": 382,
+        "compressed": 100.02210772709489
+      }
+    },
+    {
+      "relativePath": "tests/addon-test-support/ember-test-helpers/legacy-0-6-x/test-module-for-acceptance.js",
+      "sizes": {
+        "raw": 932,
+        "uglified": 595,
+        "compressed": 155.79359711419232
+      }
+    },
+    {
+      "relativePath": "tests/addon-test-support/ember-test-helpers/legacy-0-6-x/test-module-for-component.js",
+      "sizes": {
+        "raw": 10724,
+        "uglified": 5831,
+        "compressed": 1526.7772517190847
+      }
+    },
+    {
+      "relativePath": "tests/addon-test-support/ember-test-helpers/legacy-0-6-x/test-module-for-model.js",
+      "sizes": {
+        "raw": 2179,
+        "uglified": 1022,
+        "compressed": 267.5984138667303
+      }
+    },
+    {
+      "relativePath": "tests/addon-test-support/ember-test-helpers/legacy-0-6-x/test-module.js",
+      "sizes": {
+        "raw": 8367,
+        "uglified": 4646,
+        "compressed": 1216.499247382416
+      }
+    },
+    {
+      "relativePath": "tests/addon-test-support/ember-test-helpers/wait.js",
+      "sizes": {
+        "raw": 2458,
+        "uglified": 1090,
+        "compressed": 285.4033963940666
+      }
+    },
+    {
+      "relativePath": "tests/addon-test-support/qunit/index.js",
+      "sizes": {
+        "raw": 416,
+        "uglified": 227,
+        "compressed": 59.43722108390194
+      }
+    },
+    {
+      "relativePath": "vendor/ember-cli/test-support-suffix.js",
+      "sizes": {
+        "raw": 88,
+        "uglified": 69,
+        "compressed": 18.066820505679445
+      }
+    }
+  ]
+}

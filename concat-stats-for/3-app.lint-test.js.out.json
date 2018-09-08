@@ -1,0 +1,149 @@
+{
+  "outputFile": "/app.lint-test.js",
+  "files": [
+    {
+      "relativePath": "adapters/bike.lint-test.js",
+      "sizes": {
+        "raw": 136,
+        "uglified": 107,
+        "compressed": 14.954914337240757
+      }
+    },
+    {
+      "relativePath": "adapters/car.lint-test.js",
+      "sizes": {
+        "raw": 134,
+        "uglified": 105,
+        "compressed": 14.675383228133454
+      }
+    },
+    {
+      "relativePath": "app.lint-test.js",
+      "sizes": {
+        "raw": 116,
+        "uglified": 87,
+        "compressed": 12.15960324616772
+      }
+    },
+    {
+      "relativePath": "components/model-action/component.lint-test.js",
+      "sizes": {
+        "raw": 176,
+        "uglified": 147,
+        "compressed": 20.545536519386836
+      }
+    },
+    {
+      "relativePath": "components/page-sections/examples/burn-action/component.lint-test.js",
+      "sizes": {
+        "raw": 220,
+        "uglified": 191,
+        "compressed": 26.69522091974752
+      }
+    },
+    {
+      "relativePath": "components/page-sections/examples/post-action/component.lint-test.js",
+      "sizes": {
+        "raw": 220,
+        "uglified": 191,
+        "compressed": 26.69522091974752
+      }
+    },
+    {
+      "relativePath": "components/page-sections/examples/user-action/component.lint-test.js",
+      "sizes": {
+        "raw": 220,
+        "uglified": 191,
+        "compressed": 26.69522091974752
+      }
+    },
+    {
+      "relativePath": "components/scroll-to/component.lint-test.js",
+      "sizes": {
+        "raw": 170,
+        "uglified": 141,
+        "compressed": 19.706943192064923
+      }
+    },
+    {
+      "relativePath": "models/bike.lint-test.js",
+      "sizes": {
+        "raw": 132,
+        "uglified": 103,
+        "compressed": 14.395852119026149
+      }
+    },
+    {
+      "relativePath": "models/bridge.lint-test.js",
+      "sizes": {
+        "raw": 136,
+        "uglified": 107,
+        "compressed": 14.954914337240757
+      }
+    },
+    {
+      "relativePath": "models/car.lint-test.js",
+      "sizes": {
+        "raw": 130,
+        "uglified": 101,
+        "compressed": 14.116321009918845
+      }
+    },
+    {
+      "relativePath": "models/post.lint-test.js",
+      "sizes": {
+        "raw": 132,
+        "uglified": 103,
+        "compressed": 14.395852119026149
+      }
+    },
+    {
+      "relativePath": "models/user.lint-test.js",
+      "sizes": {
+        "raw": 132,
+        "uglified": 103,
+        "compressed": 14.395852119026149
+      }
+    },
+    {
+      "relativePath": "resolver.lint-test.js",
+      "sizes": {
+        "raw": 126,
+        "uglified": 97,
+        "compressed": 13.557258791704237
+      }
+    },
+    {
+      "relativePath": "router.lint-test.js",
+      "sizes": {
+        "raw": 122,
+        "uglified": 93,
+        "compressed": 12.998196573489631
+      }
+    },
+    {
+      "relativePath": "serializers/application.lint-test.js",
+      "sizes": {
+        "raw": 156,
+        "uglified": 127,
+        "compressed": 17.750225428313797
+      }
+    },
+    {
+      "relativePath": "serializers/bike.lint-test.js",
+      "sizes": {
+        "raw": 142,
+        "uglified": 113,
+        "compressed": 15.79350766456267
+      }
+    },
+    {
+      "relativePath": "services/server.lint-test.js",
+      "sizes": {
+        "raw": 140,
+        "uglified": 111,
+        "compressed": 15.513976555455365
+      }
+    }
+  ]
+}

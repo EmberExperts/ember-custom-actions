@@ -1,0 +1,19 @@
+{
+  "outputFile": "/assets/test-support.css",
+  "files": [
+    {
+      "relativePath": "vendor/qunit/qunit.css",
+      "sizes": {
+        "raw": 7875,
+        "compressed": 2122.1347980997625
+      }
+    },
+    {
+      "relativePath": "vendor/ember-qunit/test-container-styles.css",
+      "sizes": {
+        "raw": 544,
+        "compressed": 146.5957244655582
+      }
+    }
+  ]
+}

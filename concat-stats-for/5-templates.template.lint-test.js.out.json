@@ -1,0 +1,101 @@
+{
+  "outputFile": "/templates.template.lint-test.js",
+  "files": [
+    {
+      "relativePath": "dummy/components/model-action/template.template.lint-test.js",
+      "sizes": {
+        "raw": 195,
+        "uglified": 166,
+        "compressed": 19.620874219446925
+      }
+    },
+    {
+      "relativePath": "dummy/components/page-sections/documentation/template.template.lint-test.js",
+      "sizes": {
+        "raw": 225,
+        "uglified": 196,
+        "compressed": 23.166815343443353
+      }
+    },
+    {
+      "relativePath": "dummy/components/page-sections/examples/burn-action/template.template.lint-test.js",
+      "sizes": {
+        "raw": 239,
+        "uglified": 210,
+        "compressed": 24.821587867975023
+      }
+    },
+    {
+      "relativePath": "dummy/components/page-sections/examples/post-action/template.template.lint-test.js",
+      "sizes": {
+        "raw": 239,
+        "uglified": 210,
+        "compressed": 24.821587867975023
+      }
+    },
+    {
+      "relativePath": "dummy/components/page-sections/examples/template.template.lint-test.js",
+      "sizes": {
+        "raw": 215,
+        "uglified": 186,
+        "compressed": 21.98483496877788
+      }
+    },
+    {
+      "relativePath": "dummy/components/page-sections/examples/user-action/template.template.lint-test.js",
+      "sizes": {
+        "raw": 239,
+        "uglified": 210,
+        "compressed": 24.821587867975023
+      }
+    },
+    {
+      "relativePath": "dummy/components/page-sections/footer/template.template.lint-test.js",
+      "sizes": {
+        "raw": 211,
+        "uglified": 182,
+        "compressed": 21.512042818911684
+      }
+    },
+    {
+      "relativePath": "dummy/components/page-sections/getting-started/template.template.lint-test.js",
+      "sizes": {
+        "raw": 229,
+        "uglified": 200,
+        "compressed": 23.639607493309544
+      }
+    },
+    {
+      "relativePath": "dummy/components/page-sections/header/navbar/template.template.lint-test.js",
+      "sizes": {
+        "raw": 225,
+        "uglified": 196,
+        "compressed": 23.166815343443353
+      }
+    },
+    {
+      "relativePath": "dummy/components/page-sections/header/template.template.lint-test.js",
+      "sizes": {
+        "raw": 211,
+        "uglified": 182,
+        "compressed": 21.512042818911684
+      }
+    },
+    {
+      "relativePath": "dummy/components/scroll-to/template.template.lint-test.js",
+      "sizes": {
+        "raw": 189,
+        "uglified": 160,
+        "compressed": 18.911685994647637
+      }
+    },
+    {
+      "relativePath": "dummy/templates/application.template.lint-test.js",
+      "sizes": {
+        "raw": 173,
+        "uglified": 144,
+        "compressed": 17.02051739518287
+      }
+    }
+  ]
+}

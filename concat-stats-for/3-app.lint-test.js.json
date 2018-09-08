@@ -1,0 +1,23 @@
+{
+  "outputFile": "/app.lint-test.js",
+  "sizes": {
+    "adapters/bike.lint-test.js": 136,
+    "adapters/car.lint-test.js": 134,
+    "app.lint-test.js": 116,
+    "components/model-action/component.lint-test.js": 176,
+    "components/page-sections/examples/burn-action/component.lint-test.js": 220,
+    "components/page-sections/examples/post-action/component.lint-test.js": 220,
+    "components/page-sections/examples/user-action/component.lint-test.js": 220,
+    "components/scroll-to/component.lint-test.js": 170,
+    "models/bike.lint-test.js": 132,
+    "models/bridge.lint-test.js": 136,
+    "models/car.lint-test.js": 130,
+    "models/post.lint-test.js": 132,
+    "models/user.lint-test.js": 132,
+    "resolver.lint-test.js": 126,
+    "router.lint-test.js": 122,
+    "serializers/application.lint-test.js": 156,
+    "serializers/bike.lint-test.js": 142,
+    "services/server.lint-test.js": 140
+  }
+}

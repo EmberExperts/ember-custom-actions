@@ -1,0 +1,85 @@
+{
+  "outputFile": "/addon.lint-test.js",
+  "files": [
+    {
+      "relativePath": "addon/actions/action.lint-test.js",
+      "sizes": {
+        "raw": 150,
+        "uglified": 121,
+        "compressed": 22.454619124797407
+      }
+    },
+    {
+      "relativePath": "addon/actions/custom.lint-test.js",
+      "sizes": {
+        "raw": 150,
+        "uglified": 121,
+        "compressed": 22.454619124797407
+      }
+    },
+    {
+      "relativePath": "addon/actions/model.lint-test.js",
+      "sizes": {
+        "raw": 148,
+        "uglified": 119,
+        "compressed": 22.08346839546191
+      }
+    },
+    {
+      "relativePath": "addon/actions/resource.lint-test.js",
+      "sizes": {
+        "raw": 154,
+        "uglified": 125,
+        "compressed": 23.196920583468394
+      }
+    },
+    {
+      "relativePath": "addon/index.lint-test.js",
+      "sizes": {
+        "raw": 132,
+        "uglified": 103,
+        "compressed": 19.11426256077796
+      }
+    },
+    {
+      "relativePath": "addon/mixins/adapter.lint-test.js",
+      "sizes": {
+        "raw": 150,
+        "uglified": 121,
+        "compressed": 22.454619124797407
+      }
+    },
+    {
+      "relativePath": "addon/serializers/json-api.lint-test.js",
+      "sizes": {
+        "raw": 162,
+        "uglified": 133,
+        "compressed": 24.68152350081037
+      }
+    },
+    {
+      "relativePath": "addon/serializers/rest.lint-test.js",
+      "sizes": {
+        "raw": 154,
+        "uglified": 125,
+        "compressed": 23.196920583468394
+      }
+    },
+    {
+      "relativePath": "addon/utils/normalize-payload.lint-test.js",
+      "sizes": {
+        "raw": 168,
+        "uglified": 139,
+        "compressed": 25.794975688816855
+      }
+    },
+    {
+      "relativePath": "addon/utils/url-builder.lint-test.js",
+      "sizes": {
+        "raw": 156,
+        "uglified": 127,
+        "compressed": 23.56807131280389
+      }
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Ember Custom Actions</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+
+    <meta name="name" content="Ember Custom Actions">
+    <meta name="author" content="Exelord (Maciej Kwaśniak)">
+    <meta name="keywords" content="ember, custom actions, javascript, api, non-crud, custom, ember-data">
+    <meta name="description" content="Trigger custom API actions for Ember 2 applications and communicate with non-CRUD API servers">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="https://exelord.github.io/ember-custom-actions/">
+    <meta name="twitter:creator" content="@TheMacsour">
+    <meta name="twitter:title" content="Ember Custom Actions">
+    <meta name="twitter:description" content="Trigger custom API actions for Ember 2 applications and communicate with non-CRUD API servers">
+    <meta name="twitter:image" content="https://exelord.github.io/ember-custom-actions/images/og-image.jpg">
+
+    <meta property="og:title" content="Ember Custom Actions">
+    <meta property="og:url" content="https://exelord.github.io/ember-custom-actions/">
+    <meta property="og:image" content="https://exelord.github.io/ember-custom-actions/images/og-image.jpg">
+    <meta property="og:description" content="Trigger custom API actions for Ember 2 applications and communicate with non-CRUD API servers">
+
+
+    {{content-for "head"}}
+
+    <link integrity="" rel="stylesheet" href="{{rootURL}}assets/vendor.css">
+    <link integrity="" rel="stylesheet" href="{{rootURL}}assets/dummy.css">
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-92352716-1', 'auto');
+      ga('send', 'pageview');
+    </script>
+
+    <script>
+      ((window.gitter = {}).chat = {}).options = {
+        room: 'Exelord/ember-custom-actions',
+      };
+    </script>
+    <script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
+
+    {{content-for "head-footer"}}
+  </head>
+  <body>
+    {{content-for "body"}}
+
+    <script src="{{rootURL}}assets/vendor.js"></script>
+    <script src="{{rootURL}}assets/dummy.js"></script>
+
+    {{content-for "body-footer"}}
+  </body>
+</html>

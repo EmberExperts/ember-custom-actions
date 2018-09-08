@@ -1,0 +1,8 @@
+define("dummy/components/page-sections/examples/template", ["exports"], function (exports) {
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = Ember.HTMLBars.template({ "id": "8hXQAzKb", "block": "{\"symbols\":[],\"statements\":[[7,\"div\"],[11,\"id\",\"examples\"],[9],[0,\"\\n  \"],[7,\"div\"],[11,\"class\",\"container\"],[9],[0,\"\\n    \"],[7,\"div\"],[11,\"class\",\"section-heading\"],[9],[0,\"\\n      \"],[7,\"h1\"],[9],[0,\"Live Examples\"],[10],[0,\"\\n    \"],[10],[0,\"\\n\\n    \"],[7,\"div\"],[11,\"class\",\"table-responsive\"],[9],[0,\"\\n      \"],[7,\"table\"],[11,\"class\",\"table\"],[9],[0,\"\\n        \"],[7,\"thead\"],[9],[0,\"\\n          \"],[7,\"tr\"],[9],[0,\"\\n            \"],[7,\"th\"],[11,\"class\",\"col-sm-4\"],[9],[0,\"Custom Actions\"],[10],[0,\"\\n            \"],[7,\"th\"],[11,\"class\",\"col-sm-4\"],[9],[0,\"Requests\"],[10],[0,\"\\n            \"],[7,\"th\"],[11,\"class\",\"col-sm-4\"],[9],[0,\"Results\"],[10],[0,\"\\n          \"],[10],[0,\"\\n        \"],[10],[0,\"\\n        \"],[7,\"tbody\"],[9],[0,\"\\n          \"],[1,[21,\"page-sections/examples/post-action\"],false],[0,\"\\n          \"],[1,[21,\"page-sections/examples/burn-action\"],false],[0,\"\\n          \"],[1,[21,\"page-sections/examples/user-action\"],false],[0,\"\\n        \"],[10],[0,\"\\n      \"],[10],[0,\"\\n    \"],[10],[0,\"\\n  \"],[10],[0,\"\\n\"],[10]],\"hasEval\":false}", "meta": { "moduleName": "dummy/components/page-sections/examples/template.hbs" } });
+});

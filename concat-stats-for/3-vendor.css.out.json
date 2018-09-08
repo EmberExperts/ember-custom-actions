@@ -1,0 +1,19 @@
+{
+  "outputFile": "/assets/vendor.css",
+  "files": [
+    {
+      "relativePath": "vendor/ember-bootstrap/bs3.css",
+      "sizes": {
+        "raw": 1573,
+        "compressed": 367.29409958862897
+      }
+    },
+    {
+      "relativePath": "vendor/font-awesome/css/font-awesome.min.css",
+      "sizes": {
+        "raw": 31000,
+        "compressed": 7238.472401301652
+      }
+    }
+  ]
+}

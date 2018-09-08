@@ -1,0 +1,20 @@
+{{#bs-navbar type="default" fluid=false class="navbar-fixed-top" as |navbar|}}
+  <div class="navbar-header">
+    {{#navbar.toggle}}
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+    {{/navbar.toggle}}
+    {{#scroll-to class="navbar-brand" href="#header"}}
+      <img src="images/logo.png" alt="logo" height="50px">
+    {{/scroll-to}}
+  </div>
+  {{#navbar.content}}
+    {{#navbar.nav class="navbar-right lead" as |nav|}}
+      {{#nav.item}}{{scroll-to href="#examples" label="Examples"}}{{/nav.item}}
+      {{#nav.item}}{{scroll-to href="#documentation" label="Documentation"}}{{/nav.item}}
+      {{#nav.item}}<a href="https://github.com/Exelord/ember-custom-actions">Github {{fa-icon "github"}}</a>{{/nav.item}}
+    {{/navbar.nav}}
+  {{/navbar.content}}
+{{/bs-navbar}}

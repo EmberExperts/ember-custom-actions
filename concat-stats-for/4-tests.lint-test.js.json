@@ -1,0 +1,9 @@
+{
+  "outputFile": "/tests.lint-test.js",
+  "sizes": {
+    "test-helper.lint-test.js": 132,
+    "unit/models/bike-test.lint-test.js": 152,
+    "unit/models/car-test.lint-test.js": 150,
+    "unit/models/post-test.lint-test.js": 152
+  }
+}

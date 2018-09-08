@@ -1,0 +1,6 @@
+define("ember-bootstrap/templates/components/bs-popover/element", ["exports"], function (exports) {
+  "use strict";
+
+  exports.__esModule = true;
+  exports.default = Ember.HTMLBars.template({ "id": "mfr1RxBU", "block": "{\"symbols\":[\"&default\"],\"statements\":[[4,\"ember-popper\",null,[[\"id\",\"class\",\"ariaRole\",\"placement\",\"renderInPlace\",\"popperTarget\",\"modifiers\",\"popperContainer\",\"onCreate\",\"onUpdate\"],[[23,[\"id\"]],[23,[\"popperClass\"]],[23,[\"ariaRole\"]],[23,[\"placement\"]],[23,[\"renderInPlace\"]],[23,[\"popperTarget\"]],[23,[\"popperModifiers\"]],\"#ember-bootstrap-wormhole\",[27,\"action\",[[22,0,[]],\"updatePlacement\"],null],[27,\"action\",[[22,0,[]],\"updatePlacement\"],null]]],{\"statements\":[[0,\"  \"],[7,\"div\"],[12,\"class\",[21,\"arrowClass\"]],[9],[10],[0,\"\\n\"],[4,\"if\",[[23,[\"hasTitle\"]]],null,{\"statements\":[[0,\"    \"],[7,\"h3\"],[12,\"class\",[21,\"titleClass\"]],[9],[1,[21,\"title\"],false],[10],[0,\"\\n\"]],\"parameters\":[]},null],[0,\"  \"],[7,\"div\"],[12,\"class\",[21,\"contentClass\"]],[9],[14,1],[10],[0,\"\\n\"]],\"parameters\":[]},null]],\"hasEval\":false}", "meta": { "moduleName": "ember-bootstrap/templates/components/bs-popover/element.hbs" } });
+});

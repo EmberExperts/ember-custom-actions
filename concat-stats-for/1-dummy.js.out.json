@@ -1,0 +1,973 @@
+{
+  "outputFile": "/assets/dummy.js",
+  "files": [
+    {
+      "relativePath": "vendor/ember-cli/app-prefix.js",
+      "sizes": {
+        "raw": 16,
+        "uglified": 13,
+        "compressed": 1.5862465775167651
+      }
+    },
+    {
+      "relativePath": "dummy/adapters/bike.js",
+      "sizes": {
+        "raw": 321,
+        "uglified": 218,
+        "compressed": 26.600134915281142
+      }
+    },
+    {
+      "relativePath": "dummy/adapters/car.js",
+      "sizes": {
+        "raw": 1856,
+        "uglified": 886,
+        "compressed": 108.1088052061426
+      }
+    },
+    {
+      "relativePath": "dummy/app.js",
+      "sizes": {
+        "raw": 564,
+        "uglified": 366,
+        "compressed": 44.658942105472
+      }
+    },
+    {
+      "relativePath": "dummy/components/bs-accordion.js",
+      "sizes": {
+        "raw": 360,
+        "uglified": 255,
+        "compressed": 31.114836712828858
+      }
+    },
+    {
+      "relativePath": "dummy/components/bs-accordion/item.js",
+      "sizes": {
+        "raw": 356,
+        "uglified": 265,
+        "compressed": 32.33502638784175
+      }
+    },
+    {
+      "relativePath": "dummy/components/bs-accordion/item/body.js",
+      "sizes": {
+        "raw": 366,
+        "uglified": 275,
+        "compressed": 33.55521606285465
+      }
+    },
+    {
+      "relativePath": "dummy/components/bs-accordion/item/title.js",
+      "sizes": {
+        "raw": 370,
+        "uglified": 277,
+        "compressed": 33.79925399785723
+      }
+    },
+    {
+      "relativePath": "dummy/components/bs-alert.js",
+      "sizes": {
+        "raw": 344,
+        "uglified": 247,
+        "compressed": 30.138684972818538
+      }
+    },
+    {
+      "relativePath": "dummy/components/bs-button-group.js",
+      "sizes": {
+        "raw": 370,
+        "uglified": 261,
+        "compressed": 31.846950517836593
+      }
+    },
+    {
+      "relativePath": "dummy/components/bs-button-group/button.js",
+      "sizes": {
+        "raw": 370,
+        "uglified": 275,
+        "compressed": 33.55521606285465
+      }
+    },
+    {
+      "relativePath": "dummy/components/bs-button.js",
+      "sizes": {
+        "raw": 348,
+        "uglified": 249,
+        "compressed": 30.38272290782112
+      }
+    },
+    {
+      "relativePath": "dummy/components/bs-carousel.js",
+      "sizes": {
+        "raw": 356,
+        "uglified": 253,
+        "compressed": 30.870798777826277
+      }
+    },
+    {
+      "relativePath": "dummy/components/bs-carousel/slide.js",
+      "sizes": {
+        "raw": 358,
+        "uglified": 265,
+        "compressed": 32.33502638784175
+      }
+    },
+    {
+      "relativePath": "dummy/components/bs-collapse.js",
+      "sizes": {
+        "raw": 356,
+        "uglified": 253,
+        "compressed": 30.870798777826277
+      }
+    },
+    {
+      "relativePath": "dummy/components/bs-dropdown.js",
+      "sizes": {
+        "raw": 356,
+        "uglified": 253,
+        "compressed": 30.870798777826277
+      }
+    },
+    {
+      "relativePath": "dummy/components/bs-dropdown/button.js",
+      "sizes": {
+        "raw": 362,
+        "uglified": 267,
+        "compressed": 32.57906432284433
+      }
+    },
+    {
+      "relativePath": "dummy/components/bs-dropdown/menu.js",
+      "sizes": {
+        "raw": 354,
+        "uglified": 263,
+        "compressed": 32.09098845283917
+      }
+    },
+    {
+      "relativePath": "dummy/components/bs-dropdown/menu/divider.js",
+      "sizes": {
+        "raw": 376,
+        "uglified": 279,
+        "compressed": 34.0432919328598
+      }
+    },
+    {
+      "relativePath": "dummy/components/bs-dropdown/menu/item.js",
+      "sizes": {
+        "raw": 364,
+        "uglified": 273,
+        "compressed": 33.311178127852074
+      }
+    },
+    {
+      "relativePath": "dummy/components/bs-dropdown/menu/link-to.js",
+      "sizes": {
+        "raw": 374,
+        "uglified": 279,
+        "compressed": 34.0432919328598
+      }
+    },
+    {
+      "relativePath": "dummy/components/bs-dropdown/toggle.js",
+      "sizes": {
+        "raw": 362,
+        "uglified": 267,
+        "compressed": 32.57906432284433
+      }
+    },
+    {
+      "relativePath": "dummy/components/bs-form.js",
+      "sizes": {
+        "raw": 340,
+        "uglified": 245,
+        "compressed": 29.894647037815957
+      }
+    },
+    {
+      "relativePath": "dummy/components/bs-form/element.js",
+      "sizes": {
+        "raw": 358,
+        "uglified": 261,
+        "compressed": 31.846950517836593
+      }
+    },
+    {
+      "relativePath": "dummy/components/bs-form/element/control.js",
+      "sizes": {
+        "raw": 374,
+        "uglified": 277,
+        "compressed": 33.79925399785723
+      }
+    },
+    {
+      "relativePath": "dummy/components/bs-form/element/control/checkbox.js",
+      "sizes": {
+        "raw": 394,
+        "uglified": 295,
+        "compressed": 35.99559541288044
+      }
+    },
+    {
+      "relativePath": "dummy/components/bs-form/element/control/input.js",
+      "sizes": {
+        "raw": 382,
+        "uglified": 289,
+        "compressed": 35.263481607872706
+      }
+    },
+    {
+      "relativePath": "dummy/components/bs-form/element/control/textarea.js",
+      "sizes": {
+        "raw": 394,
+        "uglified": 295,
+        "compressed": 35.99559541288044
+      }
+    },
+    {
+      "relativePath": "dummy/components/bs-form/element/errors.js",
+      "sizes": {
+        "raw": 370,
+        "uglified": 275,
+        "compressed": 33.55521606285465
+      }
+    },
+    {
+      "relativePath": "dummy/components/bs-form/element/feedback-icon.js",
+      "sizes": {
+        "raw": 396,
+        "uglified": 289,
+        "compressed": 35.263481607872706
+      }
+    },
+    {
+      "relativePath": "dummy/components/bs-form/element/help-text.js",
+      "sizes": {
+        "raw": 380,
+        "uglified": 281,
+        "compressed": 34.28732986786238
+      }
+    },
+    {
+      "relativePath": "dummy/components/bs-form/element/label.js",
+      "sizes": {
+        "raw": 366,
+        "uglified": 273,
+        "compressed": 33.311178127852074
+      }
+    },
+    {
+      "relativePath": "dummy/components/bs-form/element/layout/horizontal.js",
+      "sizes": {
+        "raw": 400,
+        "uglified": 297,
+        "compressed": 36.23963334788302
+      }
+    },
+    {
+      "relativePath": "dummy/components/bs-form/element/layout/horizontal/checkbox.js",
+      "sizes": {
+        "raw": 414,
+        "uglified": 315,
+        "compressed": 38.435974762906234
+      }
+    },
+    {
+      "relativePath": "dummy/components/bs-form/element/layout/inline.js",
+      "sizes": {
+        "raw": 384,
+        "uglified": 289,
+        "compressed": 35.263481607872706
+      }
+    },
+    {
+      "relativePath": "dummy/components/bs-form/element/layout/inline/checkbox.js",
+      "sizes": {
+        "raw": 406,
+        "uglified": 307,
+        "compressed": 37.45982302289592
+      }
+    },
+    {
+      "relativePath": "dummy/components/bs-form/element/layout/vertical.js",
+      "sizes": {
+        "raw": 392,
+        "uglified": 293,
+        "compressed": 35.75155747787787
+      }
+    },
+    {
+      "relativePath": "dummy/components/bs-form/element/layout/vertical/checkbox.js",
+      "sizes": {
+        "raw": 410,
+        "uglified": 311,
+        "compressed": 37.94789889290108
+      }
+    },
+    {
+      "relativePath": "dummy/components/bs-form/group.js",
+      "sizes": {
+        "raw": 350,
+        "uglified": 257,
+        "compressed": 31.35887464783144
+      }
+    },
+    {
+      "relativePath": "dummy/components/bs-modal-simple.js",
+      "sizes": {
+        "raw": 370,
+        "uglified": 261,
+        "compressed": 31.846950517836593
+      }
+    },
+    {
+      "relativePath": "dummy/components/bs-modal.js",
+      "sizes": {
+        "raw": 344,
+        "uglified": 247,
+        "compressed": 30.138684972818538
+      }
+    },
+    {
+      "relativePath": "dummy/components/bs-modal/body.js",
+      "sizes": {
+        "raw": 348,
+        "uglified": 257,
+        "compressed": 31.35887464783144
+      }
+    },
+    {
+      "relativePath": "dummy/components/bs-modal/dialog.js",
+      "sizes": {
+        "raw": 356,
+        "uglified": 261,
+        "compressed": 31.846950517836593
+      }
+    },
+    {
+      "relativePath": "dummy/components/bs-modal/footer.js",
+      "sizes": {
+        "raw": 356,
+        "uglified": 261,
+        "compressed": 31.846950517836593
+      }
+    },
+    {
+      "relativePath": "dummy/components/bs-modal/header.js",
+      "sizes": {
+        "raw": 356,
+        "uglified": 261,
+        "compressed": 31.846950517836593
+      }
+    },
+    {
+      "relativePath": "dummy/components/bs-modal/header/close.js",
+      "sizes": {
+        "raw": 366,
+        "uglified": 273,
+        "compressed": 33.311178127852074
+      }
+    },
+    {
+      "relativePath": "dummy/components/bs-modal/header/title.js",
+      "sizes": {
+        "raw": 366,
+        "uglified": 273,
+        "compressed": 33.311178127852074
+      }
+    },
+    {
+      "relativePath": "dummy/components/bs-nav.js",
+      "sizes": {
+        "raw": 336,
+        "uglified": 243,
+        "compressed": 29.650609102813377
+      }
+    },
+    {
+      "relativePath": "dummy/components/bs-nav/item.js",
+      "sizes": {
+        "raw": 344,
+        "uglified": 253,
+        "compressed": 30.870798777826277
+      }
+    },
+    {
+      "relativePath": "dummy/components/bs-nav/link-to.js",
+      "sizes": {
+        "raw": 354,
+        "uglified": 259,
+        "compressed": 31.602912582834012
+      }
+    },
+    {
+      "relativePath": "dummy/components/bs-navbar.js",
+      "sizes": {
+        "raw": 348,
+        "uglified": 249,
+        "compressed": 30.38272290782112
+      }
+    },
+    {
+      "relativePath": "dummy/components/bs-navbar/content.js",
+      "sizes": {
+        "raw": 362,
+        "uglified": 265,
+        "compressed": 32.33502638784175
+      }
+    },
+    {
+      "relativePath": "dummy/components/bs-navbar/link-to.js",
+      "sizes": {
+        "raw": 360,
+        "uglified": 265,
+        "compressed": 32.33502638784175
+      }
+    },
+    {
+      "relativePath": "dummy/components/bs-navbar/nav.js",
+      "sizes": {
+        "raw": 346,
+        "uglified": 257,
+        "compressed": 31.35887464783144
+      }
+    },
+    {
+      "relativePath": "dummy/components/bs-navbar/toggle.js",
+      "sizes": {
+        "raw": 358,
+        "uglified": 263,
+        "compressed": 32.09098845283917
+      }
+    },
+    {
+      "relativePath": "dummy/components/bs-popover.js",
+      "sizes": {
+        "raw": 352,
+        "uglified": 251,
+        "compressed": 30.626760842823696
+      }
+    },
+    {
+      "relativePath": "dummy/components/bs-popover/element.js",
+      "sizes": {
+        "raw": 364,
+        "uglified": 267,
+        "compressed": 32.57906432284433
+      }
+    },
+    {
+      "relativePath": "dummy/components/bs-progress.js",
+      "sizes": {
+        "raw": 356,
+        "uglified": 253,
+        "compressed": 30.870798777826277
+      }
+    },
+    {
+      "relativePath": "dummy/components/bs-progress/bar.js",
+      "sizes": {
+        "raw": 350,
+        "uglified": 261,
+        "compressed": 31.846950517836593
+      }
+    },
+    {
+      "relativePath": "dummy/components/bs-tab.js",
+      "sizes": {
+        "raw": 336,
+        "uglified": 243,
+        "compressed": 29.650609102813377
+      }
+    },
+    {
+      "relativePath": "dummy/components/bs-tab/pane.js",
+      "sizes": {
+        "raw": 344,
+        "uglified": 253,
+        "compressed": 30.870798777826277
+      }
+    },
+    {
+      "relativePath": "dummy/components/bs-tooltip.js",
+      "sizes": {
+        "raw": 352,
+        "uglified": 251,
+        "compressed": 30.626760842823696
+      }
+    },
+    {
+      "relativePath": "dummy/components/bs-tooltip/element.js",
+      "sizes": {
+        "raw": 364,
+        "uglified": 267,
+        "compressed": 32.57906432284433
+      }
+    },
+    {
+      "relativePath": "dummy/components/ember-initials/adorable/component.js",
+      "sizes": {
+        "raw": 370,
+        "uglified": 271,
+        "compressed": 33.06714019284949
+      }
+    },
+    {
+      "relativePath": "dummy/components/ember-initials/component.js",
+      "sizes": {
+        "raw": 361,
+        "uglified": 262,
+        "compressed": 31.968969485337883
+      }
+    },
+    {
+      "relativePath": "dummy/components/ember-initials/gravatar/component.js",
+      "sizes": {
+        "raw": 370,
+        "uglified": 271,
+        "compressed": 33.06714019284949
+      }
+    },
+    {
+      "relativePath": "dummy/components/ember-initials/image/component.js",
+      "sizes": {
+        "raw": 358,
+        "uglified": 265,
+        "compressed": 32.33502638784175
+      }
+    },
+    {
+      "relativePath": "dummy/components/ember-initials/initials/component.js",
+      "sizes": {
+        "raw": 370,
+        "uglified": 271,
+        "compressed": 33.06714019284949
+      }
+    },
+    {
+      "relativePath": "dummy/components/ember-popper-targeting-parent.js",
+      "sizes": {
+        "raw": 421,
+        "uglified": 286,
+        "compressed": 34.897424705368834
+      }
+    },
+    {
+      "relativePath": "dummy/components/ember-popper.js",
+      "sizes": {
+        "raw": 357,
+        "uglified": 252,
+        "compressed": 30.748779810324987
+      }
+    },
+    {
+      "relativePath": "dummy/components/fa-icon.js",
+      "sizes": {
+        "raw": 343,
+        "uglified": 248,
+        "compressed": 30.26070394031983
+      }
+    },
+    {
+      "relativePath": "dummy/components/fa-list.js",
+      "sizes": {
+        "raw": 343,
+        "uglified": 248,
+        "compressed": 30.26070394031983
+      }
+    },
+    {
+      "relativePath": "dummy/components/fa-stack.js",
+      "sizes": {
+        "raw": 347,
+        "uglified": 250,
+        "compressed": 30.50474187532241
+      }
+    },
+    {
+      "relativePath": "dummy/components/model-action/component.js",
+      "sizes": {
+        "raw": 483,
+        "uglified": 375,
+        "compressed": 45.757112812983614
+      }
+    },
+    {
+      "relativePath": "dummy/components/model-action/template.js",
+      "sizes": {
+        "raw": 431,
+        "uglified": 352,
+        "compressed": 42.95067656045395
+      }
+    },
+    {
+      "relativePath": "dummy/components/page-sections/documentation/template.js",
+      "sizes": {
+        "raw": 1262,
+        "uglified": 1109,
+        "compressed": 135.31903495893022
+      }
+    },
+    {
+      "relativePath": "dummy/components/page-sections/examples/burn-action/component.js",
+      "sizes": {
+        "raw": 1239,
+        "uglified": 825,
+        "compressed": 100.66564818856395
+      }
+    },
+    {
+      "relativePath": "dummy/components/page-sections/examples/burn-action/template.js",
+      "sizes": {
+        "raw": 1626,
+        "uglified": 1415,
+        "compressed": 172.65683901432482
+      }
+    },
+    {
+      "relativePath": "dummy/components/page-sections/examples/post-action/component.js",
+      "sizes": {
+        "raw": 1628,
+        "uglified": 1013,
+        "compressed": 123.6052140788064
+      }
+    },
+    {
+      "relativePath": "dummy/components/page-sections/examples/post-action/template.js",
+      "sizes": {
+        "raw": 1779,
+        "uglified": 1548,
+        "compressed": 188.88536169199634
+      }
+    },
+    {
+      "relativePath": "dummy/components/page-sections/examples/template.js",
+      "sizes": {
+        "raw": 1547,
+        "uglified": 1360,
+        "compressed": 165.9457958017539
+      }
+    },
+    {
+      "relativePath": "dummy/components/page-sections/examples/user-action/component.js",
+      "sizes": {
+        "raw": 1612,
+        "uglified": 1007,
+        "compressed": 122.87310027379867
+      }
+    },
+    {
+      "relativePath": "dummy/components/page-sections/examples/user-action/template.js",
+      "sizes": {
+        "raw": 1785,
+        "uglified": 1550,
+        "compressed": 189.12939962699895
+      }
+    },
+    {
+      "relativePath": "dummy/components/page-sections/footer/template.js",
+      "sizes": {
+        "raw": 2223,
+        "uglified": 1942,
+        "compressed": 236.96083488750446
+      }
+    },
+    {
+      "relativePath": "dummy/components/page-sections/getting-started/template.js",
+      "sizes": {
+        "raw": 7069,
+        "uglified": 6295,
+        "compressed": 768.1094004206183
+      }
+    },
+    {
+      "relativePath": "dummy/components/page-sections/header/navbar/template.js",
+      "sizes": {
+        "raw": 2165,
+        "uglified": 1898,
+        "compressed": 231.5920003174477
+      }
+    },
+    {
+      "relativePath": "dummy/components/page-sections/header/template.js",
+      "sizes": {
+        "raw": 1242,
+        "uglified": 1087,
+        "compressed": 132.63461767390183
+      }
+    },
+    {
+      "relativePath": "dummy/components/scroll-to/component.js",
+      "sizes": {
+        "raw": 557,
+        "uglified": 361,
+        "compressed": 44.048847267965556
+      }
+    },
+    {
+      "relativePath": "dummy/components/scroll-to/template.js",
+      "sizes": {
+        "raw": 570,
+        "uglified": 473,
+        "compressed": 57.71497162810999
+      }
+    },
+    {
+      "relativePath": "dummy/helpers/app-version.js",
+      "sizes": {
+        "raw": 1152,
+        "uglified": 536,
+        "compressed": 65.40216658069124
+      }
+    },
+    {
+      "relativePath": "dummy/helpers/bs-contains.js",
+      "sizes": {
+        "raw": 493,
+        "uglified": 337,
+        "compressed": 41.12039204793461
+      }
+    },
+    {
+      "relativePath": "dummy/helpers/bs-eq.js",
+      "sizes": {
+        "raw": 447,
+        "uglified": 309,
+        "compressed": 37.7038609578985
+      }
+    },
+    {
+      "relativePath": "dummy/helpers/cancel-all.js",
+      "sizes": {
+        "raw": 348,
+        "uglified": 247,
+        "compressed": 30.138684972818538
+      }
+    },
+    {
+      "relativePath": "dummy/helpers/perform.js",
+      "sizes": {
+        "raw": 338,
+        "uglified": 241,
+        "compressed": 29.4065711678108
+      }
+    },
+    {
+      "relativePath": "dummy/helpers/pluralize.js",
+      "sizes": {
+        "raw": 252,
+        "uglified": 183,
+        "compressed": 22.329471052736
+      }
+    },
+    {
+      "relativePath": "dummy/helpers/singularize.js",
+      "sizes": {
+        "raw": 260,
+        "uglified": 187,
+        "compressed": 22.817546922741162
+      }
+    },
+    {
+      "relativePath": "dummy/helpers/task.js",
+      "sizes": {
+        "raw": 326,
+        "uglified": 235,
+        "compressed": 28.674457362803064
+      }
+    },
+    {
+      "relativePath": "dummy/initializers/app-version.js",
+      "sizes": {
+        "raw": 566,
+        "uglified": 348,
+        "compressed": 42.46260069044879
+      }
+    },
+    {
+      "relativePath": "dummy/initializers/container-debug-adapter.js",
+      "sizes": {
+        "raw": 587,
+        "uglified": 425,
+        "compressed": 51.8580611880481
+      }
+    },
+    {
+      "relativePath": "dummy/initializers/ember-concurrency.js",
+      "sizes": {
+        "raw": 386,
+        "uglified": 271,
+        "compressed": 33.06714019284949
+      }
+    },
+    {
+      "relativePath": "dummy/initializers/ember-data.js",
+      "sizes": {
+        "raw": 317,
+        "uglified": 222,
+        "compressed": 27.0882107852863
+      }
+    },
+    {
+      "relativePath": "dummy/initializers/export-application-global.js",
+      "sizes": {
+        "raw": 1371,
+        "uglified": 678,
+        "compressed": 82.72885996587436
+      }
+    },
+    {
+      "relativePath": "dummy/initializers/load-bootstrap-config.js",
+      "sizes": {
+        "raw": 509,
+        "uglified": 325,
+        "compressed": 39.65616443791913
+      }
+    },
+    {
+      "relativePath": "dummy/instance-initializers/ember-data.js",
+      "sizes": {
+        "raw": 337,
+        "uglified": 227,
+        "compressed": 27.698305622792745
+      }
+    },
+    {
+      "relativePath": "dummy/models/bike.js",
+      "sizes": {
+        "raw": 438,
+        "uglified": 303,
+        "compressed": 36.97174715289076
+      }
+    },
+    {
+      "relativePath": "dummy/models/bridge.js",
+      "sizes": {
+        "raw": 416,
+        "uglified": 286,
+        "compressed": 34.897424705368834
+      }
+    },
+    {
+      "relativePath": "dummy/models/car.js",
+      "sizes": {
+        "raw": 639,
+        "uglified": 404,
+        "compressed": 49.295662870521014
+      }
+    },
+    {
+      "relativePath": "dummy/models/post.js",
+      "sizes": {
+        "raw": 760,
+        "uglified": 515,
+        "compressed": 62.83976826316416
+      }
+    },
+    {
+      "relativePath": "dummy/models/user.js",
+      "sizes": {
+        "raw": 439,
+        "uglified": 306,
+        "compressed": 37.33780405539463
+      }
+    },
+    {
+      "relativePath": "dummy/resolver.js",
+      "sizes": {
+        "raw": 228,
+        "uglified": 151,
+        "compressed": 18.424864092694733
+      }
+    },
+    {
+      "relativePath": "dummy/router.js",
+      "sizes": {
+        "raw": 386,
+        "uglified": 258,
+        "compressed": 31.48089361533273
+      }
+    },
+    {
+      "relativePath": "dummy/serializers/application.js",
+      "sizes": {
+        "raw": 260,
+        "uglified": 191,
+        "compressed": 23.30562279274632
+      }
+    },
+    {
+      "relativePath": "dummy/serializers/bike.js",
+      "sizes": {
+        "raw": 250,
+        "uglified": 181,
+        "compressed": 22.085433117733423
+      }
+    },
+    {
+      "relativePath": "dummy/services/ajax.js",
+      "sizes": {
+        "raw": 321,
+        "uglified": 230,
+        "compressed": 28.064362525296616
+      }
+    },
+    {
+      "relativePath": "dummy/services/server.js",
+      "sizes": {
+        "raw": 359,
+        "uglified": 251,
+        "compressed": 30.626760842823696
+      }
+    },
+    {
+      "relativePath": "dummy/templates/application.js",
+      "sizes": {
+        "raw": 633,
+        "uglified": 540,
+        "compressed": 65.8902424506964
+      }
+    },
+    {
+      "relativePath": "dummy/templates/components/ember-popper-targeting-parent.js",
+      "sizes": {
+        "raw": 441,
+        "uglified": 306,
+        "compressed": 37.33780405539463
+      }
+    },
+    {
+      "relativePath": "dummy/templates/components/ember-popper.js",
+      "sizes": {
+        "raw": 377,
+        "uglified": 272,
+        "compressed": 33.18915916035078
+      }
+    },
+    {
+      "relativePath": "vendor/ember-cli/app-suffix.js",
+      "sizes": {
+        "raw": 1,
+        "uglified": 0,
+        "compressed": 0
+      }
+    },
+    {
+      "relativePath": "vendor/ember-cli/app-config.js",
+      "sizes": {
+        "raw": 513,
+        "uglified": 336,
+        "compressed": 40.99837308043332
+      }
+    },
+    {
+      "relativePath": "vendor/ember-cli/app-boot.js",
+      "sizes": {
+        "raw": 165,
+        "uglified": 106,
+        "compressed": 12.9340105551367
+      }
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "outputFile": "/templates.template.lint-test.js",
+  "sizes": {
+    "dummy/components/model-action/template.template.lint-test.js": 195,
+    "dummy/components/page-sections/documentation/template.template.lint-test.js": 225,
+    "dummy/components/page-sections/examples/burn-action/template.template.lint-test.js": 239,
+    "dummy/components/page-sections/examples/post-action/template.template.lint-test.js": 239,
+    "dummy/components/page-sections/examples/template.template.lint-test.js": 215,
+    "dummy/components/page-sections/examples/user-action/template.template.lint-test.js": 239,
+    "dummy/components/page-sections/footer/template.template.lint-test.js": 211,
+    "dummy/components/page-sections/getting-started/template.template.lint-test.js": 229,
+    "dummy/components/page-sections/header/navbar/template.template.lint-test.js": 225,
+    "dummy/components/page-sections/header/template.template.lint-test.js": 211,
+    "dummy/components/scroll-to/template.template.lint-test.js": 189,
+    "dummy/templates/application.template.lint-test.js": 173
+  }
+}

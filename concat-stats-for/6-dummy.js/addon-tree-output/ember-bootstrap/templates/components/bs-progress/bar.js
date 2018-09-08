@@ -1,0 +1,6 @@
+define("ember-bootstrap/templates/components/bs-progress/bar", ["exports"], function (exports) {
+  "use strict";
+
+  exports.__esModule = true;
+  exports.default = Ember.HTMLBars.template({ "id": "OnuU4eqw", "block": "{\"symbols\":[\"&default\"],\"statements\":[[4,\"if\",[[23,[\"showLabel\"]]],null,{\"statements\":[[4,\"if\",[[24,1]],null,{\"statements\":[[0,\"    \"],[14,1,[[23,[\"percentRounded\"]]]],[0,\"\\n\"]],\"parameters\":[]},{\"statements\":[[0,\"    \"],[1,[21,\"percentRounded\"],false],[0,\"%\\n\"]],\"parameters\":[]}]],\"parameters\":[]},{\"statements\":[[4,\"if\",[[24,1]],null,{\"statements\":[[0,\"    \"],[7,\"span\"],[11,\"class\",\"sr-only\"],[9],[14,1,[[23,[\"percentRounded\"]]]],[10],[0,\"\\n\"]],\"parameters\":[]},{\"statements\":[[0,\"    \"],[7,\"span\"],[11,\"class\",\"sr-only\"],[9],[1,[21,\"percentRounded\"],false],[0,\"%\"],[10],[0,\"\\n\"]],\"parameters\":[]}],[0,\"\\n\"]],\"parameters\":[]}]],\"hasEval\":false}", "meta": { "moduleName": "ember-bootstrap/templates/components/bs-progress/bar.hbs" } });
+});

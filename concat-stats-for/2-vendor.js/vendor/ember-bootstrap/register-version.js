@@ -1,0 +1,1 @@
+Ember.libraries.register('Ember Bootstrap', '2.1.0');

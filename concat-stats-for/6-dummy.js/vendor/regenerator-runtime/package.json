@@ -1,0 +1,50 @@
+{
+  "_args": [
+    [
+      "regenerator-runtime@0.9.6",
+      "/Users/maciej/Developer/ember-custom-actions"
+    ]
+  ],
+  "_development": true,
+  "_from": "regenerator-runtime@0.9.6",
+  "_id": "regenerator-runtime@0.9.6",
+  "_inBundle": false,
+  "_integrity": "sha1-0z65XQ0gAaS+OWWXB8UbDLcc4Ck=",
+  "_location": "/ember-maybe-import-regenerator/regenerator-runtime",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "regenerator-runtime@0.9.6",
+    "name": "regenerator-runtime",
+    "escapedName": "regenerator-runtime",
+    "rawSpec": "0.9.6",
+    "saveSpec": null,
+    "fetchSpec": "0.9.6"
+  },
+  "_requiredBy": [
+    "/ember-maybe-import-regenerator"
+  ],
+  "_resolved": "https://registry.npmjs.org/regenerator-runtime/-/regenerator-runtime-0.9.6.tgz",
+  "_spec": "0.9.6",
+  "_where": "/Users/maciej/Developer/ember-custom-actions",
+  "author": {
+    "name": "Ben Newman",
+    "email": "bn@cs.stanford.edu"
+  },
+  "description": "Runtime for Regenerator-compiled generator and async functions.",
+  "keywords": [
+    "regenerator",
+    "runtime",
+    "generator",
+    "async"
+  ],
+  "license": "MIT",
+  "main": "runtime-module.js",
+  "name": "regenerator-runtime",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/facebook/regenerator/tree/master/packages/regenerator-runtime"
+  },
+  "version": "0.9.6"
+}

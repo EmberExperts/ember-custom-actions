@@ -1,0 +1,7 @@
+{
+  "outputFile": "/assets/vendor.css",
+  "sizes": {
+    "vendor/ember-bootstrap/bs3.css": 1573,
+    "vendor/font-awesome/css/font-awesome.min.css": 31000
+  }
+}

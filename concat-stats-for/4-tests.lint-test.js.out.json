@@ -1,0 +1,37 @@
+{
+  "outputFile": "/tests.lint-test.js",
+  "files": [
+    {
+      "relativePath": "test-helper.lint-test.js",
+      "sizes": {
+        "raw": 132,
+        "uglified": 103,
+        "compressed": 31.995744680851065
+      }
+    },
+    {
+      "relativePath": "unit/models/bike-test.lint-test.js",
+      "sizes": {
+        "raw": 152,
+        "uglified": 123,
+        "compressed": 38.208510638297874
+      }
+    },
+    {
+      "relativePath": "unit/models/car-test.lint-test.js",
+      "sizes": {
+        "raw": 150,
+        "uglified": 121,
+        "compressed": 37.58723404255319
+      }
+    },
+    {
+      "relativePath": "unit/models/post-test.lint-test.js",
+      "sizes": {
+        "raw": 152,
+        "uglified": 123,
+        "compressed": 38.208510638297874
+      }
+    }
+  ]
+}
