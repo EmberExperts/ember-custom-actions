@@ -1,5 +1,5 @@
 <td>
-  <a class="btn btn-lg btn-outline btn-ember {{if post.published 'disabled'}}" {{action 'publish' post}}>Publish post</a>
+  <a role="button" class="btn btn-lg btn-outline btn-ember {{if post.published "disabled"}}" {{action "publish" post}}>Publish post</a>
 </td>
 <td>
   {{#if pending}}
@@ -11,7 +11,7 @@
 </td>
 <td>
   {{#if post.published}}
-    <div class="{{if post.published 'show-result'}}">
+    <div class={{if post.published "show-result"}}>
       <span class="text-muted">Published:</span> <span class="h4 text-success">{{post.published}}</span>
     </div>
   {{else}}
