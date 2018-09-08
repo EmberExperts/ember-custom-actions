@@ -1,5 +1,20 @@
 # Change Log
 
+## [v3.0.0](https://github.com/Exelord/ember-custom-actions/tree/v3.0.0) (2018-09-08)
+[Full Changelog](https://github.com/Exelord/ember-custom-actions/compare/v2.1.0...v3.0.0)
+
+**Implemented enhancements:**
+
+- Upgrade to Ember 3.4 [\#51](https://github.com/Exelord/ember-custom-actions/pull/51) ([Exelord](https://github.com/Exelord))
+- Drop support for Ember 2.12 [\#50](https://github.com/Exelord/ember-custom-actions/pull/50) ([Exelord](https://github.com/Exelord))
+- Update dependencies [\#47](https://github.com/Exelord/ember-custom-actions/pull/47) ([Exelord](https://github.com/Exelord))
+
+**Closed issues:**
+
+- \[Feature request\] Make it possible to add an extra 'callback' function to custom actions [\#46](https://github.com/Exelord/ember-custom-actions/issues/46)
+- urlForCustomAction not working. [\#45](https://github.com/Exelord/ember-custom-actions/issues/45)
+- Pass payload through serializer? [\#41](https://github.com/Exelord/ember-custom-actions/issues/41)
+
 ## [v2.1.0](https://github.com/Exelord/ember-custom-actions/tree/v2.1.0) (2018-05-01)
 [Full Changelog](https://github.com/Exelord/ember-custom-actions/compare/v2.0.1...v2.1.0)
 
