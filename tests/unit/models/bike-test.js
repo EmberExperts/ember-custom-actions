@@ -113,3 +113,28 @@ test('model action set serialized errors in error object', function(assert) {
     done();
   });
 });
+
+test('model action without actionId', function(assert) {
+  assert.expect(4);
+
+  this.server.patch('/bikes/:id', (request) => {
+    let data = JSON.parse(request.requestBody);
+
+    assert.deepEqual(data, { myParam: 'My first param', defaultParam: 'ok' });
+    assert.deepEqual(request.queryParams, { soap: 'true', include: 'sponge' });
+    assert.equal(request.url, '/bikes/1?include=sponge&soap=true');
+
+    return [200, { }, 'true'];
+  });
+
+  let done = assert.async();
+  let payload = { myParam: 'My first param' };
+
+  let model = this.subject();
+  model.set('id', 1);
+
+  model.clean(payload, { queryParams: { soap: true, include: 'sponge' } }).then((response) => {
+    assert.ok(response, true);
+    done();
+  });
+});
