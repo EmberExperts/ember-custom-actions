@@ -1,5 +1,16 @@
 # Change Log
 
+## [v3.1.0](https://github.com/Exelord/ember-custom-actions/tree/v3.1.0) (2019-03-04)
+[Full Changelog](https://github.com/Exelord/ember-custom-actions/compare/v3.0.0...v3.1.0)
+
+**Closed issues:**
+
+- Warning: cjs already defined [\#54](https://github.com/Exelord/ember-custom-actions/issues/54)
+
+**Merged pull requests:**
+
+- Update ember-cli-cjs-transform to 2.0.0 [\#55](https://github.com/Exelord/ember-custom-actions/pull/55) ([oakho](https://github.com/oakho))
+
 ## [v3.0.0](https://github.com/Exelord/ember-custom-actions/tree/v3.0.0) (2018-09-08)
 [Full Changelog](https://github.com/Exelord/ember-custom-actions/compare/v2.1.0...v3.0.0)
 

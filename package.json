@@ -1,6 +1,6 @@
 {
   "name": "ember-custom-actions",
-  "version": "3.0.0",
+  "version": "3.1.0",
   "description": "Custom API actions for Ember 2 applications",
   "keywords": [
     "ember-addon",
