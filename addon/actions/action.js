@@ -41,8 +41,14 @@ export default EmberObject.extend({
     @public
     @return {Object}
   */
-  options: computed(function() {
-    return {};
+  options: computed({
+    get() {
+      return {};
+    },
+
+    set(key, value) {
+      return value;
+    }
   }),
 
   /**
