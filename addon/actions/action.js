@@ -247,7 +247,8 @@ export default EmberObject.extend({
   _dataForCustomAction(data) {
     let actionId = this.get('id');
     let modelId = this.get('model.id');
+    let model = this.get('model');
 
-    return this.get('adapter').dataForCustomAction({ data, actionId, modelId });
+    return this.get('adapter').dataForCustomAction({ data, actionId, modelId, model });
   }
 });
