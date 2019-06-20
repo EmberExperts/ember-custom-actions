@@ -1,5 +1,18 @@
 # Change Log
 
+## [v3.2.0](https://github.com/Exelord/ember-custom-actions/tree/v3.2.0) (2019-06-20)
+[Full Changelog](https://github.com/Exelord/ember-custom-actions/compare/v3.1.0...v3.2.0)
+
+**Closed issues:**
+
+- Pass the `model` to `dataForCustomAction` within `params` for enabling serialization [\#59](https://github.com/Exelord/ember-custom-actions/issues/59)
+
+**Merged pull requests:**
+
+- Add model itself as params to dataForCustomAction [\#60](https://github.com/Exelord/ember-custom-actions/pull/60) ([feanor07](https://github.com/feanor07))
+- Bump bootstrap-sass from 3.3.7 to 3.4.1 [\#58](https://github.com/Exelord/ember-custom-actions/pull/58) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump morgan from 1.9.0 to 1.9.1 [\#57](https://github.com/Exelord/ember-custom-actions/pull/57) ([dependabot[bot]](https://github.com/apps/dependabot))
+
 ## [v3.1.0](https://github.com/Exelord/ember-custom-actions/tree/v3.1.0) (2019-03-04)
 [Full Changelog](https://github.com/Exelord/ember-custom-actions/compare/v3.0.0...v3.1.0)
 

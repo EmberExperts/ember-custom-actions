@@ -192,6 +192,8 @@ export default JSONAPIAdapter.extend(AdapterMixin, {
 });
 ```
 
+`params` contains following data: `data`, `actionId`, `modelId`, `model`
+
 ### Configuration
 
 You can define your custom options in your `config/environment.js` file
