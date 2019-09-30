@@ -1,5 +1,12 @@
 # Change Log
 
+## [v3.3.0](https://github.com/Exelord/ember-custom-actions/tree/v3.3.0) (2019-09-30)
+[Full Changelog](https://github.com/Exelord/ember-custom-actions/compare/v3.2.0...v3.3.0)
+
+**Merged pull requests:**
+
+- Bump lodash.merge from 4.6.1 to 4.6.2 [\#61](https://github.com/Exelord/ember-custom-actions/pull/61) ([dependabot[bot]](https://github.com/apps/dependabot))
+
 ## [v3.2.0](https://github.com/Exelord/ember-custom-actions/tree/v3.2.0) (2019-06-20)
 [Full Changelog](https://github.com/Exelord/ember-custom-actions/compare/v3.1.0...v3.2.0)
 
