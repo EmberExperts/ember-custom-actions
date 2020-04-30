@@ -13,11 +13,5 @@ module.exports = {
         { transformation: 'cjs', as: 'lodash.merge' }
       ]
     });
-
-    this.import('node_modules/jquery-param/jquery-param.js', {
-      using: [
-        { transformation: 'amd', as: 'jquery-param' }
-      ]
-    });
   },
 };
