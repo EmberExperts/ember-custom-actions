@@ -40,7 +40,7 @@
     "broccoli-asset-rev": "3.0.0",
     "ember-ajax": "3.1.0",
     "ember-bootstrap": "2.1.0",
-    "ember-cli": "~3.4.0",
+    "ember-cli": "~3.28.6",
     "ember-cli-app-version": "3.2.0",
     "ember-cli-code-coverage": "0.4.2",
     "ember-cli-dependency-checker": "3.0.0",
