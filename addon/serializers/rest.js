@@ -1,4 +1,4 @@
-import { deprecate } from '@ember/application/deprecations';
+import { deprecate } from '@ember/debug';
 
 import DS from 'ember-data';
 
